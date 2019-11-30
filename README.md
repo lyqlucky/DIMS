@@ -131,6 +131,13 @@
 	* [Tomcat 官网](http://tomcat.apache.org/)  
 	* [Tomcat 9 官网下载页面](https://tomcat.apache.org/download-90.cgi)  
 2. 双击运行下载的安装文件，按照提示一步一步安装并配置。  
+3. 配置环境变量：  
+
+	| 变量 | 值 |
+	| --- | --- |
+	| TOMCAT_HOME | C:\Program Files\Apache Software Foundation\Tomcat 9.0 |
+	| CATALINA_HOME | C:\Program Files\Apache Software Foundation\Tomcat 9.0 |
+	| Path | ;%TOMCAT_HOME%\bin;%CATALINA_HOME%\lib |
 
 #### 在 Eclipse 中配置 Tomcat Server  
 
