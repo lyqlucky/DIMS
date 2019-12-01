@@ -34,7 +34,7 @@
 	- [ ] [2.4 集成 Spring 和 MyBatis](#集成-Spring-和-MyBatis)  
 		- [ ] [2.4.1 导入 MyBatis 的 jar 包](#导入-MyBatis-的-jar-包)  
 		- [ ] [2.4.2 配置 MyBatis](#配置-MyBatis)  
-	- [ ] [2.5 集成 log4j](#集成-log4j)  
+	- [ ] [2.5 配置 log4j](#配置-log4j)  
 	- [ ] [2.6 集成基于 Bootstrap 前端框架的 ACE 模板](#集成基于-Bootstrap-前端框架的-ACE-模板)  
 
 ## 本组成员任务分工  
@@ -439,6 +439,20 @@ applicationContext.xml：
 </beans>
 ```
 
-### 集成 log4j  
+### 配置 log4j  
+
+在 `resource` 目录下，新建一个名为 `log4j.properties` 的文件：  
+
+log4j.properties：  
+
+```
+log4j.rootLogger=ERROR, stdout
+
+log4j.logger.com.sms=TRACE
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
+```
 
 ### 集成基于 Bootstrap 前端框架的 ACE 模板  
