@@ -17,11 +17,12 @@
 	- [ ] [1.5 数据库实施](#数据库实施)  
 	- [ ] [1.6 数据库运行和维护](#数据库运行和维护)  
 - [ ] [2. 应用系统设计](#应用系统设计)  
-	- [ ] [2.1 环境准备](#环境准备)  
-		- [ ] [2.1.1 配置 Java 环境](#配置-Java-环境)  
-		- [ ] [2.2.2 安装 Eclipse IDE for Enterprise Java Developers](#安装-Eclipse-IDE-for-Enterprise-Java-Developers)  
-		- [ ] [2.2.3 配置 Tomcat 环境](#配置-Tomcat-环境)  
-		- [ ] [2.2.4 在 Eclipse 中配置 Tomcat Server]()  
+	- [ ] [2.0 环境准备](#环境准备)  
+		- [ ] [2.0.1 配置 Java 环境](#配置-Java-环境)  
+		- [ ] [2.0.2 安装 Eclipse IDE for Enterprise Java Developers](#安装-Eclipse-IDE-for-Enterprise-Java-Developers)  
+		- [ ] [2.0.3 配置 Tomcat 环境](#配置-Tomcat-环境)  
+		- [ ] [2.0.4 在 Eclipse 中配置 Tomcat Server](#在-Eclipse-中配置-Tomcat-Server)  
+	- [ ] [2.1 创建一个新的 Dynamic Web 项目](#创建一个新的-Dynamic-Web-项目)  
 	- [ ] [2.2 集成 Spring 和 Sping MVC]()  
 		- [ ] [2.2.1 导入 Spring 的 jar 包]()  
 		- [ ] [2.2.2 导入 Spring MVC 的 jar 包]()  
@@ -146,6 +147,14 @@
 * [安装 Eclipse，配置 Tomcat](https://www.cnblogs.com/greenteaone/p/7929571.html)  
 * [Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上](https://blog.csdn.net/yerenyuan_pku/article/details/51830104)  
 * [Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上](https://blog.csdn.net/weixin_41704733/article/details/79871950)  
+
+### 创建一个新的 Dynamic Web 项目  
+
+新建一个名为 `DIMS` 的 `Dynamic Web Project`，`Target runtime` 选择上一步在 Eclipse 当中配置的 `Apache Tomcat v9.0`，`Dynamic web module version` 选择最新版本，`Configuration` 选择 `Default Configuration for Apache Tomcat v9.0`，其它选项不作更改，点击 `Next`。  
+
+将 `Default output folder` 的值改为 `WebContent\WEB-INF\classes`，点击 `Next`。  
+
+勾选 `Generate web.xml deployment descriptor`，点击 `Finish`。  
 
 ### 集成 Spring 和 Sping MVC  
 
