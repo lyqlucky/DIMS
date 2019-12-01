@@ -205,6 +205,11 @@
 * [commons-logging-1.2.jar](https://commons.apache.org/proper/commons-logging/download_logging.cgi)  
 * [commons-pool2-2.7.0.jar](https://commons.apache.org/proper/commons-pool/download_pool.cgi)  
 
+参考：  
+
+* [一篇关于 Apache Commons 类库的详解](https://blog.csdn.net/wiker_yong/article/details/23551209)  
+* [Apache Commons 工具包](https://blog.csdn.net/qq_34520606/article/details/78431802)  
+
 #### 导入其它基础 jar 包  
 
 * [aspectjweaver-1.9.4.jar](https://mvnrepository.com/artifact/org.aspectj/aspectjweaver)  
@@ -213,9 +218,74 @@
 * [jackson-core-2.10.0.jar](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)  
 * [jackson-databind-2.10.0.jar](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)  
 
+参考：  
+
+* [com.springsource.*.xx.jar 和同名 *.xx.jar 有什么区别？](https://blog.csdn.net/snower08/article/details/83353064)  
+
 #### 配置 Spring  
 
+在项目的 `Java Resources` 项中新建一个名为 `resource` 的 'source folder'，然后在其下新建两个 XML 文件。  
+
+applicationContext.xml：  
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+</beans>
+```
+
 #### 配置 SpringMVC  
+
+applicationContext-mvc.xml：  
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!-- mvc 静态资源放行 —— 允许访问图片等静态资源 -->
+	<mvc:default-servlet-handler/>
+	
+	<!-- mvc 支持注解 Controller -->
+	<context:annotation-config/>
+	<mvc:annotation-driven/>
+	
+	<!-- 设置扫描包的路径 Controller -->
+	<context:component-scan base-package="com.dims.web.controller"/>
+	
+	<!-- 视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 配置前缀和后缀 -->
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<!-- 文件上传配置 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 最大值配置 -->
+		<property name="maxUploadSize">
+			<value>200000</value>
+		</property>
+	</bean>
+</beans>
+```
 
 ### 配置 web.xml  
 

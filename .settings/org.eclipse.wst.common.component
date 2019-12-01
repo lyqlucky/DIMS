@@ -2,6 +2,7 @@
     <wb-module deploy-name="DIMS">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resource"/>
         <property name="context-root" value="DIMS"/>
         <property name="java-output-path" value="/DIMS/WebContent/WEB-INF/classes"/>
     </wb-module>
