@@ -32,7 +32,7 @@
 		- [ ] [2.2.6 配置 SpringMVC](#配置-SpringMVC)  
 	- [ ] [2.3 配置 web.xml](#配置-web.xml)  
 	- [ ] [2.4 集成 Spring 和 MyBatis](#集成-Spring-和-MyBatis)  
-		- [ ] [2.4.1 导入 MyBatis 的 jar 包]()  
+		- [ ] [2.4.1 导入 MyBatis 的 jar 包](#导入-MyBatis-的-jar-包)  
 		- [ ] [2.4.2 配置 MyBatis](#配置-MyBatis)  
 	- [ ] [2.5 集成 log4j](#集成-log4j)  
 	- [ ] [2.6 集成基于 Bootstrap 前端框架的 ACE 模板](#集成基于-Bootstrap-前端框架的-ACE-模板)  
@@ -352,6 +352,29 @@ web.xml：
 ### 集成 Spring 和 MyBatis  
 
 #### 导入 MyBatis 的 jar 包  
+
+* [MyBatis 官网](https://blog.mybatis.org/)  
+* [MyBatis v3 官网](https://mybatis.org/mybatis-3/zh/index.html)  
+* [MyBatis v3 GitHub 项目](https://github.com/mybatis/mybatis-3/)  
+* [MyBatis-Spring 官网](http://mybatis.org/spring/zh/index.html)  
+
+* [MyBatis v3 GitHub 项目 jar 包下载页面](https://github.com/mybatis/mybatis-3/releases)  
+* [MyBatis-Spring jar 包下载页面](https://mvnrepository.com/artifact/org.mybatis/mybatis-spring/2.0.3)  
+
+需要导入的 jar 包：  
+
+* asm-7.0.jar  
+* cglib-3.2.10.jar  
+* javassist-3.24.1-GA.jar  
+* log4j-1.2.17.jar  
+* mybatis-3.5.3.jar  
+* mybatis-spring-2.0.3.jar  
+* slf4j-api-1.7.26.jar  
+* slf4j-log4j12-1.7.26.jar  
+
+除此之外还需要导入 SQL Server 的 JDBC Driver jar 包：  
+
+* [mssql-jdbc-7.4.1.jre8.jar](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15)  
 
 #### 配置 MyBatis  
 
