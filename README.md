@@ -23,17 +23,19 @@
 		- [ ] [2.0.3 配置 Tomcat 环境](#配置-Tomcat-环境)  
 		- [ ] [2.0.4 在 Eclipse 中配置 Tomcat Server](#在-Eclipse-中配置-Tomcat-Server)  
 	- [ ] [2.1 创建一个新的 Dynamic Web 项目](#创建一个新的-Dynamic-Web-项目)  
-	- [ ] [2.2 集成 Spring 和 Sping MVC]()  
-		- [ ] [2.2.1 导入 Spring 的 jar 包]()  
-		- [ ] [2.2.2 导入 Spring MVC 的 jar 包]()  
-		- [ ] [2.2.3 配置 Spring]()  
-		- [ ] [2.2.4 配置 Spring MVC]()  
-	- [ ] [2.3 配置 web.xml]()  
-	- [ ] [2.4 集成 MyBatis](#集成-MyBatis)  
+	- [ ] [2.2 集成 Spring 和 SpingMVC](#集成-Spring-和-SpingMVC)  
+		- [ ] [2.2.1 导入 Spring 的 jar 包](#导入-Spring-的-jar-包)  
+		- [ ] [2.2.2 导入 SpringMVC 的 jar 包](#导入-SpringMVC-的-jar-包)  
+		- [ ] [2.2.3 导入 Apache Commons 的 jar 包](#导入-Apache-Commons-的-jar-包)  
+		- [ ] [2.2.4 导入其它基础 jar 包](#导入其它基础-jar-包)  
+		- [ ] [2.2.5 配置 Spring](#配置-Spring)  
+		- [ ] [2.2.6 配置 SpringMVC](#配置-SpringMVC)  
+	- [ ] [2.3 配置 web.xml](#配置-web.xml)  
+	- [ ] [2.4 集成 Spring 和 MyBatis](#集成-Spring-和-MyBatis)  
 		- [ ] [2.4.1 导入 MyBatis 的 jar 包]()  
 		- [ ] [2.4.2 配置 MyBatis](#配置-MyBatis)  
 	- [ ] [2.5 集成 log4j](#集成-log4j)  
-	- [ ] [2.6 集成 Bootstrap]()  
+	- [ ] [2.6 集成基于 Bootstrap 前端框架的 ACE 模板](#集成基于-Bootstrap-前端框架的-ACE-模板)  
 
 ## 本组成员任务分工  
 
@@ -124,7 +126,7 @@
 #### 安装 Eclipse IDE for Enterprise Java Developers  
 
 * [Eclipse 官网](https://www.eclipse.org/)  
-* [Eclipse 官网下载页面](https://www.eclipse.org/downloads/)  
+* [Eclipse 官网 Installer 下载页面](https://www.eclipse.org/downloads/)  
 
 #### 配置 Tomcat 环境  
 
@@ -159,19 +161,65 @@
 
 * [Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上](https://blog.csdn.net/weixin_41704733/article/details/79871950)  
 
-### 集成 Spring 和 Sping MVC  
+后续需要导入的 jar 包都复制到项目的 `WebContent\WEB-INF\lib` 目录当中来。  
+
+### 集成 Spring 和 SpingMVC  
+
+* [Spring 官网](https://spring.io/)  
+* [Spring 发行版的下载地址](https://repo.spring.io/release/org/springframework/spring/)  
+* [Spring 发行版 v5.2.1 的下载地址](https://repo.spring.io/release/org/springframework/spring/5.2.1.RELEASE/)  
+
+下载 `spring-5.2.1.RELEASE-dist.zip` 并解压。  
 
 #### 导入 Spring 的 jar 包  
 
-#### 导入 Spring MVC 的 jar 包  
+将 `spring-5.2.1.RELEASE-dist.zip` 解压路径的 `libs` 目录下的一部分 jar 包复制到项目的 `WebContent\WEB-INF\lib` 目录当中来，需要的 jar 包如下：  
+
+* spring-aop-5.2.1.RELEASE.jar  
+* spring-aspects-5.2.1.RELEASE.jar  
+* spring-beans-5.2.1.RELEASE.jar  
+* spring-context-5.2.1.RELEASE.jar  
+* spring-core-5.2.1.RELEASE.jar  
+* spring-expression-5.2.1.RELEASE.jar  
+* spring-jdbc-5.2.1.RELEASE.jar  
+* spring-test-5.2.1.RELEASE.jar  
+* spring-tx-5.2.1.RELEASE.jar  
+* spring-web-5.2.1.RELEASE.jar  
+
+#### 导入 SpringMVC 的 jar 包  
+
+将 `spring-5.2.1.RELEASE-dist.zip` 解压路径的 `libs` 目录下的一部分 jar 包复制到项目的 `WebContent\WEB-INF\lib` 目录当中来，需要的 jar 包如下：  
+
+* spring-webmvc-5.2.1.RELEASE.jar  
+
+#### 导入 Apache Commons 的 jar 包  
+
+* [Apache Commons 官网](https://commons.apache.org/index.html)  
+* [Apache Commons 官网 jar 包下载地址](https://commons.apache.org/downloads/index.html)  
+
+需要导入的 jar 包：  
+
+* [commons-dbcp2-2.7.0.jar](https://commons.apache.org/proper/commons-dbcp/download_dbcp.cgi)  
+* [commons-fileupload-1.4.jar](https://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi)  
+* [commons-io-2.6.jar](https://commons.apache.org/proper/commons-io/download_io.cgi)  
+* [commons-logging-1.2.jar](https://commons.apache.org/proper/commons-logging/download_logging.cgi)  
+* [commons-pool2-2.7.0.jar](https://commons.apache.org/proper/commons-pool/download_pool.cgi)  
+
+#### 导入其它基础 jar 包  
+
+* [aspectjweaver-1.9.4.jar](https://mvnrepository.com/artifact/org.aspectj/aspectjweaver)  
+* [com.springsource.org.aopalliance-1.0.0.jar](https://mvnrepository.com/artifact/org.aopalliance/com.springsource.org.aopalliance)  
+* [jackson-annotations-2.10.0.jar](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations)  
+* [jackson-core-2.10.0.jar](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)  
+* [jackson-databind-2.10.0.jar](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)  
 
 #### 配置 Spring  
 
-#### 配置 Spring MVC  
+#### 配置 SpringMVC  
 
 ### 配置 web.xml  
 
-### 集成 MyBatis  
+### 集成 Spring 和 MyBatis  
 
 #### 导入 MyBatis 的 jar 包  
 
@@ -179,4 +227,4 @@
 
 ### 集成 log4j  
 
-### 集成 Bootstrap  
+### 集成基于 Bootstrap 前端框架的 ACE 模板  
