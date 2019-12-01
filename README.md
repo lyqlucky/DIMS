@@ -143,9 +143,8 @@
 #### 在 Eclipse 中配置 Tomcat Server  
 
 参考：  
-* [Eclipse 配置 Tomcat9](https://blog.csdn.net/weixin_44436561/article/details/86300115)  
+
 * [安装 Eclipse，配置 Tomcat](https://www.cnblogs.com/greenteaone/p/7929571.html)  
-* [Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上](https://blog.csdn.net/yerenyuan_pku/article/details/51830104)  
 * [Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上](https://blog.csdn.net/weixin_41704733/article/details/79871950)  
 
 ### 创建一个新的 Dynamic Web 项目  
@@ -155,6 +154,10 @@
 将 `Default output folder` 的值改为 `WebContent\WEB-INF\classes`，点击 `Next`。  
 
 勾选 `Generate web.xml deployment descriptor`，点击 `Finish`。  
+
+测试项目是否可以发布成功，参考：  
+
+* [Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上](https://blog.csdn.net/weixin_41704733/article/details/79871950)  
 
 ### 集成 Spring 和 Sping MVC  
 
