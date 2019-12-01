@@ -35,7 +35,7 @@
 		- [ ] [2.4.1 导入 MyBatis 的 jar 包](#导入-MyBatis-的-jar-包)  
 		- [ ] [2.4.2 配置 MyBatis](#配置-MyBatis)  
 	- [ ] [2.5 配置 log4j](#配置-log4j)  
-	- [ ] [2.6 集成基于 Bootstrap 前端框架的 ACE 模板](#集成基于-Bootstrap-前端框架的-ACE-模板)  
+	- [ ] [2.6 集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板](#集成基于-Bootstrap-前端框架的-ACE-管理系统页面模板)  
 
 ## 本组成员任务分工  
 
@@ -455,4 +455,10 @@ log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
 log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 ```
 
-### 集成基于 Bootstrap 前端框架的 ACE 模板  
+### 集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板  
+
+* [ACE 管理系统页面模板预览](http://ace.jeka.by/)  
+* [ACE GitHub 项目](https://github.com/bopoda/ace)  
+* [ACE GitHub 项目 (中文版)](https://github.com/XinLiangCoder/AceAdmin)  
+
+从 ACE 的 GitHub 项目页面下载该项目的压缩包，解压后将解压路径下的 `assets` 文件夹复制到项目的 `WebContent` 目录下。  
