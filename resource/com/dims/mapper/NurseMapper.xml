@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 用来找唯一的 Mapper 文件，一般是 domain 的全路径名 + Mapper -->
+<mapper namespace="com.dims.mapper.NurseMapper">
+	<!-- 登录 -->
+	<select id="login" parameterType="User" resultType="Nurse">
+		SELECT Nno, Nname, Nsex, Nage, Npwd
+		FROM Nurse
+		WHERE Nno = #{no} AND Npwd = #{pwd};
+	</select>
+</mapper>
