@@ -52,17 +52,27 @@
 												请输入您的信息
 											</h4>
 											<div class="space-6"></div>
-											<form>
+											<form action="submitLogin" method="post">
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="编号" />
+															<select class="chosen-select form-control" name="role" data-placeholder="登录角色">
+																<option value=""></option>
+																<option value=0>库存管理员</option>
+																<option value=1>医生</option>
+																<option value=2>发药处护士</option>
+															</select>
+														</span>
+													</label>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" required="required" name="no" class="form-control" placeholder="编号" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="登陆密码" />
+															<input type="password" required="required" name="pwd" class="form-control" placeholder="登陆密码" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
@@ -72,7 +82,7 @@
 															<input type="checkbox" class="ace" />
 															<span class="lbl"> 记住我</span>
 														</label>
-														<button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+														<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">登入</span>
 														</button>

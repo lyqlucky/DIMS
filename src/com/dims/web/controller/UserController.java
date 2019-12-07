@@ -40,6 +40,7 @@ public class UserController {
 
 	@RequestMapping(value = "submitLogin")
 	public String submitLogin(HttpServletRequest req, User user) {
+		System.out.println("submitLogin: " + user);
 		switch (user.getRole()) {
 		case ADMIN:
 			Admin currentAdmin = adminService.login(user);
@@ -74,8 +75,27 @@ public class UserController {
 				// 重定向到 WEB-INF/views/login.jsp，留在登录页面
 				return "redirect:/login";
 			}
+		default:
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
 		}
-		// 重定向到 WEB-INF/views/login.jsp，留在登录页面
-		return "redirect:/login";
+	}
+
+	@RequestMapping(value = "admin")
+	public String admin() {
+		// 重定向到 WEB-INF/views/admin/index.jsp
+		return "redirect:/admin/index";
+	}
+
+	@RequestMapping(value = "doctor")
+	public String doctor() {
+		// 重定向到 WEB-INF/views/doctor/index.jsp
+		return "redirect:/doctor/index";
+	}
+
+	@RequestMapping(value = "nurse")
+	public String nurse() {
+		// 重定向到 WEB-INF/views/nurse/index.jsp
+		return "redirect:/nurse/index";
 	}
 }
