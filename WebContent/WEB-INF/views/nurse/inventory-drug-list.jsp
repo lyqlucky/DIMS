@@ -971,7 +971,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach items="${inventoryDrugs}" var="id">
+													<c:forEach items="${drugs}" var="drug">
 														<tr>
 															<td class="center">
 																<label class="pos-rel">
@@ -979,10 +979,10 @@
 																	<span class="lbl"></span>
 																</label>
 															</td>
-															<td>${id.PDno}</td>
-															<td>${id.PDname}</td>
-															<td>${id.PDlife}</td>
-															<td>${id.PDnum}</td>
+															<td>${drug.PDno}</td>
+															<td>${drug.PDname}</td>
+															<td>${drug.PDlife}</td>
+															<td>${drug.PDnum}</td>
 															<td>
 																<div class="hidden-sm hidden-xs action-buttons">
 																	<a class="blue" href="#">
