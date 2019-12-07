@@ -8,4 +8,19 @@
 		FROM Nurse
 		WHERE Nno = #{no} AND Npwd = #{pwd};
 	</select>
+	
+	<!-- 查看药品库存列表 -->
+	<select id="queryAllDrugs" resultType="Drug">
+		SELECT d.PDno, d.PDname, d.PDlife, SUM(i.PDnum) AS PDnum
+		FROM Drug d, InventoryDrug i
+		WHERE d.PDno = i.PDno
+		GROUP BY d.PDno, d.PDname, d.PDlife;
+	</select>
+	
+	<!-- 查看某一库存药品的所有批次 -->
+	<select id="queryAllPDbatches" parameterType="Drug" resultType="InventoryDrug">
+		SELECT d.PDno, d.PDname, d.PDlife, i.PDbatch, i.PDnum, i.Sno, i.SAno, i.Stime
+		FROM Drug d, InventoryDrug i
+		WHERE d.PDno = i.PDno AND d.PDno = #{PDno};
+	</select>
 </mapper>

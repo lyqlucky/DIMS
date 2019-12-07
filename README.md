@@ -36,7 +36,9 @@
 		- [ ] [2.4.2 配置 MyBatis](#配置-MyBatis)  
 	- [ ] [2.5 配置 log4j](#配置-log4j)  
 	- [ ] [2.6 集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板](#集成基于-Bootstrap-前端框架的-ACE-管理系统页面模板)  
-	- [ ] [2.7 详细设计阶段](#详细设计阶段)  
+	- [ ] [2.7 导入 Apache Taglibs 的 jar 包](#导入-Apache-Taglibs-的-jar-包)  
+	- [ ] [2.8 详细设计阶段](#详细设计阶段)  
+	- [ ] [2.9 遇到的问题](#遇到的问题)  
 
 ## 本组成员任务分工  
 
@@ -505,6 +507,15 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 
 从 ACE 的 GitHub 项目页面下载该项目的压缩包，解压后将解压路径下的 `assets` 文件夹复制到项目的 `WebContent` 目录下。  
 
+### 导入 Apache Taglibs 的 jar 包  
+
+* [Apache Taglibs 官网下载页面](http://tomcat.apache.org/download-taglibs.cgi)  
+
+需要导入的 jar 包：  
+
+* taglibs-standard-impl-1.2.5.jar  
+* taglibs-standard-spec-1.2.5.jar  
+
 ### 详细设计阶段  
 
 ![详细设计_时序图_User](./Doc/详细设计_时序图_User.png)  
@@ -518,3 +529,10 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 参考：  
 
 * [UML 之时序图](https://www.cnblogs.com/gd-luojialin/p/10356740.html)  
+
+### 遇到的问题  
+
+1. `javax.el.PropertyNotFoundException: 类型[com.dims.domain.InventoryDrug]上找不到属性[Sno]`  
+	
+	参考：  
+	* [javax.el.PropertyNotFoundException——属性未找到](https://blog.csdn.net/gr_guhun/article/details/89953842)  

@@ -1,11 +1,15 @@
 package com.dims.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dims.domain.Drug;
 import com.dims.service.INurseService;
 
 @Controller
@@ -32,7 +36,15 @@ public class NurseController {
 	}
 
 	@RequestMapping(value = "inventory-drug-list")
-	public String inventoryDrugList() {
+	public String inventoryDrugList(HttpServletRequest req, Model model) {
+		List<Drug> drugs = nurseService.queryAllDrugs();
+
+		for (Drug drug : drugs) {
+			drug.setInventoryDrugs(nurseService.queryAllPDbatches(drug));
+		}
+
+		model.addAttribute("drugs", drugs);
+
 		// 请求映射到 WEB-INF/views/nurse/inventory-drug-list.jsp
 		return "nurse/inventory-drug-list";
 	}
