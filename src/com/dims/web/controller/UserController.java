@@ -13,14 +13,10 @@ import com.dims.domain.User;
 import com.dims.service.IAdminService;
 import com.dims.service.IDoctorService;
 import com.dims.service.INurseService;
-import com.dims.service.IUserService;
 
 @Controller
 @RequestMapping(value = "/")
 public class UserController {
-	@Autowired
-	private IUserService userService;
-
 	@Autowired
 	private IAdminService adminService;
 
