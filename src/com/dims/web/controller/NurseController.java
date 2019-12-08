@@ -35,8 +35,8 @@ public class NurseController {
 		return "nurse/welcome";
 	}
 
-	@RequestMapping(value = "inventory-drug-list")
-	public String inventoryDrugList(HttpServletRequest req, Model model) {
+	@RequestMapping(value = "query-pdbatch-list")
+	public String queryPDbatchList(HttpServletRequest req, Model model) {
 		List<Drug> drugs = nurseService.queryAllDrugs();
 
 		for (Drug drug : drugs) {
@@ -45,7 +45,7 @@ public class NurseController {
 
 		model.addAttribute("drugs", drugs);
 
-		// 请求映射到 WEB-INF/views/nurse/inventory-drug-list.jsp
-		return "nurse/inventory-drug-list";
+		// 请求映射到 WEB-INF/views/nurse/query-pdbatch-list.jsp
+		return "nurse/query-pdbatch-list";
 	}
 }
