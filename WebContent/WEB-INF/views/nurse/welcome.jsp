@@ -47,7 +47,7 @@
 					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							Ace Admin
+							医院药品库存管理系统 DIMS
 						</small>
 					</a>
 				</div>
@@ -247,7 +247,7 @@
 				</div><!-- /.sidebar-shortcuts -->
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="../nurse/welcome">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 欢迎页面 </span>
 						</a>
@@ -477,14 +477,6 @@
 							</li>
 							<li class="active">Dashboard</li>
 						</ul><!-- /.breadcrumb -->
-						<div class="nav-search" id="nav-search">
-							<form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-							</form>
-						</div><!-- /.nav-search -->
 					</div>
 					<div class="page-content">
 						<div class="ace-settings-container" id="ace-settings-container">
@@ -561,12 +553,11 @@
 										<i class="ace-icon fa fa-times"></i>
 									</button>
 									<i class="ace-icon fa fa-check green"></i>
-									Welcome to
+									欢迎使用
 									<strong class="green">
-										Ace
-										<small>(v1.4)</small>
-									</strong>,
-	Ð»ÑÐ³ÐºÐ¸Ð¹, Ð¼Ð½Ð¾Ð³Ð¾ÑÑÐ½ÐºÑÐ¸Ð¾Ð½Ð°Ð»ÑÐ½ÑÐ¹ Ð¸ Ð¿ÑÐ¾ÑÑÐ¾Ð¹ Ð² Ð¸ÑÐ¿Ð¾Ð»ÑÐ·Ð¾Ð²Ð°Ð½Ð¸Ð¸ ÑÐ°Ð±Ð»Ð¾Ð½ Ð´Ð»Ñ Ð°Ð´Ð¼Ð¸Ð½ÐºÐ¸ Ð½Ð° bootstrap 3.3.6. ÐÐ°Ð³ÑÑÐ·Ð¸ÑÑ Ð¸ÑÑÐ¾Ð´Ð½Ð¸ÐºÐ¸ Ñ <a href="https://github.com/bopoda/ace">github</a> (with minified ace js/css files).
+										医院药品库存管理系统
+										<small>DIMS (v1.0)</small>
+									</strong>
 								</div>
 								<div class="row">
 									<div class="space-6"></div>

@@ -247,7 +247,7 @@
 				</div><!-- /.sidebar-shortcuts -->
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="index.html">
+						<a href="../nurse/welcome">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 欢迎页面 </span>
 						</a>
@@ -481,14 +481,6 @@
 							</li>
 							<li class="active">Simple &amp; Dynamic</li>
 						</ul><!-- /.breadcrumb -->
-						<div class="nav-search" id="nav-search">
-							<form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-							</form>
-						</div><!-- /.nav-search -->
 					</div>
 					<div class="page-content">
 						<div class="ace-settings-container" id="ace-settings-container">
@@ -947,7 +939,6 @@
 				var active_class = 'active';
 				$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
 					var th_checked = this.checked;//checkbox inside "TH" table header
-					
 					$(this).closest('table').find('tbody > tr').each(function(){
 						var row = this;
 						if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
