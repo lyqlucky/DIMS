@@ -44,7 +44,7 @@ public class UserController {
 		switch (user.getRole()) {
 		case ADMIN:
 			Admin currentAdmin = adminService.login(user);
-			if (currentAdmin != null) {
+			if (currentAdmin != null) { // 登录成功
 				req.getSession().setAttribute("currentAdmin", currentAdmin);
 
 				// 重定向到 WEB-INF/views/admin/index.jsp
@@ -55,7 +55,7 @@ public class UserController {
 			}
 		case DOCTOR:
 			Doctor currentDoctor = doctorService.login(user);
-			if (currentDoctor != null) {
+			if (currentDoctor != null) { // 登录成功
 				req.getSession().setAttribute("currentDoctor", currentDoctor);
 
 				// 重定向到 WEB-INF/views/doctor/index.jsp
@@ -66,7 +66,7 @@ public class UserController {
 			}
 		case NURSE:
 			Nurse currentNurse = nurseService.login(user);
-			if (currentNurse != null) {
+			if (currentNurse != null) { // 登录成功
 				req.getSession().setAttribute("currentNurse", currentNurse);
 
 				// 重定向到 WEB-INF/views/nurse/index.jsp
@@ -79,6 +79,16 @@ public class UserController {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
 			return "redirect:/login";
 		}
+	}
+
+	@RequestMapping(value = "logout")
+	public String logout(HttpServletRequest req) {
+		req.getSession().removeAttribute("currentAdmin");
+		req.getSession().removeAttribute("currentDoctor");
+		req.getSession().removeAttribute("currentNurse");
+
+		// 重定向到 WEB-INF/views/login.jsp
+		return "redirect:/login";
 	}
 
 	@RequestMapping(value = "admin")

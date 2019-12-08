@@ -56,11 +56,11 @@
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<select class="chosen-select form-control" name="role" data-placeholder="登录角色">
-																<option value=""></option>
-																<option value=0>库存管理员</option>
-																<option value=1>医生</option>
-																<option value=2>发药处护士</option>
+															<select class="chosen-select form-control" required="required" name="role">
+																<option value="" disabled="disabled" selected="selected" style="display: none;">请选择一个登录角色</option>
+																<option value="ADMIN">库存管理员</option>
+																<option value="DOCTOR">医生</option>
+																<option value="NURSE">发药处护士</option>
 															</select>
 														</span>
 													</label>

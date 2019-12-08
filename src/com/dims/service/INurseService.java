@@ -12,5 +12,5 @@ public interface INurseService {
 
 	public List<Drug> queryAllDrugs(); // 查看药品库存列表
 
-	public List<InventoryDrug> queryAllPDbatches(Drug drug); // 查看某一库存药品的所有批次
+	public List<InventoryDrug> queryAllPDbatches(Drug drug); // 查看某一药品的所有库存批次
 }

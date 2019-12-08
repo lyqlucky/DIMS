@@ -8,4 +8,12 @@
 		FROM Doctor
 		WHERE Dno = #{no} AND Dpwd = #{pwd};
 	</select>
+	
+	<!-- 查看药品库存列表 -->
+	<select id="queryAllDrugs" resultType="Drug">
+		SELECT d.PDno, d.PDname, d.PDlife, SUM(i.PDnum) AS PDnum
+		FROM Drug d, InventoryDrug i
+		WHERE d.PDno = i.PDno
+		GROUP BY d.PDno, d.PDname, d.PDlife;
+	</select>
 </mapper>
