@@ -23,4 +23,25 @@
 		FROM Drug d, InventoryDrug i
 		WHERE d.PDno = i.PDno AND d.PDno = #{PDno};
 	</select>
+	
+	<!-- 查看未处理处方列表 -->
+	<select id="queryAllUnsolvedRxs" resultType="Prescription">
+		SELECT p.Pno, p.Pid, p.Dno, p.Ptime, p.Nno, p.Htime, p.Pstate
+		FROM Prescription p
+		WHERE p.Pstate = 0;
+	</select>
+	
+	<!-- 查看已处理处方列表 -->
+	<select id="queryAllSolvedRxs" resultType="Prescription">
+		SELECT p.Pno, p.Pid, p.Dno, p.Ptime, p.Nno, p.Htime, p.Pstate
+		FROM Prescription p
+		WHERE p.Pstate = 1;
+	</select>
+	
+	<!-- 查看某一处方包含的所有药品 -->
+	<select id="queryAllContainedDrugs" parameterType="Prescription" resultType="Drug">
+		SELECT PID.PDno, PID.PDnum
+		FROM Prescription p, PID
+		WHERE p.Pno = PID.Pno AND p.Pno = #{Pno};
+	</select>
 </mapper>

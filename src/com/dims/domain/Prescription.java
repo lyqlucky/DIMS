@@ -1,6 +1,7 @@
 package com.dims.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Prescription {
 	int Pno; // 编号
@@ -10,6 +11,7 @@ public class Prescription {
 	String Nno; // 处理护士编号
 	Date Htime; // 处理时间
 	boolean Pstate; // 状态 (1 为已处理，0 为未处理)
+	List<Drug> Drugs; // 处方包含的药品
 
 	public int getPno() {
 		return Pno;
@@ -67,9 +69,17 @@ public class Prescription {
 		Pstate = pstate;
 	}
 
+	public List<Drug> getDrugs() {
+		return Drugs;
+	}
+
+	public void setDrugs(List<Drug> drugs) {
+		Drugs = drugs;
+	}
+
 	@Override
 	public String toString() {
 		return "Prescription [Pno=" + Pno + ", Pid=" + Pid + ", Dno=" + Dno + ", Ptime=" + Ptime + ", Nno=" + Nno
-				+ ", Htime=" + Htime + ", Pstate=" + Pstate + "]";
+				+ ", Htime=" + Htime + ", Pstate=" + Pstate + ", Drugs=" + Drugs + "]";
 	}
 }
