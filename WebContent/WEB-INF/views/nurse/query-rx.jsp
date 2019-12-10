@@ -261,7 +261,7 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-					<li class="active open">
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
 							<span class="menu-text"> 查看药品库存列表 </span>
@@ -276,7 +276,7 @@
 								</a>
 								<b class="arrow"></b>
 							</li>
-							<li class="active">
+							<li class="">
 								<a href="../nurse/query-pdbatch-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看具体批次明细
@@ -309,172 +309,25 @@
 							</li>
 						</ul>
 					</li>
-					<li class="">
+					<li class="active open">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text"> Forms </span>
+							<span class="menu-text"> 查看处方 / 处理处方 </span>
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
 						<b class="arrow"></b>
 						<ul class="submenu">
-							<li class="">
-								<a href="form-elements.html">
+							<li class="active">
+								<a href="../nurse/query-rx?Pno=1">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Form Elements
+									查看处方的具体明细
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li class="">
 								<a href="form-elements-2.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Form Elements 2
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="form-wizard.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Wizard &amp; Validation
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="wysiwyg.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Wysiwyg &amp; Markdown
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="dropzone.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Dropzone File Upload
-								</a>
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-					<li class="">
-						<a href="calendar.html">
-							<i class="menu-icon fa fa-calendar"></i>
-							<span class="menu-text">
-								Calendar
-								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
-									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-								</span>
-							</span>
-						</a>
-						<b class="arrow"></b>
-					</li>
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-tag"></i>
-							<span class="menu-text"> More Pages </span>
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-						<b class="arrow"></b>
-						<ul class="submenu">
-							<li class="">
-								<a href="profile.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									User Profile
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="inbox.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Inbox
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="pricing.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Pricing Tables
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="invoice.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Invoice
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="timeline.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Timeline
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="search.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Search Results
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="email.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Email Templates
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="login.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Login &amp; Register
-								</a>
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
-							<span class="menu-text">
-								Other Pages
-								<span class="badge badge-primary">5</span>
-							</span>
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-						<b class="arrow"></b>
-						<ul class="submenu">
-							<li class="">
-								<a href="faq.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									FAQ
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="error-404.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Error 404
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="error-500.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Error 500
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="grid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Grid
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="blank.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Blank Page
+									处理未处理处方
 								</a>
 								<b class="arrow"></b>
 							</li>
@@ -491,22 +344,18 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="../nurse/index">首页</a>
 							</li>
 							<li>
-								<a href="#">Forms</a>
+								<a href="../nurse/query-rx?Pno=1">查看处方 / 处理处方</a>
 							</li>
-							<li class="active">Form Elements</li>
+							<li class="active">查看处方的具体明细</li>
 						</ul><!-- /.breadcrumb -->
 					</div>
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								Form Elements
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									Common form elements and layouts
-								</small>
+								${rx.pno} 号处方的具体明细 (不可修改)
 							</h1>
 						</div><!-- /.page-header -->
 						<div class="row">
@@ -514,100 +363,62 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<form class="form-horizontal" role="form">
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Text Field </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 处方编号 </label>
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Full Length </label>
-										<div class="col-sm-9">
-											<input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />
+											<input readonly="readonly" type="text" id="form-field-1" placeholder="处方编号" class="col-xs-10 col-sm-5" name="Pno" value="${rx.pno}" />
 										</div>
 									</div>
 									<div class="space-4"></div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Password Field </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 病人身份证号码 </label>
 										<div class="col-sm-9">
-											<input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />
-											<span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">Inline help text</span>
-											</span>
+											<input readonly="readonly" type="text" id="form-field-2" placeholder="病人身份证号码" class="col-xs-10 col-sm-5" name="Pid" value="${rx.pid}" />
 										</div>
 									</div>
 									<div class="space-4"></div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> Readonly field </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> 开出医生编号 </label>
 										<div class="col-sm-9">
-											<input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" />
-											<span class="help-inline col-xs-12 col-sm-7">
-												<label class="middle">
-													<input class="ace" type="checkbox" id="id-disable-check" />
-													<span class="lbl"> Disable it!</span>
-												</label>
-											</span>
+											<input readonly="readonly" type="text" id="form-field-3" placeholder="开出医生编号" class="col-xs-10 col-sm-5" name="Dno" value="${rx.dno}" />
 										</div>
 									</div>
 									<div class="space-4"></div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-4">Relative Sizing</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> 开出时间 </label>
 										<div class="col-sm-9">
-											<input class="input-sm" type="text" id="form-field-4" placeholder=".input-sm" />
-											<div class="space-2"></div>
-											<div class="help-block" id="input-size-slider"></div>
+											<input readonly="readonly" type="text" id="form-field-4" placeholder="开出时间" class="col-xs-10 col-sm-5" name="Ptime" value="${rx.ptime}" />
 										</div>
 									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-5">Grid Sizing</label>
-										<div class="col-sm-9">
-											<div class="clearfix">
-												<input class="col-xs-1" type="text" id="form-field-5" placeholder=".col-xs-1" />
+									<c:choose>
+										<c:when test="${rx.pstate}">
+											<div class="space-4"></div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> 处理护士编号 </label>
+												<div class="col-sm-9">
+													<input readonly="readonly" type="text" id="form-field-5" placeholder="处理护士编号" class="col-xs-10 col-sm-5" name="Nno" value="${rx.nno}" />
+												</div>
 											</div>
-											<div class="space-2"></div>
-											<div class="help-block" id="input-span-slider"></div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
-										<div class="col-sm-9">
-											<span class="input-icon">
-												<input type="text" id="form-field-icon-1" />
-												<i class="ace-icon fa fa-leaf blue"></i>
-											</span>
-											<span class="input-icon input-icon-right">
-												<input type="text" id="form-field-icon-2" />
-												<i class="ace-icon fa fa-leaf green"></i>
-											</span>
-										</div>
-									</div>
-									<div class="space-4"></div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-6">Tooltip and help button</label>
-										<div class="col-sm-9">
-											<input data-rel="tooltip" type="text" id="form-field-6" placeholder="Tooltip on hover" title="Hello Tooltip!" data-placement="bottom" />
-											<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>
-										</div>
-									</div>
-									<div class="space-4"></div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">Tag input</label>
-										<div class="col-sm-9">
-											<div class="inline">
-												<input type="text" name="tags" id="form-field-tags" value="Tag Input Control" placeholder="Enter tags ..." />
+											<div class="space-4"></div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-6"> 处理时间 </label>
+												<div class="col-sm-9">
+													<input readonly="readonly" type="text" id="form-field-6" placeholder="处理时间" class="col-xs-10 col-sm-5" name="Htime" value="${rx.htime}" />
+												</div>
 											</div>
-										</div>
-									</div>
-									<div class="clearfix form-actions">
-										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="button">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												Submit
-											</button>
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset">
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												Reset
-											</button>
+										</c:when>
+									</c:choose>
+									<div class="space-4"></div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-7"> 处方状态 </label>
+										<div class="col-sm-9">
+											<c:choose>
+												<c:when test="${rx.pstate}">
+													<span class="label label-success arrowed">已处理</span>
+												</c:when>
+												<c:otherwise>
+													<span class="label label-danger arrowed-in">未处理</span>
+												</c:otherwise>
+											</c:choose>
 										</div>
 									</div>
 									<div class="hr hr-24"></div>

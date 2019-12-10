@@ -532,7 +532,12 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 
 ### 遇到的问题  
 
-1. `javax.el.PropertyNotFoundException: 类型[com.dims.domain.InventoryDrug]上找不到属性[Sno]`  
+1. `javax.el.PropertyNotFoundException: 类型[com.dims.domain.InventoryDrug]上找不到属性[Sno]`：  
 	
 	参考：  
 	* [javax.el.PropertyNotFoundException——属性未找到](https://blog.csdn.net/gr_guhun/article/details/89953842)  
+
+2. 关于 jsp 页面当中 Date / DateTime 类型的值的显示格式问题：  
+
+	参考：
+	* []()  
