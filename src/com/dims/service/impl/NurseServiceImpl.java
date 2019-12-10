@@ -44,8 +44,13 @@ public class NurseServiceImpl implements INurseService {
 	}
 
 	@Override
-	public List<Drug> queryAllContainedDrugs(Prescription prescription) { // 查看某一处方包含的所有药品
-		return nurseMapper.queryAllContainedDrugs(prescription);
+	public Prescription queryOneRx(Prescription rx) { // 查看某一处方的具体明细
+		return nurseMapper.queryOneRx(rx);
+	}
+
+	@Override
+	public List<Drug> queryAllContainedDrugs(Prescription rx) { // 查看某一处方包含的所有药品
+		return nurseMapper.queryAllContainedDrugs(rx);
 	}
 
 	@Override

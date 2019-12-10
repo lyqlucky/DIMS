@@ -557,13 +557,13 @@
 															<td>${rx.htime}</td>
 															<td>
 																<div class="hidden-sm hidden-xs action-buttons">
-																	<a class="blue" href="#">
+																	<a class="blue" href="../nurse/query-rx?Pno=${rx.pno}" title="查看">
 																		<i class="ace-icon fa fa-search-plus bigger-130"></i>
 																	</a>
-																	<a class="green" href="#">
+																	<a class="green" href="#" title="Edit">
 																		<i class="ace-icon fa fa-pencil bigger-130"></i>
 																	</a>
-																	<a class="red" href="#">
+																	<a class="red" href="#" title="Delete">
 																		<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																	</a>
 																</div>
@@ -574,7 +574,7 @@
 																		</button>
 																		<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																			<li>
-																				<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<a href="../nurse/query-rx?Pno=${rx.pno}" class="tooltip-info" data-rel="tooltip" title="查看">
 																					<span class="blue">
 																						<i class="ace-icon fa fa-search-plus bigger-120"></i>
 																					</span>

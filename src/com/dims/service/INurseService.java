@@ -19,7 +19,9 @@ public interface INurseService {
 
 	public List<Prescription> queryAllSolvedRxs(); // 查看已处理处方列表
 
-	public List<Drug> queryAllContainedDrugs(Prescription prescription); // 查看某一处方包含的所有药品
+	public Prescription queryOneRx(Prescription rx); // 查看某一处方的具体明细
+
+	public List<Drug> queryAllContainedDrugs(Prescription rx); // 查看某一处方包含的所有药品
 
 	public void changeNpwd(String Npwd, String Nno); // 修改登录密码
 }

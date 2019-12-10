@@ -109,6 +109,22 @@ public class NurseController {
 		return "nurse/query-solved-rx-list";
 	}
 
+	@RequestMapping(value = "query-rx")
+	public String queryRx(HttpServletRequest req, Prescription rx, Model model) {
+		if (req.getSession().getAttribute("currentNurse") == null) {
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
+		}
+
+		rx = nurseService.queryOneRx(rx);
+		rx.setDrugs(nurseService.queryAllContainedDrugs(rx));
+
+		model.addAttribute("rx", rx);
+
+		// 请求映射到 WEB-INF/views/nurse/query-rx.jsp
+		return "nurse/query-rx";
+	}
+
 	@RequestMapping(value = "profile")
 	public String profile(HttpServletRequest req) {
 		if (req.getSession().getAttribute("currentNurse") == null) {

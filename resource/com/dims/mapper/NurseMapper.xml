@@ -38,6 +38,13 @@
 		WHERE p.Pstate = 1;
 	</select>
 	
+	<!-- 查看某一处方的具体明细 -->
+	<select id="queryOneRx" parameterType="Prescription" resultType="Prescription">
+		SELECT p.Pno, p.Pid, p.Dno, p.Ptime, p.Nno, p.Htime, p.Pstate
+		FROM Prescription p
+		WHERE p.Pno = #{Pno};
+	</select>
+	
 	<!-- 查看某一处方包含的所有药品 -->
 	<select id="queryAllContainedDrugs" parameterType="Prescription" resultType="Drug">
 		SELECT PID.PDno, PID.PDnum
