@@ -253,6 +253,13 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
+					<li class="">
+						<a href="../nurse/profile">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text"> 个人信息页面 </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
 					<li class="active open">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
