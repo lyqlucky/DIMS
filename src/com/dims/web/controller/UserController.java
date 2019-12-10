@@ -33,14 +33,17 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "login")
-	public String login() {
+	public String login(HttpServletRequest req) {
+		req.getSession().removeAttribute("echo");
+
 		// 请求映射到 WEB-INF/views/login.jsp
 		return "/login";
 	}
 
 	@RequestMapping(value = "submitLogin")
 	public String submitLogin(HttpServletRequest req, User user) {
-		System.out.println("submitLogin: " + user);
+		String echo;
+
 		switch (user.getRole()) {
 		case ADMIN:
 			Admin currentAdmin = adminService.login(user);
@@ -50,8 +53,11 @@ public class UserController {
 				// 重定向到 WEB-INF/views/admin/index.jsp
 				return "redirect:/admin/index";
 			} else {
-				// 重定向到 WEB-INF/views/login.jsp，留在登录页面
-				return "redirect:/login";
+				echo = "登陆失败！";
+				req.getSession().setAttribute("echo", echo);
+
+				// 请求映射到 WEB-INF/views/login.jsp，留在登录页面
+				return "/login"; // 不要用重定向，重定向会执行 login 方法
 			}
 		case DOCTOR:
 			Doctor currentDoctor = doctorService.login(user);
@@ -61,8 +67,11 @@ public class UserController {
 				// 重定向到 WEB-INF/views/doctor/index.jsp
 				return "redirect:/doctor/index";
 			} else {
-				// 重定向到 WEB-INF/views/login.jsp，留在登录页面
-				return "redirect:/login";
+				echo = "登陆失败！";
+				req.getSession().setAttribute("echo", echo);
+
+				// 请求映射到 WEB-INF/views/login.jsp，留在登录页面
+				return "/login"; // 不要用重定向，重定向会执行 login 方法
 			}
 		case NURSE:
 			Nurse currentNurse = nurseService.login(user);
@@ -72,12 +81,18 @@ public class UserController {
 				// 重定向到 WEB-INF/views/nurse/index.jsp
 				return "redirect:/nurse/index";
 			} else {
-				// 重定向到 WEB-INF/views/login.jsp，留在登录页面
-				return "redirect:/login";
+				echo = "登陆失败！";
+				req.getSession().setAttribute("echo", echo);
+
+				// 请求映射到 WEB-INF/views/login.jsp，留在登录页面
+				return "/login"; // 不要用重定向，重定向会执行 login 方法
 			}
 		default:
-			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
-			return "redirect:/login";
+			echo = "登陆失败！";
+			req.getSession().setAttribute("echo", echo);
+
+			// 请求映射到 WEB-INF/views/login.jsp，留在登录页面
+			return "/login"; // 不要用重定向，重定向会执行 login 方法
 		}
 	}
 

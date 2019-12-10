@@ -510,6 +510,17 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
+								<c:choose>
+									<c:when test="${echo != null}">
+										<div class="alert alert-info">
+											<button class="close" data-dismiss="alert">
+												<i class="ace-icon fa fa-times"></i>
+											</button>
+											<i class="ace-icon fa fa-hand-o-right"></i>
+											${echo}
+										</div>
+									</c:when>
+								</c:choose>
 								<div>
 									<div id="user-profile-3" class="user-profile row">
 										<div class="col-sm-offset-1 col-sm-10">

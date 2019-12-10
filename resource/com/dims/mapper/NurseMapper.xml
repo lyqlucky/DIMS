@@ -44,4 +44,11 @@
 		FROM Prescription p, PID
 		WHERE p.Pno = PID.Pno AND p.Pno = #{Pno};
 	</select>
+	
+	<!-- 修改登陆密码 -->
+	<update id="changeNpwd">
+		UPDATE Nurse
+		SET Npwd = #{arg0}
+		WHERE Nno = #{arg1};
+	</update>
 </mapper>

@@ -47,4 +47,9 @@ public class NurseServiceImpl implements INurseService {
 	public List<Drug> queryAllContainedDrugs(Prescription prescription) { // 查看某一处方包含的所有药品
 		return nurseMapper.queryAllContainedDrugs(prescription);
 	}
+
+	@Override
+	public void changeNpwd(String Npwd, String Nno) { // 修改登录密码
+		nurseMapper.changeNpwd(Npwd, Nno);
+	}
 }

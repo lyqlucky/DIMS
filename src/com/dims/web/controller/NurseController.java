@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dims.domain.Drug;
+import com.dims.domain.Nurse;
 import com.dims.domain.Prescription;
 import com.dims.service.INurseService;
 
@@ -115,7 +116,33 @@ public class NurseController {
 			return "redirect:/login";
 		}
 
+		req.getSession().removeAttribute("echo");
+
 		// 请求映射到 WEB-INF/views/nurse/profile.jsp
 		return "nurse/profile";
+	}
+
+	@RequestMapping(value = "changeNpwd")
+	public String changeNpwd(HttpServletRequest req, String Npwd1, String Npwd2) {
+		if (req.getSession().getAttribute("currentNurse") == null) {
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
+		}
+
+		Nurse currentNurse = (Nurse) req.getSession().getAttribute("currentNurse");
+
+		String echo;
+
+		if (Npwd1.equals(Npwd2)) {
+			nurseService.changeNpwd(Npwd1, currentNurse.getNno());
+			echo = "修改密码成功！";
+		} else {
+			echo = "两次输入的密码不一致，修改密码失败！";
+		}
+
+		req.getSession().setAttribute("echo", echo);
+
+		// 请求映射到 WEB-INF/views/nurse/profile.jsp
+		return "nurse/profile"; // 不要用重定向，重定向会执行 profile 方法
 	}
 }

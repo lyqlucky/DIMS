@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
 		<title>登陆页面 - 医院药品库存管理系统</title>
-		<meta name="description" content="User login page" />
+		<meta name="description" content="登陆页面 - 医院药品库存管理系统" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -43,6 +44,17 @@
 								<h4 class="blue" id="id-company-text">&copy; 2019-2020</h4>
 							</div>
 							<div class="space-6"></div>
+							<c:choose>
+								<c:when test="${echo != null}">
+									<div class="alert alert-info">
+										<button class="close" data-dismiss="alert">
+											<i class="ace-icon fa fa-times"></i>
+										</button>
+										<i class="ace-icon fa fa-hand-o-right"></i>
+										${echo}
+									</div>
+								</c:when>
+							</c:choose>
 							<div class="position-relative">
 								<div id="login-box" class="login-box visible widget-box no-border">
 									<div class="widget-body">
