@@ -44,7 +44,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="../nurse/index" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							医院药品库存管理系统 DIMS
@@ -182,7 +182,7 @@
 						</li>
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="../assets/images/avatars/avatar${currentNurse.nsex ? '4' : '3'}.png" alt="头像" />
+								<img class="nav-user-photo" src="../assets/images/avatars/${currentNurse.nsex ? 'Male' : 'Female'}Nurse.png" alt="头像" />
 								<span class="user-info">
 									<small>欢迎，</small>
 									${currentNurse.nname}

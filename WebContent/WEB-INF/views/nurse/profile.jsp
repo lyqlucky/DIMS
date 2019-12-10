@@ -49,7 +49,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="../nurse/index" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							医院药品库存管理系统 DIMS
@@ -187,7 +187,7 @@
 						</li>
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="../assets/images/avatars/avatar${currentNurse.nsex ? '4' : '3'}.png" alt="头像" />
+								<img class="nav-user-photo" src="../assets/images/avatars/${currentNurse.nsex ? 'Male' : 'Female'}Nurse.png" alt="头像" />
 								<span class="user-info">
 									<small>欢迎，</small>
 									${currentNurse.nname}
@@ -505,9 +505,7 @@
 					</div>
 					<div class="page-content">
 						<div class="page-header">
-							<h1>
-								个人信息
-							</h1>
+							<h1>个人信息</h1>
 						</div><!-- /.page-header -->
 						<div class="row">
 							<div class="col-xs-12">
@@ -515,7 +513,6 @@
 								<div>
 									<div id="user-profile-3" class="user-profile row">
 										<div class="col-sm-offset-1 col-sm-10">
-											<div class="space"></div>
 											<div class="tabbable">
 												<ul class="nav nav-tabs padding-16">
 													<li class="active">
@@ -539,7 +536,7 @@
 																	<div class="row">
 																		<div class="col-xs-12 col-sm-3 center">
 																			<span class="profile-picture">
-																				<img class="editable img-responsive" alt="头像" id="avatar" src="../assets/images/avatars/avatar${currentNurse.nsex ? '4' : '3'}.png" />
+																				<img class="editable img-responsive" id="avatar" src="../assets/images/avatars/${currentNurse.nsex ? 'Male' : 'Female'}Nurse.png" alt="头像" />
 																			</span>
 																		</div><!-- /.col -->
 																		<div class="col-xs-12 col-sm-9">
