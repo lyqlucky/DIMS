@@ -47,9 +47,9 @@
 	
 	<!-- 查看某一处方包含的所有药品 -->
 	<select id="queryAllContainedDrugs" parameterType="Prescription" resultType="Drug">
-		SELECT PID.PDno, PID.PDnum
-		FROM Prescription p, PID
-		WHERE p.Pno = PID.Pno AND p.Pno = #{Pno};
+		SELECT PID.PDno, PID.PDnum, d.PDname
+		FROM Prescription p, PID, Drug d
+		WHERE p.Pno = PID.Pno AND PID.PDno = d.PDno AND p.Pno = #{Pno};
 	</select>
 	
 	<!-- 修改登陆密码 -->

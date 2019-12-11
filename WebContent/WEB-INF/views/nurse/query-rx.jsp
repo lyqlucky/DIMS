@@ -444,7 +444,31 @@
 											</c:choose>
 										</div>
 									</div>
-									<div class="hr hr-24"></div>
+									<div class="space-4"></div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 处方包含的药品列表 </label>
+										<div class="col-xs-10 col-sm-4">
+											<table id="simple-table" class="table table-bordered table-hover">
+												<thead>
+													<tr>
+														<th>药品编号</th>
+														<th>药品名称</th>
+														<th>药品数量</th>
+													</tr>
+												</thead>
+												<tbody>
+													<c:forEach items="${rx.drugs}" var="drug">
+														<tr>
+															<td>${drug.PDno}</td>
+															<td>${drug.PDname}</td>
+															<td>${drug.PDnum}</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<hr />
 									<div class="row">
 										<div class="col-xs-12 col-sm-4">
 											<div class="widget-box">
@@ -753,6 +777,7 @@
 											</div>
 										</div><!-- /.span -->
 									</div><!-- /.row -->
+									<div class="space-24"></div>
 									<hr />
 									<div class="row">
 										<div class="col-sm-4">

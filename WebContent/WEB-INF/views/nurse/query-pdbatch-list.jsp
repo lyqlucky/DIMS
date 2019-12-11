@@ -361,7 +361,7 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
 									<div class="col-xs-12">
-										<table id="simple-table" class="table  table-bordered table-hover">
+										<table id="simple-table" class="table table-bordered table-hover">
 											<thead>
 												<tr>
 													<th class="center">
