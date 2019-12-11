@@ -4,7 +4,7 @@
 ![Java](https://img.shields.io/badge/java-1.8+-green.svg)
 ![Tomcat](https://img.shields.io/badge/tomcat-9.0+-yellow.svg)
 
-数据库系统原理课程设计，DIMS，Drug Inventory Management System，基于 SSM 框架的医院药品管理系统。  
+数据库系统原理课程设计，DIMS，Drug Inventory Management System，基于 SSM 框架的医院药品库存管理系统。  
 
 ## 任务进度  
 
@@ -547,3 +547,8 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 
 	参考：  
 	* [jsp 页面的数显示两位小数](https://blog.csdn.net/guorun18/article/details/49616985)  
+
+4. 关于 `Model Attribute` 和 `Session Attribute` 的作用域问题：  
+
+	参考：  
+	* []()  
