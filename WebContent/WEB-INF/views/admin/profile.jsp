@@ -50,7 +50,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div class="navbar-header pull-left">
-					<a href="../nurse/index" class="navbar-brand">
+					<a href="../admin/index" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							医院药品库存管理系统 DIMS
@@ -72,7 +72,7 @@
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
-											<a href="../nurse/query-solved-rx-list">
+											<a href="../admin/query-solved-rx-list">
 												<div class="clearfix">
 													<span class="pull-left">已处理处方数目占比</span>
 													<span class="pull-right">
@@ -86,7 +86,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="../nurse/query-unsolved-rx-list">
+											<a href="../admin/query-unsolved-rx-list">
 												<div class="clearfix">
 													<span class="pull-left">未处理处方数目占比</span>
 													<span class="pull-right">
@@ -119,16 +119,16 @@
 						</li>
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="../assets/images/avatars/${currentNurse.nsex ? 'Male' : 'Female'}Nurse.png" alt="头像" />
+								<img class="nav-user-photo" src="../assets/images/avatars/Admin.png" alt="头像" />
 								<span class="user-info">
 									<small>欢迎，</small>
-									${currentNurse.nname}
+									${currentAdmin.aname}
 								</span>
 								<i class="ace-icon fa fa-caret-down"></i>
 							</a>
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
-									<a href="../nurse/profile">
+									<a href="../admin/profile">
 										<i class="ace-icon fa fa-user"></i>
 										个人信息
 									</a>
@@ -178,14 +178,14 @@
 				</div><!-- /.sidebar-shortcuts -->
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="../nurse/welcome">
+						<a href="../admin/welcome">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 欢迎页面 </span>
 						</a>
 						<b class="arrow"></b>
 					</li>
 					<li class="active">
-						<a href="../nurse/profile">
+						<a href="../admin/profile">
 							<i class="menu-icon fa fa-tag"></i>
 							<span class="menu-text"> 个人信息页面 </span>
 						</a>
@@ -200,14 +200,14 @@
 						<b class="arrow"></b>
 						<ul class="submenu">
 							<li class="">
-								<a href="../nurse/query-drug-list">
+								<a href="../admin/query-drug-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看药品库存列表
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li class="">
-								<a href="../nurse/query-pdbatch-list">
+								<a href="../admin/query-pdbatch-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看具体批次明细
 								</a>
@@ -224,14 +224,14 @@
 						<b class="arrow"></b>
 						<ul class="submenu">
 							<li class="">
-								<a href="../nurse/query-unsolved-rx-list">
+								<a href="../admin/query-unsolved-rx-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看未处理处方列表
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li class="">
-								<a href="../nurse/query-solved-rx-list">
+								<a href="../admin/query-solved-rx-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看已处理处方列表
 								</a>
@@ -248,7 +248,7 @@
 						<b class="arrow"></b>
 						<ul class="submenu">
 							<li class="">
-								<a href="../nurse/query-rx?Pno=1">
+								<a href="../admin/query-rx?Pno=1">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看处方的具体明细
 								</a>
@@ -274,7 +274,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="../nurse/index">首页</a>
+								<a href="../admin/index">首页</a>
 							</li>
 							<li class="active">个人信息页面</li>
 						</ul><!-- /.breadcrumb -->
@@ -323,40 +323,40 @@
 																	<div class="row">
 																		<div class="col-xs-12 col-sm-3 center">
 																			<span class="profile-picture">
-																				<img class="editable img-responsive" id="avatar" src="../assets/images/avatars/${currentNurse.nsex ? 'Male' : 'Female'}Nurse.png" alt="头像" />
+																				<img class="editable img-responsive" id="avatar" src="../assets/images/avatars/Admin.png" alt="头像" />
 																			</span>
 																		</div><!-- /.col -->
 																		<div class="col-xs-12 col-sm-9">
 																			<h4 class="blue">
-																				<span class="middle">&nbsp; ${currentNurse.nname}</span>
+																				<span class="middle">&nbsp; ${currentAdmin.aname}</span>
 																				<span class="label label-purple arrowed-in-right">
 																					<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
-																					发药处护士
+																					库存管理员
 																				</span>
 																			</h4>
 																			<div class="profile-user-info">
 																				<div class="profile-info-row">
 																					<div class="profile-info-name"> 编号 </div>
 																					<div class="profile-info-value">
-																						<span>${currentNurse.nno}</span>
+																						<span>${currentAdmin.ano}</span>
 																					</div>
 																				</div>
 																				<div class="profile-info-row">
 																					<div class="profile-info-name"> 姓名 </div>
 																					<div class="profile-info-value">
-																						<span>${currentNurse.nname}</span>
+																						<span>${currentAdmin.aname}</span>
 																					</div>
 																				</div>
 																				<div class="profile-info-row">
 																					<div class="profile-info-name"> 性别 </div>
 																					<div class="profile-info-value">
-																						<span>${currentNurse.nsex ? '男' : '女'}</span>
+																						<span>${currentAdmin.asex ? '男' : '女'}</span>
 																					</div>
 																				</div>
 																				<div class="profile-info-row">
 																					<div class="profile-info-name"> 年龄 </div>
 																					<div class="profile-info-value">
-																						<span>${currentNurse.nage}</span>
+																						<span>${currentAdmin.aage}</span>
 																					</div>
 																				</div>
 																			</div>
@@ -367,19 +367,19 @@
 														</div>
 													</div>
 													<div id="edit-password" class="tab-pane">
-														<form action="../nurse/changeNpwd" method="post" class="form-horizontal">
+														<form action="../admin/changeApwd" method="post" class="form-horizontal">
 															<div class="space-20"></div>
 															<div class="form-group">
 																<label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">新密码</label>
 																<div class="col-sm-9">
-																	<input type="password" name="Npwd1" required="required" id="form-field-pass1" />
+																	<input type="password" name="Apwd1" required="required" id="form-field-pass1" />
 																</div>
 															</div>
 															<div class="space-4"></div>
 															<div class="form-group">
 																<label class="col-sm-3 control-label no-padding-right" for="form-field-pass2">确认密码</label>
 																<div class="col-sm-9">
-																	<input type="password" name="Npwd2" required="required" id="form-field-pass2" />
+																	<input type="password" name="Apwd2" required="required" id="form-field-pass2" />
 																</div>
 															</div>
 															<div class="clearfix form-actions">

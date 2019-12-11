@@ -30,4 +30,11 @@
 		FROM Drug d, InventoryDrug i
 		WHERE d.PDno = i.PDno AND d.PDno = #{PDno};
 	</select>
+	
+	<!-- 修改登陆密码 -->
+	<update id="changeApwd">
+		UPDATE Admin
+		SET Apwd = #{arg0}
+		WHERE Ano = #{arg1};
+	</update>
 </mapper>

@@ -37,4 +37,9 @@ public class AdminServiceImpl implements IAdminService {
 	public List<DestroyedDrug> queryAllDestroyedPDbatches(Drug drug) { // 参看某一药品的所有已销毁批次
 		return adminMapper.queryAllDestroyedPDbatches(drug);
 	}
+
+	@Override
+	public void changeApwd(String Apwd, String Ano) { // 修改登录密码
+		adminMapper.changeApwd(Apwd, Ano);
+	}
 }
