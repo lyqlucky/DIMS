@@ -546,4 +546,4 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 3. 关于 jsp 页面当中实型值的显示格式问题：  
 
 	参考：  
-	* []()  
+	* [jsp 页面的数显示两位小数](https://blog.csdn.net/guorun18/article/details/49616985)  
