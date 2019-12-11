@@ -163,7 +163,11 @@ INSERT INTO Drug(PDno, PDname, PDlife) VALUES('Z20025728', '痫愈胶囊', 360);
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
 	VALUES('H31020838', '2019-06-20', 15, 'SYT0001', 'admin0001', '2019-06-25 10:30:30.000');
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('H31020838', '2019-11-25', 270, 'SKYQD0001', 'admin0002', '2019-11-30 13:59:53.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
 	VALUES('H20043730', '2019-08-18', 32, 'SDS0001', 'admin0001', '2019-08-25 10:28:23.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('H20043730', '2019-11-27', 500, 'SFT0001', 'admin0003', '2019-11-30 15:25:22.000');
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
 	VALUES('H32021306', '2019-09-30', 180, 'SGT0001', 'admin0002', '2019-10-10 15:05:26.000');
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
@@ -179,9 +183,29 @@ INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
 	VALUES('H20023788', '2019-11-21', 165, 'SYC0001', 'admin0005', '2019-11-25 11:53:55.000');
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
-	VALUES('H31020838', '2019-11-25', 270, 'SKYQD0001', 'admin0002', '2019-11-30 13:59:53.000');
+	VALUES('Z20054523', '2019-10-10', 5, 'SFT0001', 'admin0003', '2019-10-11 15:29:42.000');
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
-	VALUES('H20043730', '2019-11-27', 500, 'SFT0001', 'admin0003', '2019-11-30 15:25:22.000');
+	VALUES('Z20054523', '2019-11-01', 15, 'SFT0001', 'admin0005', '2019-11-05 17:35:23.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z20054523', '2019-11-06', 500, 'SFT0001', 'admin0002', '2019-11-08 14:25:12.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z51020341', '2019-11-08', 14, 'SFT0001', 'admin0001', '2019-11-11 15:25:22.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z51020341', '2019-11-10', 300, 'SFT0001', 'admin0001', '2019-11-15 15:16:29.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z20083397', '2019-11-25', 500, 'SFT0001', 'admin0001', '2019-11-30 14:35:02.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z34020775', '2019-11-25', 25, 'SFT0001', 'admin0002', '2019-12-01 15:46:02.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z63020270', '2019-11-29', 3, 'SFT0001', 'admin0004', '2019-12-02 16:47:32.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z63020270', '2019-12-01', 600, 'SFT0001', 'admin0004', '2019-12-04 08:25:32.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('H41024386', '2019-12-01', 35, 'SFT0001', 'admin0003', '2019-12-04 09:22:55.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('H41024386', '2019-12-02', 700, 'SFT0001', 'admin0005', '2019-12-05 15:56:22.000');
+INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
+	VALUES('Z20025728', '2019-12-05', 109, 'SFT0001', 'admin0002', '2019-12-09 10:45:06.000');
 
 INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
 	VALUES('H20023788', '2018-06-10', 5, 'SYC0001', 'admin0005', '2018-06-25 10:30:30.000',

@@ -45,7 +45,7 @@ public class NurseController {
 		return "nurse/welcome";
 	}
 
-	@RequestMapping(value = "query-drug-list")
+	@RequestMapping(value = "/query-drug-list")
 	public String queryDrugList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -60,7 +60,7 @@ public class NurseController {
 		return "nurse/query-drug-list";
 	}
 
-	@RequestMapping(value = "query-pdbatch-list")
+	@RequestMapping(value = "/query-pdbatch-list")
 	public String queryPDbatchList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -79,7 +79,7 @@ public class NurseController {
 		return "nurse/query-pdbatch-list";
 	}
 
-	@RequestMapping(value = "query-unsolved-rx-list")
+	@RequestMapping(value = "/query-unsolved-rx-list")
 	public String queryUnsolvedPrescriptionList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -98,7 +98,7 @@ public class NurseController {
 		return "nurse/query-unsolved-rx-list";
 	}
 
-	@RequestMapping(value = "query-solved-rx-list")
+	@RequestMapping(value = "/query-solved-rx-list")
 	public String querySolvedPrescriptionList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -117,7 +117,7 @@ public class NurseController {
 		return "nurse/query-solved-rx-list";
 	}
 
-	@RequestMapping(value = "query-rx")
+	@RequestMapping(value = "/query-rx")
 	public String queryRx(HttpServletRequest req, Prescription rx, Model model) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -133,7 +133,7 @@ public class NurseController {
 		return "nurse/query-rx";
 	}
 
-	@RequestMapping(value = "profile")
+	@RequestMapping(value = "/profile")
 	public String profile(HttpServletRequest req) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -146,7 +146,7 @@ public class NurseController {
 		return "nurse/profile";
 	}
 
-	@RequestMapping(value = "changeNpwd")
+	@RequestMapping(value = "/changeNpwd")
 	public String changeNpwd(HttpServletRequest req, String Npwd1, String Npwd2) {
 		if (req.getSession().getAttribute("currentNurse") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
