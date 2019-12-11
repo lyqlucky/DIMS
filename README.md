@@ -122,10 +122,10 @@
 | Doctor | 医生 | { Dno, Dname, Dsex, Dage, Dpwd } |
 | Nurse | 发药处护士 | { Nno, Nname, Nsex, Nage, Npwd } |
 | Supplier | 供应商 | { Sno, Sname, Saddr, Sphone } |
+| Drug | 药品 | { PDno, PDname, PDlife, PDnum } |
 | InventoryDrug | 库存药品 | { PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime } |
 | DestroyedDrug | 已销毁药品 | { PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime } |
-| PID | 处方包含的药品 | { Pno, PDno, PDnum } |
-| Prescription | 处方 | { Pno, Pid, Dno, Ptime, Nno, Htime, Pstate, List`<PID>` } |
+| Prescription | 处方 | { Pno, Pid, Dno, Ptime, Nno, Htime, Pstate, List`Drug` } |
 
 * **数据流**：
 
