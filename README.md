@@ -74,41 +74,41 @@
 数据项描述 = { 数据项名, 数据项含义说明, 别名, 数据类型, 长度, 取值范围, 取值含义, 与其他数据项的逻辑关系, 数据项之间的联系 }
 ```
 
-| 数据项名 | 数据项含义说明 | 别名 | 数据类型 | 长度 | 取值范围 | 取值含义 | 与其他数据项的逻辑关系 | 数据项之间的联系 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Ano | 库存管理员编号 |  | VARCHAR | 20 |  |  |  |  |
-| Aname | 库存管理员姓名 |  | VARCHAR | 20 |  |  |  | Ano→Aname |
-| Asex | 库存管理员性别 |  | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Ano→Asex |
-| Aage | 库存管理员年龄 |  | SMALLINT | 2 | [0, 32767] |  |  | Ano→Aage |
-| Apwd | 库存管理员登陆密码 |  | VARCHAR | 20 |  |  |  | Ano→Apwd |
-| Dno | 医生编号 |  | VARCHAR | 20 |  |  |  |   |
-| Dname | 医生姓名 |  | VARCHAR | 20 |  |  |  | Dno→Dname |
-| Dsex | 医生性别 |  | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Dno→Dsex |
-| Dage | 医生年龄 |  | SMALLINT | 2 | [0, 32767] |  |  | Dno→Dage |
-| Dpwd | 医生登陆密码 |  | VARCHAR | 20 |  |  |  | Dno→Dpwd |
-| Nno | 发药处护士编号 |  | VARCHAR | 20 |  |  |  |  |
-| Nname | 发药处护士姓名 |  | VARCHAR | 20 |  |  |  | Nno→Nname |
-| Nsex | 发药处护士性别 |  | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Nno→Nsex |
-| Nage | 发药处护士年龄 |  | SMALLINT | 2 | [0, 32767] |  |  | Nno→Nage |
-| Npwd | 发药处护士登陆密码 |  | VARCHAR | 20 |  |  |  | Nno→Npwd |
-| Sno | 供应商编号 |  | VARCHAR | 20 |  |  |  |  |
-| Sname | 供应商名称 |  | VARCHAR | 20 |  |  |  | Sno→Sname |
-| Saddr | 供应商地址 |  | VARCHAR | 60 |  |  |  | Sno→Saddr |
-| Sphone | 供应商电话 |  | VARCHAR | 20 |  |  |  | Sno→Sphone |
-| PDno | 药品编号 |  | VARCHAR | 20 |  |  |  |  |
-| PDname | 药品名称 |  | VARCHAR | 20 |  |  |  | PDno→PDname |
-| PDlife | 药品保质期 |  | SMALLINT | 2 | [0, 32767] | 保质期总天数 |  | PDno→PDlife |
-| PDbatch | 药品批次 |  | DATE |  |  |  |  |  |
-| PDnum | 药品数量 |  | SMALLINT | 2 | [0, 32767] |  |  | (PDno, PDbatch)→PDnum |
-| SAno | 药品入库库存管理员编号 |  | VARCHAR | 20 |  |  | SAno ∈ List`<Ano`> | (PDno, PDbatch)→SAno |
-| Stime | 药品入库时间 |  | DATETIME |  |  |  |  | (PDno, PDbatch)→Stime |
-| DAno | 药品销毁库存管理员编号 |  | VARCHAR | 20 |  |  | DAno ∈ List`<Ano`> | (PDno, PDbatch)→DAno |
-| Dtime | 药品销毁时间 |  | DATETIME |  |  |  | Dtime ≥ Stime | (PDno, PDbatch)→Dtime |
-| Pno | 处方编号 |  | INT |  |  |  |  |  |
-| Pid | 病人身份证号 |  | VARCHAR | 20 |  |  |  | Pno→Pid |
-| Ptime | 处方开出时间 |  | DATETIME |  |  |  |  | Pno→Ptime |
-| Htime | 处方处理时间 |  | DATETIME |  |  |  | Htime ≥ Ptime | Pno→Htime |
-| Pstate | 处方状态 |  | BIT | 1 | { 0, 1 } | 0 代表未处理，1 代表已处理 |  | Pno→Pstate |
+| 数据项名 | 数据项含义说明 | 数据类型 | 长度 | 取值范围 | 取值含义 | 与其他数据项的逻辑关系 | 数据项之间的联系 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Ano | 库存管理员编号 | VARCHAR | 20 |  |  |  |  |
+| Aname | 库存管理员姓名 | VARCHAR | 20 |  |  |  | Ano→Aname |
+| Asex | 库存管理员性别 | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Ano→Asex |
+| Aage | 库存管理员年龄 | SMALLINT | 2 | [0, 32767] |  |  | Ano→Aage |
+| Apwd | 库存管理员登陆密码 | VARCHAR | 20 |  |  |  | Ano→Apwd |
+| Dno | 医生编号 | VARCHAR | 20 |  |  |  |   |
+| Dname | 医生姓名 | VARCHAR | 20 |  |  |  | Dno→Dname |
+| Dsex | 医生性别 | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Dno→Dsex |
+| Dage | 医生年龄 | SMALLINT | 2 | [0, 32767] |  |  | Dno→Dage |
+| Dpwd | 医生登陆密码 | VARCHAR | 20 |  |  |  | Dno→Dpwd |
+| Nno | 发药处护士编号 | VARCHAR | 20 |  |  |  |  |
+| Nname | 发药处护士姓名 | VARCHAR | 20 |  |  |  | Nno→Nname |
+| Nsex | 发药处护士性别 | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Nno→Nsex |
+| Nage | 发药处护士年龄 | SMALLINT | 2 | [0, 32767] |  |  | Nno→Nage |
+| Npwd | 发药处护士登陆密码 | VARCHAR | 20 |  |  |  | Nno→Npwd |
+| Sno | 供应商编号 | VARCHAR | 20 |  |  |  |  |
+| Sname | 供应商名称 | VARCHAR | 20 |  |  |  | Sno→Sname |
+| Saddr | 供应商地址 | VARCHAR | 60 |  |  |  | Sno→Saddr |
+| Sphone | 供应商电话 | VARCHAR | 20 |  |  |  | Sno→Sphone |
+| PDno | 药品编号 | VARCHAR | 20 |  |  |  |  |
+| PDname | 药品名称 | VARCHAR | 20 |  |  |  | PDno→PDname |
+| PDlife | 药品保质期 | SMALLINT | 2 | [0, 32767] | 保质期总天数 |  | PDno→PDlife |
+| PDbatch | 药品批次 | DATE |  |  |  |  |  |
+| PDnum | 药品数量 | SMALLINT | 2 | [0, 32767] |  |  | (PDno, PDbatch)→PDnum |
+| SAno | 药品入库库存管理员编号 | VARCHAR | 20 |  |  | SAno ∈ List`<Ano`> | (PDno, PDbatch)→SAno |
+| Stime | 药品入库时间 | DATETIME |  |  |  |  | (PDno, PDbatch)→Stime |
+| DAno | 药品销毁库存管理员编号 | VARCHAR | 20 |  |  | DAno ∈ List`<Ano`> | (PDno, PDbatch)→DAno |
+| Dtime | 药品销毁时间 | DATETIME |  |  |  | Dtime ≥ Stime | (PDno, PDbatch)→Dtime |
+| Pno | 处方编号 | INT |  |  |  |  |  |
+| Pid | 病人身份证号 | VARCHAR | 20 |  |  |  | Pno→Pid |
+| Ptime | 处方开出时间 | DATETIME |  |  |  |  | Pno→Ptime |
+| Htime | 处方处理时间 | DATETIME |  |  |  | Htime ≥ Ptime | Pno→Htime |
+| Pstate | 处方状态 | BIT | 1 | { 0, 1 } | 0 代表未处理，1 代表已处理 |  | Pno→Pstate |
 
 * **数据结构**：
 
