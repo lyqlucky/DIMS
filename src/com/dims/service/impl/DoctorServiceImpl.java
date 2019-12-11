@@ -25,4 +25,9 @@ public class DoctorServiceImpl implements IDoctorService {
 	public List<Drug> queryAllDrugs() { // 查看药品库存列表
 		return doctorMapper.queryAllDrugs();
 	}
+
+	@Override
+	public void changeDpwd(String Dpwd, String Dno) { // 修改登录密码
+		doctorMapper.changeDpwd(Dpwd, Dno);
+	}
 }

@@ -16,4 +16,11 @@
 		WHERE d.PDno = i.PDno
 		GROUP BY d.PDno, d.PDname, d.PDlife;
 	</select>
+	
+	<!-- 修改登陆密码 -->
+	<update id="changeDpwd">
+		UPDATE Doctor
+		SET Dpwd = #{arg0}
+		WHERE Dno = #{arg1};
+	</update>
 </mapper>
