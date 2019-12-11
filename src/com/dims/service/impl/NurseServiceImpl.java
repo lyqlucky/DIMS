@@ -24,6 +24,21 @@ public class NurseServiceImpl implements INurseService {
 	}
 
 	@Override
+	public int countUnsolvedRxs() { // 统计未处理处方数目
+		return nurseMapper.countUnsolvedRxs();
+	}
+
+	@Override
+	public int countSolvedRxs() { // 统计已处理处方数目
+		return nurseMapper.countSolvedRxs();
+	}
+
+	@Override
+	public int countMySolvedRxs(Nurse nurse) { // 统计由该名护士处理的处方数目
+		return nurseMapper.countMySolvedRxs(nurse);
+	}
+
+	@Override
 	public List<Drug> queryAllDrugs() { // 查看药品库存列表
 		return nurseMapper.queryAllDrugs();
 	}

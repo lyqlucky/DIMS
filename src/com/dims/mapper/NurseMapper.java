@@ -11,6 +11,12 @@ import com.dims.domain.User;
 public interface NurseMapper {
 	public Nurse login(User user); // 登录
 
+	public int countUnsolvedRxs(); // 统计未处理处方数目
+
+	public int countSolvedRxs(); // 统计已处理处方数目
+
+	public int countMySolvedRxs(Nurse nurse); // 统计由该名护士处理的处方数目
+
 	public List<Drug> queryAllDrugs(); // 查看药品库存列表
 
 	public List<InventoryDrug> queryAllPDbatches(Drug drug); // 查看某一药品的所有库存批次

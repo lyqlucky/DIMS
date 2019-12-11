@@ -9,6 +9,27 @@
 		WHERE Nno = #{no} AND Npwd = #{pwd};
 	</select>
 	
+	<!-- 统计未处理处方数目 -->
+	<select id="countUnsolvedRxs" resultType="int">
+		SELECT COUNT(*)
+		FROM Prescription p
+		WHERE p.Pstate = 0;
+	</select>
+	
+	<!-- 统计已处理处方数目 -->
+	<select id="countSolvedRxs" resultType="int">
+		SELECT COUNT(*)
+		FROM Prescription p
+		WHERE p.Pstate = 1;
+	</select>
+	
+	<!-- 统计由该名护士处理的处方数目 -->
+	<select id="countMySolvedRxs" parameterType="Nurse" resultType="int">
+		SELECT COUNT(*)
+		FROM Prescription p
+		WHERE p.Pstate = 1 AND p.Nno = #{Nno};
+	</select>
+	
 	<!-- 查看药品库存列表 -->
 	<select id="queryAllDrugs" resultType="Drug">
 		SELECT d.PDno, d.PDname, d.PDlife, SUM(i.PDnum) AS PDnum

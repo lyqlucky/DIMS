@@ -33,6 +33,14 @@ public class NurseController {
 			return "redirect:/login";
 		}
 
+		int unsolvedRxsNum = nurseService.countUnsolvedRxs();
+		int solvedRxsNum = nurseService.countSolvedRxs();
+		int mySolvedRxsNum = nurseService.countMySolvedRxs((Nurse) req.getSession().getAttribute("currentNurse"));
+
+		req.getSession().setAttribute("unsolvedRxsNum", unsolvedRxsNum);
+		req.getSession().setAttribute("solvedRxsNum", solvedRxsNum);
+		req.getSession().setAttribute("mySolvedRxsNum", mySolvedRxsNum);
+
 		// 请求映射到 WEB-INF/views/nurse/welcome.jsp
 		return "nurse/welcome";
 	}
