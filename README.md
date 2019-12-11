@@ -74,11 +74,58 @@
 数据项描述 = { 数据项名, 数据项含义说明, 别名, 数据类型, 长度, 取值范围, 取值含义, 与其他数据项的逻辑关系, 数据项之间的联系 }
 ```
 
+| 数据项名 | 数据项含义说明 | 别名 | 数据类型 | 长度 | 取值范围 | 取值含义 | 与其他数据项的逻辑关系 | 数据项之间的联系 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Admin No. | 库存管理员编号 | Ano | VARCHAR | 20 |  |  |  |  |
+| Admin Name | 库存管理员姓名 | Aname | VARCHAR | 20 |  |  |  | Ano→Aname |
+| Admin Sex | 库存管理员性别 | Asex | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Ano→Asex |
+| Admin Age | 库存管理员年龄 | Aage | SMALLINT | 2 | [0, 32767] |  |  | Ano→Aage |
+| Admin Password | 库存管理员登陆密码 | Apwd | VARCHAR | 20 |  |  |  | Ano→Apwd |
+| Doctor No. | 医生编号 | Dno | VARCHAR | 20 |  |  |  |   |
+| Doctor Name | 医生姓名 | Dname | VARCHAR | 20 |  |  |  | Dno→Dname |
+| Doctor Sex | 医生性别 | Dsex | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Dno→Dsex |
+| Doctor Age | 医生年龄 | Dage | SMALLINT | 2 | [0, 32767] |  |  | Dno→Dage |
+| Doctor Password | 医生登陆密码 | Dpwd | VARCHAR | 20 |  |  |  | Dno→Dpwd |
+| Nurse No. | 发药处护士编号 | Nno | VARCHAR | 20 |  |  |  |  |
+| Nurse Name | 发药处护士姓名 | Nname | VARCHAR | 20 |  |  |  | Nno→Nname |
+| Nurse Sex | 发药处护士性别 | Nsex | BIT | 1 | { 0, 1 } | 0 代表女，1 代表男 |  | Nno→Nsex |
+| Nurse Age | 发药处护士年龄 | Nage | SMALLINT | 2 | [0, 32767] |  |  | Nno→Nage |
+| Nurse Password | 发药处护士登陆密码 | Npwd | VARCHAR | 20 |  |  |  | Nno→Npwd |
+| Supplier No. | 供应商编号 | Sno | VARCHAR | 20 |  |  |  |  |
+| Supplier Name | 供应商名称 | Sname | VARCHAR | 20 |  |  |  | Sno→Sname |
+| Supplier Address | 供应商地址 | Saddr | VARCHAR | 60 |  |  |  | Sno→Saddr |
+| Supplier Phone | 供应商电话 | Sphone | VARCHAR | 20 |  |  |  | Sno→Sphone |
+| Drug No. | 药品编号 | PDno | VARCHAR | 20 |  |  |  |  |
+| Drug Name | 药品名称 | PDname | VARCHAR | 20 |  |  |  | PDno→PDname |
+| Drug Life | 药品保质期 | PDlife | SMALLINT | 2 | [0, 32767] | 保质期总天数 |  | PDno→PDlife |
+| Drug Batch | 药品批次 | PDbatch | DATE |  |  |  |  |  |
+| Drug Number | 药品数量 | PDnum | SMALLINT | 2 | [0, 32767] |  |  | (PDno, PDbatch)→PDnum |
+| Drug Stored Admin No. | 药品入库库存管理员编号 | SAno | VARCHAR | 20 |  |  | SAno ∈ List`<Ano`> | (PDno, PDbatch)→SAno |
+| Drug Stored Time | 药品入库时间 | Stime | DATETIME |  |  |  |  | (PDno, PDbatch)→Stime |
+| Drug Destroyed Admin No. | 药品销毁库存管理员编号 | DAno | VARCHAR | 20 |  |  | DAno ∈ List`<Ano`> | (PDno, PDbatch)→DAno |
+| Drug Destroyed Time | 药品销毁时间 | Dtime | DATETIME |  |  |  | Dtime ≥ Stime | (PDno, PDbatch)→Dtime |
+| Prescription No. | 处方编号 | Pno | INT |  |  |  |  |  |
+| Patient ID | 病人身份证号 | Pid | VARCHAR | 20 |  |  |  | Pno→Pid |
+| Prescribed Time | 处方开出时间 | Ptime | DATETIME |  |  |  |  | Pno→Ptime |
+| Prescription Handle Time | 处方处理时间 | Htime | DATETIME |  |  |  | Htime ≥ Ptime | Pno→Htime |
+| Prescription State | 处方状态 | Pstate | BIT | 1 | { 0, 1 } | 0 代表未处理，1 代表已处理 |  | Pno→Pstate |
+
 * **数据结构**：
 
 ```
 数据结构描述 = { 数据结构名, 含义说明, 组成:{数据项或数据结构} }
 ```
+
+| 数据结构名 | 含义说明 | 组成:{数据项或数据结构} |
+| --- | --- | --- |
+| Admin | 库存管理员 | { Ano, Aname, Asex, Aage, Apwd } |
+| Doctor | 医生 | { Dno, Dname, Dsex, Dage, Dpwd } |
+| Nurse | 发药处护士 | { Nno, Nname, Nsex, Nage, Npwd } |
+| Supplier | 供应商 | { Sno, Sname, Saddr, Sphone } |
+| InventoryDrug | 库存药品 | { PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime } |
+| DestroyedDrug | 已销毁药品 | { PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime } |
+| PID | 处方包含的药品 | { Pno, PDno, PDnum } |
+| Prescription | 处方 | { Pno, Pid, Dno, Ptime, Nno, Htime, Pstate, List`<PID>` } |
 
 * **数据流**：
 
@@ -86,17 +133,26 @@
 数据流描述 = { 数据流名, 说明, 数据流来源, 数据流去向, 组成:{数据结构}, 平均流量, 高峰期流量 }
 ```
 
+| 数据流名 | 说明 | 数据流来源 | 数据流去向 | 组成:{数据结构} | 平均流量 | 高峰期流量 |
+| --- | --- | ---  | --- | --- | --- | --- |
+
 * **数据存储**：
 
 ```
 数据存储描述 = { 数据存储名, 说明, 编号, 输入的数据流, 输出的数据流, 组成:{数据结构}, 数据量, 存取频度, 存取方式 }
 ```
 
+| 数据存储名 | 说明 | 编号 | 输入的数据流 | 输出的数据流 | 组成:{数据结构} | 数据量 | 存取频度 | 存取方式 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
 * **处理过程**：
 
 ```
 处理过程描述 = { 处理过程名, 说明, 输入:{数据流}, 输出:{数据流}, 处理:{简要说明} }
 ```
+
+| 处理过程名 | 说明 | 输入:{数据流} | 输出:{数据流} | 处理:{简要说明} |
+| --- | --- | --- | --- | --- |
 
 ### 概念结构设计  
 
