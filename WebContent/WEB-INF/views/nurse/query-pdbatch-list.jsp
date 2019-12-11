@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -463,11 +464,15 @@
 																			<tbody>
 																				<c:forEach items="${drug.inventoryDrugs}" var="batch">
 																					<tr>
-																						<td>${batch.PDbatch}</td>
+																						<td>
+																							<fmt:formatDate value="${batch.PDbatch}" pattern="yyyy 年 MM 月 dd 日"/>
+																						</td>
 																						<td>${batch.PDnum}</td>
 																						<td>${batch.sno}</td>
 																						<td>${batch.SAno}</td>
-																						<td>${batch.stime}</td>
+																						<td>
+																							<fmt:formatDate value="${batch.stime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
+																						</td>
 																					</tr>
 																				</c:forEach>
 																			</tbody>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -384,9 +385,20 @@
 									</div>
 									<div class="space-4"></div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> 开出时间 </label>
-										<div class="col-sm-9">
-											<input readonly="readonly" type="text" id="form-field-4" placeholder="开出时间" class="col-xs-10 col-sm-5" name="Ptime" value="${rx.ptime}" />
+										<label class="col-sm-3 control-label no-padding-right" for="date-timepicker1"> 开出时间 </label>
+										<div class="col-sm-4">
+											<div class="widget-box">
+												<div class="widget-body">
+													<div class="widget-main">
+														<div class="input-group">
+															<input readonly="readonly" type="text" id="date-timepicker1" placeholder="开出时间" class="form-control" name="Ptime" value='<fmt:formatDate value="${rx.ptime}" pattern="MM/dd/yyyy HH:mm:ss"/>'/>
+															<span class="input-group-addon">
+																<i class="fa fa-clock-o bigger-110"></i>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<c:choose>
@@ -400,9 +412,20 @@
 											</div>
 											<div class="space-4"></div>
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-6"> 处理时间 </label>
-												<div class="col-sm-9">
-													<input readonly="readonly" type="text" id="form-field-6" placeholder="处理时间" class="col-xs-10 col-sm-5" name="Htime" value="${rx.htime}" />
+												<label class="col-sm-3 control-label no-padding-right" for="date-timepicker1"> 处理时间 </label>
+												<div class="col-sm-4">
+													<div class="widget-box">
+														<div class="widget-body">
+															<div class="widget-main">
+																<div class="input-group">
+																	<input readonly="readonly" type="text" id="date-timepicker1" placeholder="处理时间" class="form-control" name="Htime" value='<fmt:formatDate value="${rx.htime}" pattern="MM/dd/yyyy HH:mm:ss"/>'/>
+																	<span class="input-group-addon">
+																		<i class="fa fa-clock-o bigger-110"></i>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
 										</c:when>
@@ -451,82 +474,6 @@
 														<div>
 															<label for="form-field-11">Autosize</label>
 															<textarea id="form-field-11" class="autosize-transition form-control"></textarea>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div><!-- /.span -->
-										<div class="col-xs-12 col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">Masked Input</h4>
-													<span class="widget-toolbar">
-														<a href="#" data-action="settings">
-															<i class="ace-icon fa fa-cog"></i>
-														</a>
-														<a href="#" data-action="reload">
-															<i class="ace-icon fa fa-refresh"></i>
-														</a>
-														<a href="#" data-action="collapse">
-															<i class="ace-icon fa fa-chevron-up"></i>
-														</a>
-														<a href="#" data-action="close">
-															<i class="ace-icon fa fa-times"></i>
-														</a>
-													</span>
-												</div>
-												<div class="widget-body">
-													<div class="widget-main">
-														<div>
-															<label for="form-field-mask-1">
-																Date
-																<small class="text-success">99/99/9999</small>
-															</label>
-															<div class="input-group">
-																<input class="form-control input-mask-date" type="text" id="form-field-mask-1" />
-																<span class="input-group-btn">
-																	<button class="btn btn-sm btn-default" type="button">
-																		<i class="ace-icon fa fa-calendar bigger-110"></i>
-																		Go!
-																	</button>
-																</span>
-															</div>
-														</div>
-														<hr />
-														<div>
-															<label for="form-field-mask-2">
-																Phone
-																<small class="text-warning">(999) 999-9999</small>
-															</label>
-															<div class="input-group">
-																<span class="input-group-addon">
-																	<i class="ace-icon fa fa-phone"></i>
-																</span>
-																<input class="form-control input-mask-phone" type="text" id="form-field-mask-2" />
-															</div>
-														</div>
-														<hr />
-														<div>
-															<label for="form-field-mask-3">
-																Product Key
-																<small class="text-error">a*-999-a999</small>
-															</label>
-															<div class="input-group">
-																<input class="form-control input-mask-product" type="text" id="form-field-mask-3" />
-																<span class="input-group-addon">
-																	<i class="ace-icon fa fa-key"></i>
-																</span>
-															</div>
-														</div>
-														<hr />
-														<div>
-															<label for="form-field-mask-4">
-																Eye Script
-																<small class="text-info">~9.99 ~9.99 999</small>
-															</label>
-															<div>
-																<input class="input-medium input-mask-eyescript" type="text" id="form-field-mask-4" />
-															</div>
 														</div>
 													</div>
 												</div>
@@ -806,227 +753,8 @@
 											</div>
 										</div><!-- /.span -->
 									</div><!-- /.row -->
-									<div class="space-24"></div>
-									<h3 class="header smaller lighter blue">
-										Checkboxes & Radio
-										<small>All Checkboxes, Radios and Switch Buttons Are Pure CSS</small>
-									</h3>
-									<div class="row">
-										<div class="col-xs-12 col-sm-5">
-											<div class="control-group">
-												<label class="control-label bolder blue">Checkbox</label>
-												<div class="checkbox">
-													<label>
-														<input name="form-field-checkbox" type="checkbox" class="ace" />
-														<span class="lbl"> choice 1</span>
-													</label>
-												</div>
-												<div class="checkbox">
-													<label>
-														<input name="form-field-checkbox" type="checkbox" class="ace" />
-														<span class="lbl"> choice 2</span>
-													</label>
-												</div>
-												<div class="checkbox">
-													<label>
-														<input name="form-field-checkbox" class="ace ace-checkbox-2" type="checkbox" />
-														<span class="lbl"> choice 3</span>
-													</label>
-												</div>
-												<div class="checkbox">
-													<label class="block">
-														<input name="form-field-checkbox" disabled="" type="checkbox" class="ace" />
-														<span class="lbl"> disabled</span>
-													</label>
-												</div>
-												<div class="checkbox">
-													<label class="block">
-														<input name="form-field-checkbox" type="checkbox" class="ace input-lg" />
-														<span class="lbl bigger-120"> large checkbox</span>
-													</label>
-												</div>
-											</div>
-										</div>
-										<div class="col-xs-12 col-sm-6">
-											<div class="control-group">
-												<label class="control-label bolder blue">Radio</label>
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> radio option 1</span>
-													</label>
-												</div>
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> radio option 2</span>
-													</label>
-												</div>
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> radio option 3</span>
-													</label>
-												</div>
-												<div class="radio">
-													<label>
-														<input disabled="" name="form-field-radio" type="radio" class="ace" />
-														<span class="lbl"> disabled</span>
-													</label>
-												</div>
-												<div class="radio">
-													<label>
-														<input name="form-field-radio" type="radio" class="ace input-lg" />
-														<span class="lbl bigger-120"> large radio</span>
-													</label>
-												</div>
-											</div>
-										</div>
-									</div><!-- /.row -->
-									<hr />
-									<div class="form-group">
-										<label class="control-label col-xs-12 col-sm-3">On/Off Switches</label>
-										<div class="controls col-xs-12 col-sm-9">
-											<div class="row">
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-2" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-3" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch" type="checkbox" />
-														<span class="lbl" data-lbl="CUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOM"></span>
-													</label>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-4" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-5" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-7" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch btn-rotate" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-4 btn-rotate" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-4 btn-empty" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-												<div class="col-xs-3">
-													<label>
-														<input name="switch-field-1" class="ace ace-switch ace-switch-4 btn-flat" type="checkbox" />
-														<span class="lbl"></span>
-													</label>
-												</div>
-											</div>
-										</div>
-									</div>
 									<hr />
 									<div class="row">
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">Custom File Input</h4>
-													<div class="widget-toolbar">
-														<a href="#" data-action="collapse">
-															<i class="ace-icon fa fa-chevron-up"></i>
-														</a>
-														<a href="#" data-action="close">
-															<i class="ace-icon fa fa-times"></i>
-														</a>
-													</div>
-												</div>
-												<div class="widget-body">
-													<div class="widget-main">
-														<div class="form-group">
-															<div class="col-xs-12">
-																<input type="file" id="id-input-file-2" />
-															</div>
-														</div>
-														<div class="form-group">
-															<div class="col-xs-12">
-																<input multiple="" type="file" id="id-input-file-3" />
-															</div>
-														</div>
-														<label>
-															<input type="checkbox" name="file-format" id="id-file-format" class="ace" />
-															<span class="lbl"> Allow only images</span>
-														</label>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">jQuery UI Sliders</h4>
-												</div>
-												<div class="widget-body">
-													<div class="widget-main">
-														<div class="row">
-															<div class="col-xs-3 col-md-2">
-																<div id="slider-range"></div>
-															</div>
-															<div class="col-xs-9 col-md-10">
-																<div id="slider-eq">
-																	<span class="ui-slider-green ui-slider-small">77</span>
-																	<span class="ui-slider-red">55</span>
-																	<span class="ui-slider-purple" data-rel="tooltip" title="Disabled!">33</span>
-																	<span class="ui-slider-simple ui-slider-orange">40</span>
-																	<span class="ui-slider-simple ui-slider-dark">88</span>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
 										<div class="col-sm-4">
 											<div class="widget-box">
 												<div class="widget-header">
@@ -1047,288 +775,13 @@
 										</div>
 									</div>
 									<hr />
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">Date Picker</h4>
-													<span class="widget-toolbar">
-														<a href="#" data-action="settings">
-															<i class="ace-icon fa fa-cog"></i>
-														</a>
-														<a href="#" data-action="reload">
-															<i class="ace-icon fa fa-refresh"></i>
-														</a>
-														<a href="#" data-action="collapse">
-															<i class="ace-icon fa fa-chevron-up"></i>
-														</a>
-														<a href="#" data-action="close">
-															<i class="ace-icon fa fa-times"></i>
-														</a>
-													</span>
-												</div>
-												<div class="widget-body">
-													<div class="widget-main">
-														<label for="id-date-picker-1">Date Picker</label>
-														<div class="row">
-															<div class="col-xs-8 col-sm-11">
-																<div class="input-group">
-																	<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
-																	<span class="input-group-addon">
-																		<i class="fa fa-calendar bigger-110"></i>
-																	</span>
-																</div>
-															</div>
-														</div>
-														<div class="space space-8"></div>
-														<label>Range Picker</label>
-														<div class="row">
-															<div class="col-xs-8 col-sm-11">
-																<div class="input-daterange input-group">
-																	<input type="text" class="input-sm form-control" name="start" />
-																	<span class="input-group-addon">
-																		<i class="fa fa-exchange"></i>
-																	</span>
-																	<input type="text" class="input-sm form-control" name="end" />
-																</div>
-															</div>
-														</div>
-														<hr />
-														<label for="id-date-range-picker-1">Date Range Picker</label>
-														<div class="row">
-															<div class="col-xs-8 col-sm-11">
-																<div class="input-group">
-																	<span class="input-group-addon">
-																		<i class="fa fa-calendar bigger-110"></i>
-																	</span>
-																	<input class="form-control" type="text" name="date-range-picker" id="id-date-range-picker-1" />
-																</div>
-															</div>
-														</div>
-														<hr />
-														<label for="timepicker1">Time Picker</label>
-														<div class="input-group bootstrap-timepicker">
-															<input id="timepicker1" type="text" class="form-control" />
-															<span class="input-group-addon">
-																<i class="fa fa-clock-o bigger-110"></i>
-															</span>
-														</div>
-														<hr />
-														<label for="date-timepicker1">Date/Time Picker</label>
-														<div class="input-group">
-															<input id="date-timepicker1" type="text" class="form-control" />
-															<span class="input-group-addon">
-																<i class="fa fa-clock-o bigger-110"></i>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">
-														<i class="ace-icon fa fa-tint"></i>
-														Color Picker
-													</h4>
-												</div>
-												<div class="widget-body">
-													<div class="widget-main">
-														<div class="clearfix">
-															<label for="colorpicker1">Color Picker</label>
-														</div>
-														<div class="control-group">
-															<div class="bootstrap-colorpicker">
-																<input id="colorpicker1" type="text" class="input-small" />
-															</div>
-														</div>
-														<hr />
-														<div>
-															<label for="simple-colorpicker-1">Custom Color Picker</label>
-															<select id="simple-colorpicker-1" class="hide">
-																<option value="#ac725e">#ac725e</option>
-																<option value="#d06b64">#d06b64</option>
-																<option value="#f83a22">#f83a22</option>
-																<option value="#fa573c">#fa573c</option>
-																<option value="#ff7537">#ff7537</option>
-																<option value="#ffad46" selected="">#ffad46</option>
-																<option value="#42d692">#42d692</option>
-																<option value="#16a765">#16a765</option>
-																<option value="#7bd148">#7bd148</option>
-																<option value="#b3dc6c">#b3dc6c</option>
-																<option value="#fbe983">#fbe983</option>
-																<option value="#fad165">#fad165</option>
-																<option value="#92e1c0">#92e1c0</option>
-																<option value="#9fe1e7">#9fe1e7</option>
-																<option value="#9fc6e7">#9fc6e7</option>
-																<option value="#4986e7">#4986e7</option>
-																<option value="#9a9cff">#9a9cff</option>
-																<option value="#b99aff">#b99aff</option>
-																<option value="#c2c2c2">#c2c2c2</option>
-																<option value="#cabdbf">#cabdbf</option>
-																<option value="#cca6ac">#cca6ac</option>
-																<option value="#f691b2">#f691b2</option>
-																<option value="#cd74e6">#cd74e6</option>
-																<option value="#a47ae2">#a47ae2</option>
-																<option value="#555">#555</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-header">
-													<h4 class="widget-title">
-														<i class="ace-icon fa fa-tachometer"></i>
-														Knob Input
-													</h4>
-												</div>
-												<div class="widget-body">
-													<div class="widget-main">
-														<div class="control-group">
-															<div class="row">
-																<div class="col-xs-6 center">
-																	<div class="knob-container inline">
-																		<input type="text" class="input-small knob" value="15" data-min="0" data-max="100" data-step="10" data-width="80" data-height="80" data-thickness=".2" />
-																	</div>
-																</div>
-																<div class="col-xs-6  center">
-																	<div class="knob-container inline">
-																		<input type="text" class="input-small knob" value="41" data-min="0" data-max="100" data-width="80" data-height="80" data-thickness=".2" data-fgcolor="#87B87F" data-displayprevious="true" data-anglearc="250" data-angleoffset="-125" />
-																	</div>
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-xs-12 center">
-																	<div class="knob-container inline">
-																		<input type="text" class="input-small knob" value="1" data-min="0" data-max="10" data-width="150" data-height="150" data-thickness=".2" data-fgcolor="#B8877F" data-angleoffset="90" data-cursor="true" />
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+										
 								</form>
 								<div class="hr hr-18 dotted hr-double"></div>
 								<h4 class="pink">
 									<i class="ace-icon fa fa-hand-o-right green"></i>
 									<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Form Inside a Modal Box </a>
 								</h4>
-								<div class="hr hr-18 dotted hr-double"></div>
-								<h4 class="header green">Form Layouts</h4>
-								<div class="row">
-									<div class="col-sm-5">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">Default</h4>
-											</div>
-											<div class="widget-body">
-												<div class="widget-main no-padding">
-													<form>
-														<!-- <legend>Form</legend> -->
-														<fieldset>
-															<label>Label name</label>
-															<input type="text" placeholder="Type something&hellip;" />
-															<span class="help-block">Example block-level help text here.</span>
-															<label class="pull-right">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"> check me out</span>
-															</label>
-														</fieldset>
-														<div class="form-actions center">
-															<button type="button" class="btn btn-sm btn-success">
-																Submit
-																<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-															</button>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-7">
-										<div class="widget-box">
-											<div class="widget-header">
-												<h4 class="widget-title">Inline Forms</h4>
-											</div>
-											<div class="widget-body">
-												<div class="widget-main">
-													<form class="form-inline">
-														<input type="text" class="input-small" placeholder="Username" />
-														<input type="password" class="input-small" placeholder="Password" />
-														<label class="inline">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"> remember me</span>
-														</label>
-														<button type="button" class="btn btn-info btn-sm">
-															<i class="ace-icon fa fa-key bigger-110"></i>Login
-														</button>
-													</form>
-												</div>
-											</div>
-										</div>
-										<div class="space-6"></div>
-										<div class="widget-box">
-											<div class="widget-header widget-header-small">
-												<h5 class="widget-title lighter">Search Form</h5>
-											</div>
-											<div class="widget-body">
-												<div class="widget-main">
-													<form class="form-search">
-														<div class="row">
-															<div class="col-xs-12 col-sm-8">
-																<div class="input-group">
-																	<span class="input-group-addon">
-																		<i class="ace-icon fa fa-check"></i>
-																	</span>
-																	<input type="text" class="form-control search-query" placeholder="Type your query" />
-																	<span class="input-group-btn">
-																		<button type="button" class="btn btn-purple btn-sm">
-																			<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
-																			Search
-																		</button>
-																	</span>
-																</div>
-																<div class="hr"></div>
-																<div class="input-group input-group-lg">
-																	<span class="input-group-addon">
-																		<i class="ace-icon fa fa-check"></i>
-																	</span>
-																	<input type="text" class="form-control search-query" placeholder="Type your query" />
-																	<span class="input-group-btn">
-																		<button type="button" class="btn btn-default btn-lg">
-																			<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
-																			Search
-																		</button>
-																	</span>
-																</div>
-																<div class="hr"></div>
-																<div class="input-group">
-																	<span class="input-group-addon">
-																		<i class="ace-icon fa fa-check"></i>
-																	</span>
-																	<input type="text" class="form-control search-query" placeholder="Type your query" />
-																	<span class="input-group-btn">
-																		<button type="button" class="btn btn-inverse btn-white">
-																			<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
-																			Search
-																		</button>
-																	</span>
-																</div>
-															</div>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
 								<div id="modal-form" class="modal" tabindex="-1">
 									<div class="modal-dialog">
 										<div class="modal-content">
@@ -1761,7 +1214,7 @@
 					$(this).prev().focus();
 				});
 				if(!ace.vars['old_ie']) $('#date-timepicker1').datetimepicker({
-				 //format: 'MM/DD/YYYY h:mm:ss A',//use this option to display seconds
+				 format: 'MM/DD/YYYY h:mm:ss A',//use this option to display seconds
 				 icons: {
 					time: 'fa fa-clock-o',
 					date: 'fa fa-calendar',
@@ -1843,7 +1296,6 @@
 				*/
 				$(document).one('ajaxloadstart.page', function(e) {
 					autosize.destroy('textarea[class*=autosize]')
-					
 					$('.limiterBox,.autosizejs').remove();
 					$('.daterangepicker.dropdown-menu,.colorpicker.dropdown-menu,.bootstrap-datetimepicker-widget.dropdown-menu').remove();
 				});

@@ -540,4 +540,5 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 2. 关于 jsp 页面当中 Date / DateTime 类型的值的显示格式问题：  
 
 	参考：
-	* []()  
+	* [jsp 中的日期显示问题](https://blog.csdn.net/xiaolizi22233/article/details/54237183)  
+	* [jstl 标签的 fmt:formatDate 格式化日期 String to Date](https://www.cnblogs.com/jxldjsn/p/6936924.html)  

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -399,9 +400,13 @@
 															<td>${rx.pno}</td>
 															<td>${rx.pid}</td>
 															<td>${rx.dno}</td>
-															<td>${rx.ptime}</td>
+															<td>
+																<fmt:formatDate value="${rx.ptime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
+															</td>
 															<td>${rx.nno}</td>
-															<td>${rx.htime}</td>
+															<td>
+																<fmt:formatDate value="${rx.htime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
+															</td>
 															<td>
 																<div class="hidden-sm hidden-xs action-buttons">
 																	<a class="blue" href="../nurse/query-rx?Pno=${rx.pno}" title="查看">
