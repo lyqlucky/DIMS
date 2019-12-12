@@ -85,7 +85,7 @@ public class AdminController {
 		return "admin/query-drug-list";
 	}
 
-	@RequestMapping(value = "query-pdbatch-list")
+	@RequestMapping(value = "/query-pdbatch-list")
 	public String queryPDbatchList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentAdmin") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -104,7 +104,7 @@ public class AdminController {
 		return "admin/query-pdbatch-list";
 	}
 
-	@RequestMapping(value = "query-destroyed-pdbatch-list")
+	@RequestMapping(value = "/query-destroyed-pdbatch-list")
 	public String queryDestroyedDrugList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentAdmin") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
@@ -117,6 +117,21 @@ public class AdminController {
 
 		// 请求映射到 WEB-INF/views/admin/query-destroyed-pdbatch-list.jsp
 		return "admin/query-destroyed-pdbatch-list";
+	}
+
+	@RequestMapping(value = "/fill-storage-form")
+	public String fillStorageForm(HttpServletRequest req, Model model) {
+		if (req.getSession().getAttribute("currentAdmin") == null) {
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
+		}
+
+		List<Drug> drugs = adminService.queryAllDrugs();
+
+		model.addAttribute("drugs", drugs);
+
+		// 请求映射到 WEB-INF/views/admin/fill-storage-form.jsp
+		return "admin/fill-storage-form";
 	}
 
 	@RequestMapping(value = "/changeApwd")

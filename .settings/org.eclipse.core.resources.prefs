@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/admin/fill-storage-form.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/login.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/nurse/profile.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/nurse/query-rx.jsp=UTF-8
