@@ -227,7 +227,7 @@
 					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> 查看药品库存列表 </span>
+							<span class="menu-text"> 查看药品库存信息 </span>
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
 						<b class="arrow"></b>
@@ -235,14 +235,21 @@
 							<li class="">
 								<a href="../nurse/query-drug-list">
 									<i class="menu-icon fa fa-caret-right"></i>
-									查看药品库存列表
+									查看库存药品列表
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li class="">
 								<a href="../nurse/query-pdbatch-list">
 									<i class="menu-icon fa fa-caret-right"></i>
-									查看具体批次明细
+									查看库存药品批次明细
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="../admin/query-destroyed-drug-list">
+									<i class="menu-icon fa fa-caret-right"></i>
+									查看已销毁药品批次列表
 								</a>
 								<b class="arrow"></b>
 							</li>
