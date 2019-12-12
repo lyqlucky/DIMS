@@ -7,8 +7,8 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>查看药品库存列表 - 医院药品库存管理系统</title>
-		<meta name="description" content="查看药品库存列表 - 医院药品库存管理系统" />
+		<title>查看已销毁药品批次列表 - 医院药品库存管理系统</title>
+		<meta name="description" content="查看已销毁药品批次列表 - 医院药品库存管理系统" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
@@ -232,7 +232,7 @@
 						</a>
 						<b class="arrow"></b>
 						<ul class="submenu">
-							<li class="active">
+							<li class="">
 								<a href="../admin/query-drug-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看库存药品列表
@@ -246,8 +246,8 @@
 								</a>
 								<b class="arrow"></b>
 							</li>
-							<li class="">
-								<a href="../admin/query-destroyed-drug-list">
+							<li class="active">
+								<a href="../admin/query-destroyed-pdbatch-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看已销毁药品批次列表
 								</a>
@@ -317,18 +317,18 @@
 								<a href="../admin/index">首页</a>
 							</li>
 							<li>
-								<a href="../admin/query-drug-list">查看药品库存列表</a>
+								<a href="../admin/query-drug-list">查看药品库存信息</a>
 							</li>
-							<li class="active">查看药品库存列表</li>
+							<li class="active">查看已销毁药品批次列表</li>
 						</ul><!-- /.breadcrumb -->
 					</div>
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								查看药品库存列表
+								查看已销毁药品批次列表
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									药品库存列表
+									已销毁药品批次列表
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -357,13 +357,17 @@
 														</th>
 														<th>药品编号</th>
 														<th>药品名称</th>
-														<th>药品保质期 (天数)</th>
 														<th>药品数量</th>
+														<th>供应商</th>
+														<th>入库管理员</th>
+														<th>入库时间</th>
+														<th>销毁管理员</th>
+														<th>销毁时间</th>
 														<th>操作</th>
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach items="${drugs}" var="drug">
+													<c:forEach items="${destroyedDrugs}" var="drug">
 														<tr>
 															<td class="center">
 																<label class="pos-rel">
@@ -373,10 +377,18 @@
 															</td>
 															<td>${drug.PDno}</td>
 															<td>${drug.PDname}</td>
-															<td>${drug.PDlife}</td>
 															<td>${drug.PDnum}</td>
+															<td>${drug.sno}</td>
+															<td>${drug.SAno}</td>
 															<td>
-																<div class="hidden-sm hidden-xs action-buttons">
+																<fmt:formatDate value="${drug.stime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
+															</td>
+															<td>${drug.DAno}</td>
+															<td>
+																<fmt:formatDate value="${drug.dtime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
+															</td>
+															<td>
+																<div class="hidden-md hidden-lg">
 																	<a class="blue" href="#">
 																		<i class="ace-icon fa fa-search-plus bigger-130"></i>
 																	</a>
@@ -387,7 +399,7 @@
 																		<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																	</a>
 																</div>
-																<div class="hidden-md hidden-lg">
+																<div class="hidden-sm hidden-xs action-buttons">
 																	<div class="inline pos-rel">
 																		<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
 																			<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
@@ -478,7 +490,9 @@
 				.DataTable( {
 					bAutoWidth: false,
 					"aoColumns": [
-					  { "bSortable": false }, null,null, null, null, { "bSortable": false }
+					  { "bSortable": false },
+					  null,null, null, null, null, null, null, null,
+					  { "bSortable": false }
 					],
 					"aaSorting": [],
 					"iDisplayLength": 5,

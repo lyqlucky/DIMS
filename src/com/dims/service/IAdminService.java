@@ -31,6 +31,8 @@ public interface IAdminService {
 
 	public List<InventoryDrug> querySpecificPDbatches(Drug drug); // 查看某一药品的所有库存批次
 
+	public List<DestroyedDrug> queryAllDestroyedPDbatches(); // 查看已销毁药品批次列表
+
 	public List<DestroyedDrug> querySpecificDestroyedPDbatches(Drug drug); // 参看某一药品的所有已销毁批次
 
 	public void changeApwd(String Apwd, String Ano); // 修改登录密码

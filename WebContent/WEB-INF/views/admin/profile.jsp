@@ -252,7 +252,7 @@
 								<b class="arrow"></b>
 							</li>
 							<li class="">
-								<a href="../admin/query-destroyed-drug-list">
+								<a href="../admin/query-destroyed-pdbatch-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看已销毁药品批次列表
 								</a>

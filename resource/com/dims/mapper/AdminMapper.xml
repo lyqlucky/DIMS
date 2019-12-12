@@ -77,6 +77,12 @@
 		WHERE PDno = #{PDno};
 	</select>
 	
+	<!-- 查看已销毁药品批次列表 -->
+	<select id="queryAllDestroyedPDbatches" resultType="DestroyedDrug">
+		SELECT *
+		FROM DestroyedDrugView;
+	</select>
+	
 	<!-- 参看某一药品的所有已销毁批次 -->
 	<select id="querySpecificDestroyedPDbatches" parameterType="Drug" resultType="DestroyedDrug">
 		SELECT *

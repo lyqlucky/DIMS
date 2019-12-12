@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dims.domain.Admin;
+import com.dims.domain.DestroyedDrug;
 import com.dims.domain.Drug;
 import com.dims.service.IAdminService;
 
@@ -103,15 +104,19 @@ public class AdminController {
 		return "admin/query-pdbatch-list";
 	}
 
-	@RequestMapping(value = "query-destroyed-drug-list")
-	public String queryDestroyedDrugList(HttpServletRequest req) {
+	@RequestMapping(value = "query-destroyed-pdbatch-list")
+	public String queryDestroyedDrugList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentAdmin") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
 			return "redirect:/login";
 		}
 
-		// 请求映射到 WEB-INF/views/admin/query-destroyed-drug-list.jsp
-		return "admin/query-destroyed-drug-list";
+		List<DestroyedDrug> destroyedDrugs = adminService.queryAllDestroyedPDbatches();
+
+		model.addAttribute("destroyedDrugs", destroyedDrugs);
+
+		// 请求映射到 WEB-INF/views/admin/query-destroyed-pdbatch-list.jsp
+		return "admin/query-destroyed-pdbatch-list";
 	}
 
 	@RequestMapping(value = "/changeApwd")
