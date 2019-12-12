@@ -75,7 +75,7 @@
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
+												<div class="progress progress-mini progress-striped active">
 													<div style="width:${solvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar"></div>
 												</div>
 											</a>
@@ -89,7 +89,7 @@
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
+												<div class="progress progress-mini progress-striped active">
 													<div style="width:${unsolvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar progress-bar-warning"></div>
 												</div>
 											</a>
@@ -337,7 +337,7 @@
 												<span class="infobox-text">已处理处方数目</span>
 												<div class="infobox-content">
 													<span class="bigger-110">~</span>
-													占总处方数目占比
+													占总处方数目比例
 												</div>
 											</div>
 										</div>
@@ -353,7 +353,7 @@
 												<span class="infobox-text">未处理处方数目</span>
 												<div class="infobox-content">
 													<span class="bigger-110">~</span>
-													占总处方数目占比
+													占总处方数目比例
 												</div>
 											</div>
 										</div>
@@ -369,7 +369,7 @@
 												<span class="infobox-text">由我处理的处方数目</span>
 												<div class="infobox-content">
 													<span class="bigger-110">~</span>
-													占处理处方数目占比
+													占处理处方数目比例
 												</div>
 											</div>
 										</div>

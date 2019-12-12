@@ -75,7 +75,7 @@
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
+												<div class="progress progress-mini progress-striped active">
 													<div style="width:${solvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar"></div>
 												</div>
 											</a>
@@ -89,7 +89,7 @@
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
+												<div class="progress progress-mini progress-striped active">
 													<div style="width:${unsolvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar progress-bar-warning"></div>
 												</div>
 											</a>

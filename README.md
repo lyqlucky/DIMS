@@ -639,6 +639,30 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 	参考：  
 	* [Visual Studio Code 插件 Markdown All in One](https://github.com/yzhang-gh/vscode-markdown)  
 
+7. 怎么把聚合函数 `SUM` 的 `NULL` 聚合结果值改为 `0`？  
+
+	参考：  
+	* [SQL Server 聚合函数 SUM 计算出来为空，怎样返回 0](https://blog.csdn.net/weixin_30740295/article/details/97448163)  
+
+8. MyBatis Mapper 层的 XML 映射文件报错 `The content of elements must consist of well-formed character data or markup.`：  
+
+	参考：  
+	* [MyBatis 报 The content of elements must consist of well-formed character data or markup. 语法格式错误](https://www.cnblogs.com/wangjinyu/p/10100550.html)  
+	* [MyBatis 异常：The content of elements must consist of well-formed character data or markup. 的解决方法](https://blog.csdn.net/qq_37856300/article/details/85296159)  
+
+9. 怎么把 SQL Server `GETDATE()` 函数返回的 `DATETIME` 类型的值转换为 `DATE` 类型的值？  
+
+	参考：  
+	* [SQL Server GETDATE() 函数](https://www.w3school.com.cn/sql/func_getdate.asp)  
+	* [SQL Server 获取当前日期](https://www.cnblogs.com/Scholars/p/8919094.html)  
+	* [SQL Server 中将 DATETIME 类型转换为 DATE，或者 TIME](https://blog.csdn.net/diligentcatrich/article/details/6274126)  
+	* [SQL Server DATETIME 数据类型的格式转换](https://www.cnblogs.com/fubeidong/archive/2007/07/06/526247.html)  
+
+10. 在 SQL Server 当中怎么计算时间差？  
+
+	参考：  
+	* [SQL Server DATEDIFF() 函数](https://www.w3school.com.cn/sql/func_datediff.asp)  
+
 ## 测试与验收  
 
 ### 界面测试  

@@ -9,26 +9,77 @@
 		WHERE Ano = #{no} AND Apwd = #{pwd};
 	</select>
 	
+	<!-- 统计量少的库存药品种数 -->
+	<select id="countLowInventoryDrugs" resultType="int">
+		SELECT COUNT(*)
+		FROM (SELECT d.PDno
+				FROM Drug d LEFT OUTER JOIN InventoryDrug i ON d.PDno = i.PDno
+				GROUP BY d.PDno
+				HAVING COALESCE(SUM(i.PDnum), 0) <![CDATA[ <= ]]> 50) Temp;
+	</select>
+	
+	<!-- 统计临期库存药品批数 -->
+	<select id="countClose2ExpiryPDbatches" resultType="int">
+		SELECT COUNT(*)
+		FROM Drug d, InventoryDrug i
+		WHERE d.PDno = i.PDno AND DATEDIFF(DAY, i.PDbatch, GETDATE()) >= (d.PDlife / 10 * 9);
+	</select>
+	
+	<!-- 统计库存药品种数 -->
+	<select id="countInventoryDrugs" resultType="int">
+		SELECT COUNT(*)
+		FROM DrugView;
+	</select>
+	
+	<!-- 统计库存药品批数 -->
+	<select id="countInventoryPDbatches" resultType="int">
+		SELECT COUNT(*)
+		FROM InventoryDrugView;
+	</select>
+	
+	<!-- 统计销毁药品批数 -->
+	<select id="countDestroyedPDbatches" resultType="int">
+		SELECT COUNT(*)
+		FROM DestroyedDrugView;
+	</select>
+	
+	<!-- 统计由该名库存管理员入库的库存药品批数 -->
+	<select id="countMyInventoryPDbatches" parameterType="Admin" resultType="int">
+		SELECT COUNT(*)
+		FROM InventoryDrugView
+		WHERE SAno = #{Ano};
+	</select>
+	
+	<!-- 统计由该名库存管理员入库的药品总批数 -->
+	<select id="countMyPDbatches" parameterType="Admin" resultType="int">
+		SELECT COUNT(*)
+		FROM AllPDbatchView
+		WHERE SAno = #{Ano};
+	</select>
+	
+	<!-- 统计由该名库存管理员销毁 (出库) 的销毁药品批数 -->
+	<select id="countMyDestoryedPDbatches" parameterType="Admin" resultType="int">
+		SELECT COUNT(*)
+		FROM DestroyedDrugView
+		WHERE DAno = #{Ano};
+	</select>
+	
 	<!-- 查看药品库存列表 -->
 	<select id="queryAllDrugs" resultType="Drug">
-		SELECT d.PDno, d.PDname, d.PDlife, SUM(i.PDnum) AS PDnum
-		FROM Drug d, InventoryDrug i
-		WHERE d.PDno = i.PDno
-		GROUP BY d.PDno, d.PDname, d.PDlife;
+		SELECT *
+		FROM DrugView;
 	</select>
 	
 	<!-- 查看某一药品的所有库存批次 -->
 	<select id="queryAllPDbatches" parameterType="Drug" resultType="InventoryDrug">
-		SELECT d.PDno, d.PDname, d.PDlife, i.PDbatch, i.PDnum, i.Sno, i.SAno, i.Stime
-		FROM Drug d, InventoryDrug i
-		WHERE d.PDno = i.PDno AND d.PDno = #{PDno};
+		SELECT *
+		FROM InventoryDrugView;
 	</select>
 	
 	<!-- 参看某一药品的所有已销毁批次 -->
 	<select id="queryAllDestroyedPDbatches" parameterType="Drug" resultType="DestroyedDrug">
-		SELECT d.PDno, d.PDname, d.PDlife, i.PDbatch, i.PDnum, i.Sno, i.SAno, i.Stime, i.DAno, i.Dtime
-		FROM Drug d, InventoryDrug i
-		WHERE d.PDno = i.PDno AND d.PDno = #{PDno};
+		SELECT *
+		FROM DestroyedDrugView;
 	</select>
 	
 	<!-- 修改登陆密码 -->

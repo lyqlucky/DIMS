@@ -75,7 +75,7 @@
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
+												<div class="progress progress-mini progress-striped active">
 													<div style="width:${solvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar"></div>
 												</div>
 											</a>
@@ -84,7 +84,7 @@
 											<a href="../nurse/query-unsolved-rx-list">
 												<div class="clearfix">
 													<span class="pull-left">未处理处方数目占比</span>
-													<span class="pull-right">
+													<span class="pull-right progress-striped active">
 														<fmt:formatNumber value="${unsolvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}" pattern="#.00"/>
 														%
 													</span>

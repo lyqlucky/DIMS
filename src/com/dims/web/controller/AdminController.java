@@ -28,6 +28,26 @@ public class AdminController {
 			return "redirect:/login";
 		}
 
+		int lowInventoryDrugsNum = adminService.countLowInventoryDrugs();
+		int close2ExpiryPDbatchesNum = adminService.countClose2ExpiryPDbatches();
+		int inventoryDrugsNum = adminService.countInventoryDrugs();
+		int inventoryPDbatchesNum = adminService.countInventoryPDbatches();
+		int destroyedPDbatchesNum = adminService.countDestroyedPDbatches();
+		int myInventoryPDbatchesNum = adminService
+				.countMyInventoryPDbatches((Admin) req.getSession().getAttribute("currentAdmin"));
+		int myPDbatchesNum = adminService.countMyPDbatches((Admin) req.getSession().getAttribute("currentAdmin"));
+		int myDestroyedPDbatchesNum = adminService
+				.countMyDestoryedPDbatches((Admin) req.getSession().getAttribute("currentAdmin"));
+
+		req.getSession().setAttribute("lowInventoryDrugsNum", lowInventoryDrugsNum);
+		req.getSession().setAttribute("close2ExpiryPDbatchesNum", close2ExpiryPDbatchesNum);
+		req.getSession().setAttribute("inventoryDrugsNum", inventoryDrugsNum);
+		req.getSession().setAttribute("inventoryPDbatchesNum", inventoryPDbatchesNum);
+		req.getSession().setAttribute("destroyedPDbatchesNum", destroyedPDbatchesNum);
+		req.getSession().setAttribute("myInventoryPDbatchesNum", myInventoryPDbatchesNum);
+		req.getSession().setAttribute("myPDbatchesNum", myPDbatchesNum);
+		req.getSession().setAttribute("myDestroyedPDbatchesNum", myDestroyedPDbatchesNum);
+
 		// 请求映射到 WEB-INF/views/admin/welcome.jsp
 		return "admin/welcome";
 	}

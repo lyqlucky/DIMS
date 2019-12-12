@@ -106,6 +106,44 @@ CREATE TABLE PID( -- 处方包含的药品
 	FOREIGN KEY (PDno) REFERENCES Drug(PDno)
 );
 
+GO
+
+CREATE VIEW DrugView
+AS
+SELECT d.PDno, d.PDname, d.PDlife, COALESCE(SUM(i.PDnum), 0) AS PDnum
+FROM Drug d LEFT OUTER JOIN InventoryDrug i ON d.PDno = i.PDno
+GROUP BY d.PDno, d.PDname, d.PDlife;
+
+GO
+
+CREATE VIEW InventoryDrugView
+AS
+SELECT d.PDno, d.PDname, d.PDlife, i.PDbatch, i.PDnum, i.Sno, i.SAno, i.Stime
+FROM Drug d, InventoryDrug i
+WHERE d.PDno = i.PDno;
+
+GO
+
+CREATE VIEW DestroyedDrugView
+AS
+SELECT d.PDno, d.PDname, d.PDlife, dd.PDbatch, dd.PDnum, dd.Sno, dd.SAno, dd.Stime, dd.DAno, dd.Dtime
+FROM Drug d, DestroyedDrug dd
+WHERE d.PDno = dd.PDno;
+
+GO
+
+CREATE VIEW AllPDbatchView
+AS
+SELECT PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime FROM InventoryDrugView
+UNION
+SELECT PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime FROM DestroyedDrugView;
+
+GO
+
+
+
+GO
+
 INSERT INTO Admin(Ano, Aname, Asex, Aage, Apwd) VALUES('admin0001', '李勇', 1, 25, 'admin0001');
 INSERT INTO Admin(Ano, Aname, Asex, Aage, Apwd) VALUES('admin0002', '刘晨', 0, 28, 'admin0002');
 INSERT INTO Admin(Ano, Aname, Asex, Aage, Apwd) VALUES('admin0003', '王敏', 0, 24, 'admin0003');
@@ -159,6 +197,10 @@ INSERT INTO Drug(PDno, PDname, PDlife) VALUES('Z34020775', '午时茶颗粒', 36
 INSERT INTO Drug(PDno, PDname, PDlife) VALUES('Z63020270', '十三味马钱子丸', 720);
 INSERT INTO Drug(PDno, PDname, PDlife) VALUES('H41024386', '氯芬黄敏片', 540);
 INSERT INTO Drug(PDno, PDname, PDlife) VALUES('Z20025728', '痫愈胶囊', 360);
+INSERT INTO Drug(PDno, PDname, PDlife) VALUES('HC20181007', '布地奈德鼻喷雾剂', 180);
+INSERT INTO Drug(PDno, PDname, PDlife) VALUES('X20010202', '甲磺酸多沙唑嗪控释片', 360);
+INSERT INTO Drug(PDno, PDname, PDlife) VALUES('J20030013', '噻奈普汀片', 180);
+INSERT INTO Drug(PDno, PDname, PDlife) VALUES('Z20120003', '复方樟薄软膏', 720);
 
 INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime)
 	VALUES('H31020838', '2019-06-20', 15, 'SYT0001', 'admin0001', '2019-06-25 10:30:30.000');

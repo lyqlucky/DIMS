@@ -32,17 +32,15 @@
 	
 	<!-- 查看药品库存列表 -->
 	<select id="queryAllDrugs" resultType="Drug">
-		SELECT d.PDno, d.PDname, d.PDlife, SUM(i.PDnum) AS PDnum
-		FROM Drug d, InventoryDrug i
-		WHERE d.PDno = i.PDno
-		GROUP BY d.PDno, d.PDname, d.PDlife;
+		SELECT *
+		FROM DrugView;
 	</select>
 	
 	<!-- 查看某一药品的所有库存批次 -->
 	<select id="queryAllPDbatches" parameterType="Drug" resultType="InventoryDrug">
-		SELECT d.PDno, d.PDname, d.PDlife, i.PDbatch, i.PDnum, i.Sno, i.SAno, i.Stime
-		FROM Drug d, InventoryDrug i
-		WHERE d.PDno = i.PDno AND d.PDno = #{PDno};
+		SELECT *
+		FROM InventoryDrugView
+		WHERE PDno = #{PDno};
 	</select>
 	
 	<!-- 查看未处理处方列表 -->

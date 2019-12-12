@@ -24,6 +24,46 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
+	public int countLowInventoryDrugs() { // 统计量少的库存药品种数
+		return adminMapper.countLowInventoryDrugs();
+	}
+
+	@Override
+	public int countClose2ExpiryPDbatches() { // 统计临期库存药品批数
+		return adminMapper.countClose2ExpiryPDbatches();
+	}
+
+	@Override
+	public int countInventoryDrugs() { // 统计库存药品种数
+		return adminMapper.countInventoryDrugs();
+	}
+
+	@Override
+	public int countInventoryPDbatches() { // 统计库存药品批数
+		return adminMapper.countInventoryPDbatches();
+	}
+
+	@Override
+	public int countDestroyedPDbatches() { // 统计销毁药品批数
+		return adminMapper.countDestroyedPDbatches();
+	}
+
+	@Override
+	public int countMyInventoryPDbatches(Admin amdin) { // 统计由该名库存管理员入库的库存药品批数
+		return adminMapper.countMyInventoryPDbatches(amdin);
+	}
+
+	@Override
+	public int countMyPDbatches(Admin admin) { // 统计由该名库存管理员入库的药品总批数
+		return adminMapper.countMyPDbatches(admin);
+	}
+
+	@Override
+	public int countMyDestoryedPDbatches(Admin admin) { // 统计由该名库存管理员销毁 (出库) 的销毁药品批数
+		return adminMapper.countMyDestoryedPDbatches(admin);
+	}
+
+	@Override
 	public List<Drug> queryAllDrugs() { // 查看药品库存列表
 		return adminMapper.queryAllDrugs();
 	}

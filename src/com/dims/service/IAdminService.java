@@ -11,6 +11,22 @@ import com.dims.domain.User;
 public interface IAdminService {
 	public Admin login(User user); // 登录
 
+	public int countLowInventoryDrugs(); // 统计量少的库存药品种数
+
+	public int countClose2ExpiryPDbatches(); // 统计临期库存药品批数
+
+	public int countInventoryDrugs(); // 统计库存药品种数
+
+	public int countInventoryPDbatches(); // 统计库存药品批数
+
+	public int countDestroyedPDbatches(); // 统计销毁药品批数
+
+	public int countMyInventoryPDbatches(Admin amdin); // 统计由该名库存管理员入库的库存药品批数
+
+	public int countMyPDbatches(Admin admin); // 统计由该名库存管理员入库的药品总批数
+
+	public int countMyDestoryedPDbatches(Admin admin); // 统计由该名库存管理员销毁 (出库) 的销毁药品批数
+
 	public List<Drug> queryAllDrugs(); // 查看药品库存列表
 
 	public List<InventoryDrug> queryAllPDbatches(Drug drug); // 查看某一药品的所有库存批次
