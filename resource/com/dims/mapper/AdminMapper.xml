@@ -73,7 +73,8 @@
 	<!-- 查看某一药品的所有库存批次 -->
 	<select id="queryAllPDbatches" parameterType="Drug" resultType="InventoryDrug">
 		SELECT *
-		FROM InventoryDrugView;
+		FROM InventoryDrugView
+		WHERE PDno = #{PDno};
 	</select>
 	
 	<!-- 参看某一药品的所有已销毁批次 -->
