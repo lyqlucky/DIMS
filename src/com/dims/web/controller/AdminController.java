@@ -1,12 +1,16 @@
 package com.dims.web.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dims.domain.Admin;
+import com.dims.domain.Drug;
 import com.dims.service.IAdminService;
 
 @Controller
@@ -66,11 +70,15 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/query-drug-list")
-	public String queryDrugList(HttpServletRequest req) {
+	public String queryDrugList(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentAdmin") == null) {
 			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
 			return "redirect:/login";
 		}
+
+		List<Drug> drugs = adminService.queryAllDrugs();
+
+		model.addAttribute("drugs", drugs);
 
 		// 请求映射到 WEB-INF/views/admin/query-drug-list.jsp
 		return "admin/query-drug-list";
