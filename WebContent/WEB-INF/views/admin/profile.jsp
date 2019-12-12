@@ -72,44 +72,82 @@
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
-											<a href="../admin/query-solved-rx-list">
+											<a href="../admin/query-my-inventory-pdbatch-list">
 												<div class="clearfix">
-													<span class="pull-left">已处理处方数目占比</span>
+													<span class="pull-left">由我入库的药品总批数占比</span>
 													<span class="pull-right">
-														<fmt:formatNumber value="${solvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}" pattern="#.00"/>
+														<fmt:formatNumber value="${myPDbatchesNum / (inventoryPDbatchesNum + destroyedPDbatchesNum) * 100}" pattern="#.00"/>
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
-													<div style="width:${solvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar"></div>
+												<div class="progress progress-mini progress-striped active">
+													<div style="width:${myPDbatchesNum / (inventoryPDbatchesNum + destroyedPDbatchesNum) * 100}%" class="progress-bar"></div>
 												</div>
 											</a>
 										</li>
 										<li>
-											<a href="../admin/query-unsolved-rx-list">
+											<a href="../admin/query-my-pdbatch-list">
 												<div class="clearfix">
-													<span class="pull-left">未处理处方数目占比</span>
+													<span class="pull-left">由我入库的库存药品批数占比</span>
 													<span class="pull-right">
-														<fmt:formatNumber value="${unsolvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}" pattern="#.00"/>
+														<fmt:formatNumber value="${myInventoryPDbatchesNum / inventoryPDbatchesNum * 100}" pattern="#.00"/>
 														%
 													</span>
 												</div>
-												<div class="progress progress-mini">
-													<div style="width:${unsolvedRxsNum / (solvedRxsNum + unsolvedRxsNum) * 100}%" class="progress-bar progress-bar-warning"></div>
+												<div class="progress progress-mini progress-striped active">
+													<div style="width:${myInventoryPDbatchesNum / inventoryPDbatchesNum * 100}%" class="progress-bar progress-bar-warning"></div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="../admin/query-my-destroyed-pdbatch-list">
+												<div class="clearfix">
+													<span class="pull-left">由我销毁的药品批数占比</span>
+													<span class="pull-right">
+														<fmt:formatNumber value="${myDestroyedPDbatchesNum / destroyedPDbatchesNum * 100}" pattern="#.00"/>
+														%
+													</span>
+												</div>
+												<div class="progress progress-mini progress-striped active">
+													<div style="width:${myDestroyedPDbatchesNum / destroyedPDbatchesNum * 100}%" class="progress-bar progress-bar-success"></div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="green dropdown-modal">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-success">${lowInventoryDrugsNum + close2ExpiryPDbatchesNum}</span>
+							</a>
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-exclamation-triangle"></i>
+									警报
+								</li>
+								<li class="dropdown-content">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink">
+										<li>
+											<a href="#">
+												<div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														库存药品数量到达下限警报
+													</span>
+													<span class="pull-right badge badge-info">${lowInventoryDrugsNum}</span>
 												</div>
 											</a>
 										</li>
 										<li>
 											<a href="#">
 												<div class="clearfix">
-													<span class="pull-left">由我处理的处方数目占比</span>
-													<span class="pull-right">
-														<fmt:formatNumber value="${mySolvedRxsNum / solvedRxsNum * 100}" pattern="#.00"/>
-														%
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														库存药品批次临期警报
 													</span>
-												</div>
-												<div class="progress progress-mini progress-striped active">
-													<div style="width:${mySolvedRxsNum / solvedRxsNum * 100}%" class="progress-bar progress-bar-success"></div>
+													<span class="pull-right badge badge-success">${close2ExpiryPDbatchesNum}</span>
 												</div>
 											</a>
 										</li>
