@@ -45,7 +45,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<div class="navbar-header pull-left">
-					<a href="../nurse/index" class="navbar-brand">
+					<a href="../admin/index" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							医院药品库存管理系统 DIMS
@@ -152,16 +152,16 @@
 						</li>
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="../assets/images/avatars/${currentNurse.nsex ? 'Male' : 'Female'}Nurse.png" alt="头像" />
+								<img class="nav-user-photo" src="../assets/images/avatars/Admin.png" alt="头像" />
 								<span class="user-info">
 									<small>欢迎，</small>
-									${currentNurse.nname}
+									${currentAdmin.aname}
 								</span>
 								<i class="ace-icon fa fa-caret-down"></i>
 							</a>
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
-									<a href="../nurse/profile">
+									<a href="../admin/profile">
 										<i class="ace-icon fa fa-user"></i>
 										个人信息
 									</a>
@@ -211,14 +211,14 @@
 				</div><!-- /.sidebar-shortcuts -->
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="../nurse/welcome">
+						<a href="../admin/welcome">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> 欢迎页面 </span>
 						</a>
 						<b class="arrow"></b>
 					</li>
 					<li class="">
-						<a href="../nurse/profile">
+						<a href="../admin/profile">
 							<i class="menu-icon fa fa-tag"></i>
 							<span class="menu-text"> 个人信息页面 </span>
 						</a>
@@ -233,14 +233,14 @@
 						<b class="arrow"></b>
 						<ul class="submenu">
 							<li class="">
-								<a href="../nurse/query-drug-list">
+								<a href="../admin/query-drug-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看库存药品列表
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li class="active">
-								<a href="../nurse/query-pdbatch-list">
+								<a href="../admin/query-pdbatch-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看库存药品批次明细
 								</a>
@@ -264,14 +264,14 @@
 						<b class="arrow"></b>
 						<ul class="submenu">
 							<li class="">
-								<a href="../nurse/query-unsolved-rx-list">
+								<a href="../admin/query-unsolved-rx-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看未处理处方列表
 								</a>
 								<b class="arrow"></b>
 							</li>
 							<li class="">
-								<a href="../nurse/query-solved-rx-list">
+								<a href="../admin/query-solved-rx-list">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看已处理处方列表
 								</a>
@@ -288,7 +288,7 @@
 						<b class="arrow"></b>
 						<ul class="submenu">
 							<li class="">
-								<a href="../nurse/query-rx?Pno=1">
+								<a href="../admin/query-rx?Pno=1">
 									<i class="menu-icon fa fa-caret-right"></i>
 									查看处方的具体明细
 								</a>
@@ -314,10 +314,10 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="../nurse/index">首页</a>
+								<a href="../admin/index">首页</a>
 							</li>
 							<li>
-								<a href="../nurse/query-drug-list">查看药品库存列表</a>
+								<a href="../admin/query-drug-list">查看药品库存列表</a>
 							</li>
 							<li class="active">查看具体批次明细</li>
 						</ul><!-- /.breadcrumb -->
