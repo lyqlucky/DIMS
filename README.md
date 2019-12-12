@@ -615,8 +615,7 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 	* [SpringMVC 里面 Controller 能不能重载方法](https://blog.csdn.net/qq_38366063/article/details/93030217)  
 	* 
 
-6. 怎么把 README.md 转化为 HTML / PDF 格式？  
+6. 怎么把 README.md 转化为 HTML 格式？  
 
 	参考：  
 	* [Visual Studio Code 插件 Markdown All in One](https://github.com/yzhang-gh/vscode-markdown)  
-	* [Visual Studio Code 插件 Markdown PDF](https://github.com/yzane/vscode-markdown-pdf)  
