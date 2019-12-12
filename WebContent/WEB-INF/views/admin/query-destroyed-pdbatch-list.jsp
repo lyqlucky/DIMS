@@ -256,28 +256,11 @@
 						</ul>
 					</li>
 					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text"> 查看处方列表 </span>
-							<b class="arrow fa fa-angle-down"></b>
+						<a href="../admin/fill-storage-form">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> 填写药品入库表单 </span>
 						</a>
 						<b class="arrow"></b>
-						<ul class="submenu">
-							<li class="">
-								<a href="../admin/query-unsolved-rx-list">
-									<i class="menu-icon fa fa-caret-right"></i>
-									查看未处理处方列表
-								</a>
-								<b class="arrow"></b>
-							</li>
-							<li class="">
-								<a href="../admin/query-solved-rx-list">
-									<i class="menu-icon fa fa-caret-right"></i>
-									查看已处理处方列表
-								</a>
-								<b class="arrow"></b>
-							</li>
-						</ul>
 					</li>
 					<li class="">
 						<a href="#" class="dropdown-toggle">
