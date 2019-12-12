@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DIMS</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: 'YaHei Consolas Hybrid';
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body class="vscode-light">
+        <h1 id="dims">DIMS</h1>
+<p><img src="https://img.shields.io/badge/sql%20server-2017+-blue.svg" alt="SQL Server">
+<img src="https://img.shields.io/badge/java-1.8+-green.svg" alt="Java">
+<img src="https://img.shields.io/badge/tomcat-9.0+-yellow.svg" alt="Tomcat"></p>
+<p>数据库系统原理课程设计，DIMS，Drug Inventory Management System，基于 SSM 框架的医院药品库存管理系统。</p>
+<h2 id="%e4%bb%bb%e5%8a%a1%e8%bf%9b%e5%ba%a6">任务进度</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E6%9C%AC%E7%BB%84%E6%88%90%E5%91%98%E4%BB%BB%E5%8A%A1%E5%88%86%E5%B7%A5">0. 本组成员任务分工</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1">1. 数据库设计</a>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">1.1 需求分析</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">1.2 概念结构设计</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">1.3 逻辑结构设计</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">1.4 物理结构设计</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E6%96%BD">1.5 数据库实施</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%90%E8%A1%8C%E5%92%8C%E7%BB%B4%E6%8A%A4">1.6 数据库运行和维护</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%BA%94%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1">2. 应用系统设计</a>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">2.0 环境准备</a>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-Java-%E7%8E%AF%E5%A2%83">2.0.1 配置 Java 环境</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AE%89%E8%A3%85-Eclipse-IDE-for-Enterprise-Java-Developers">2.0.2 安装 Eclipse IDE for Enterprise Java Developers</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-Tomcat-%E7%8E%AF%E5%A2%83">2.0.3 配置 Tomcat 环境</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%9C%A8-Eclipse-%E4%B8%AD%E9%85%8D%E7%BD%AE-Tomcat-Server">2.0.4 在 Eclipse 中配置 Tomcat Server</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84-Dynamic-Web-%E9%A1%B9%E7%9B%AE">2.1 创建一个新的 Dynamic Web 项目</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%9B%86%E6%88%90-Spring-%E5%92%8C-SpingMVC">2.2 集成 Spring 和 SpingMVC</a>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AF%BC%E5%85%A5-Spring-%E7%9A%84-jar-%E5%8C%85">2.2.1 导入 Spring 的 jar 包</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AF%BC%E5%85%A5-SpringMVC-%E7%9A%84-jar-%E5%8C%85">2.2.2 导入 SpringMVC 的 jar 包</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AF%BC%E5%85%A5-Apache-Commons-%E7%9A%84-jar-%E5%8C%85">2.2.3 导入 Apache Commons 的 jar 包</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AF%BC%E5%85%A5%E5%85%B6%E5%AE%83%E5%9F%BA%E7%A1%80-jar-%E5%8C%85">2.2.4 导入其它基础 jar 包</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-Spring">2.2.5 配置 Spring</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-SpringMVC">2.2.6 配置 SpringMVC</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-web.xml">2.3 配置 web.xml</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%9B%86%E6%88%90-Spring-%E5%92%8C-MyBatis">2.4 集成 Spring 和 MyBatis</a>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AF%BC%E5%85%A5-MyBatis-%E7%9A%84-jar-%E5%8C%85">2.4.1 导入 MyBatis 的 jar 包</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-MyBatis">2.4.2 配置 MyBatis</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%85%8D%E7%BD%AE-log4j">2.5 配置 log4j</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%9B%86%E6%88%90%E5%9F%BA%E4%BA%8E-Bootstrap-%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E7%9A%84-ACE-%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%A1%B5%E9%9D%A2%E6%A8%A1%E6%9D%BF">2.6 集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E5%AF%BC%E5%85%A5-Apache-Taglibs-%E7%9A%84-jar-%E5%8C%85">2.7 导入 Apache Taglibs 的 jar 包</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1%E9%98%B6%E6%AE%B5">2.8 详细设计阶段</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">2.9 遇到的问题</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="%e6%9c%ac%e7%bb%84%e6%88%90%e5%91%98%e4%bb%bb%e5%8a%a1%e5%88%86%e5%b7%a5">本组成员任务分工</h2>
+<h2 id="%e6%95%b0%e6%8d%ae%e5%ba%93%e8%ae%be%e8%ae%a1">数据库设计</h2>
+<p>在数据库设计过程中，需求分析和概念结构设计可以独立于任何数据库管理系统进行，逻辑结构设计和物理结构设计与选用的数据库管理系统密切相关。</p>
+<h3 id="%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90">需求分析</h3>
+<p>需求分析必须准确了解与分析用户需求 (包括数据与处理)。</p>
+<p><strong>设计描述</strong>：数字字典、全系统中数据项、数据结构、数据流、数据存储的描述。</p>
+<p><strong>任务</strong>：通过详细调查现实世界要处理的对象 (组织、部门、企业等)，充分了解原系统 (手工系统或计算机系统) 的工作概况，明确用户的各种需求，然后在此基础上确定新系统的功能。新系统必须充分考虑今后可能的扩充和改变，不能仅仅按当前应用需求来设计数据库。调查的重点是 <strong>“数据”</strong> 和 <strong>“处理”</strong>，通过调查、收集与分析，获得用户对数据库的如下要求：</p>
+<ul>
+<li><strong>信息要求</strong>：指用户需要从数据库中获得信息的内容与性质。由信息要求可以导出数据要求，即在数据库中需要存储哪些数据。</li>
+<li><strong>处理要求</strong>：指用户要完成的数据处理功能，对处理性能的要求。</li>
+<li><strong>安全性与完整性要求</strong></li>
+</ul>
+<p><strong>业务用例图</strong>：</p>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90_%E4%B8%9A%E5%8A%A1%E7%94%A8%E4%BE%8B%E5%9B%BE.png" alt="需求分析_业务用例图"></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/gd-luojialin/p/10356704.html">UML 之用例图</a></li>
+</ul>
+<p><strong>数据字典</strong>：数据字典是进行详细的数据收集和数据分析所获得的主要成果。它是关于数据库中数据的描述，即元数据，而不是数据本身。数据字典是在需求分析阶段建立，在数据库设计过程中不断修改、充实、完善的。它在数据库设计中占有很重要的地位。数据字典通常包括数据项、数据结构、数据流、数据存储和处理过程几部分。其中数据项是数据的最小组成单位，若干个数据项可以组成一个数据结构。数据字典通过对数据项和数据结构的定义来描述数据流、数据存储的逻辑内容。</p>
+<ul>
+<li><strong>数据项</strong>：数据项是不可再分的数据单位。对数据项的描述通常包括以下内容：</li>
+</ul>
+<pre><code><code><div>数据项描述 = { 数据项名, 数据项含义说明, 别名, 数据类型, 长度, 取值范围, 取值含义, 与其他数据项的逻辑关系, 数据项之间的联系 }
+</div></code></code></pre>
+<table>
+<thead>
+<tr>
+<th>数据项名</th>
+<th>数据项含义说明</th>
+<th>数据类型</th>
+<th>长度</th>
+<th>取值范围</th>
+<th>取值含义</th>
+<th>与其他数据项的逻辑关系</th>
+<th>数据项之间的联系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ano</td>
+<td>库存管理员编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Aname</td>
+<td>库存管理员姓名</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Ano→Aname</td>
+</tr>
+<tr>
+<td>Asex</td>
+<td>库存管理员性别</td>
+<td>BIT</td>
+<td>1</td>
+<td>{ 0, 1 }</td>
+<td>0 代表女，1 代表男</td>
+<td></td>
+<td>Ano→Asex</td>
+</tr>
+<tr>
+<td>Aage</td>
+<td>库存管理员年龄</td>
+<td>SMALLINT</td>
+<td>2</td>
+<td>[0, 32767]</td>
+<td></td>
+<td></td>
+<td>Ano→Aage</td>
+</tr>
+<tr>
+<td>Apwd</td>
+<td>库存管理员登陆密码</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Ano→Apwd</td>
+</tr>
+<tr>
+<td>Dno</td>
+<td>医生编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dname</td>
+<td>医生姓名</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Dno→Dname</td>
+</tr>
+<tr>
+<td>Dsex</td>
+<td>医生性别</td>
+<td>BIT</td>
+<td>1</td>
+<td>{ 0, 1 }</td>
+<td>0 代表女，1 代表男</td>
+<td></td>
+<td>Dno→Dsex</td>
+</tr>
+<tr>
+<td>Dage</td>
+<td>医生年龄</td>
+<td>SMALLINT</td>
+<td>2</td>
+<td>[0, 32767]</td>
+<td></td>
+<td></td>
+<td>Dno→Dage</td>
+</tr>
+<tr>
+<td>Dpwd</td>
+<td>医生登陆密码</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Dno→Dpwd</td>
+</tr>
+<tr>
+<td>Nno</td>
+<td>发药处护士编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Nname</td>
+<td>发药处护士姓名</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Nno→Nname</td>
+</tr>
+<tr>
+<td>Nsex</td>
+<td>发药处护士性别</td>
+<td>BIT</td>
+<td>1</td>
+<td>{ 0, 1 }</td>
+<td>0 代表女，1 代表男</td>
+<td></td>
+<td>Nno→Nsex</td>
+</tr>
+<tr>
+<td>Nage</td>
+<td>发药处护士年龄</td>
+<td>SMALLINT</td>
+<td>2</td>
+<td>[0, 32767]</td>
+<td></td>
+<td></td>
+<td>Nno→Nage</td>
+</tr>
+<tr>
+<td>Npwd</td>
+<td>发药处护士登陆密码</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Nno→Npwd</td>
+</tr>
+<tr>
+<td>Sno</td>
+<td>供应商编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sname</td>
+<td>供应商名称</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Sno→Sname</td>
+</tr>
+<tr>
+<td>Saddr</td>
+<td>供应商地址</td>
+<td>VARCHAR</td>
+<td>60</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Sno→Saddr</td>
+</tr>
+<tr>
+<td>Sphone</td>
+<td>供应商电话</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Sno→Sphone</td>
+</tr>
+<tr>
+<td>PDno</td>
+<td>药品编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PDname</td>
+<td>药品名称</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>PDno→PDname</td>
+</tr>
+<tr>
+<td>PDlife</td>
+<td>药品保质期</td>
+<td>SMALLINT</td>
+<td>2</td>
+<td>[0, 32767]</td>
+<td>保质期总天数</td>
+<td></td>
+<td>PDno→PDlife</td>
+</tr>
+<tr>
+<td>PDbatch</td>
+<td>药品批次</td>
+<td>DATE</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PDnum</td>
+<td>药品数量</td>
+<td>SMALLINT</td>
+<td>2</td>
+<td>[0, 32767]</td>
+<td></td>
+<td></td>
+<td>(PDno, PDbatch)→PDnum</td>
+</tr>
+<tr>
+<td>SAno</td>
+<td>药品入库库存管理员编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td>SAno ∈ List<code>&lt;Ano</code>&gt;</td>
+<td>(PDno, PDbatch)→SAno</td>
+</tr>
+<tr>
+<td>Stime</td>
+<td>药品入库时间</td>
+<td>DATETIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(PDno, PDbatch)→Stime</td>
+</tr>
+<tr>
+<td>DAno</td>
+<td>药品销毁库存管理员编号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td>DAno ∈ List<code>&lt;Ano</code>&gt;</td>
+<td>(PDno, PDbatch)→DAno</td>
+</tr>
+<tr>
+<td>Dtime</td>
+<td>药品销毁时间</td>
+<td>DATETIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Dtime ≥ Stime</td>
+<td>(PDno, PDbatch)→Dtime</td>
+</tr>
+<tr>
+<td>Pno</td>
+<td>处方编号</td>
+<td>INT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pid</td>
+<td>病人身份证号</td>
+<td>VARCHAR</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Pno→Pid</td>
+</tr>
+<tr>
+<td>Ptime</td>
+<td>处方开出时间</td>
+<td>DATETIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Pno→Ptime</td>
+</tr>
+<tr>
+<td>Htime</td>
+<td>处方处理时间</td>
+<td>DATETIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Htime ≥ Ptime</td>
+<td>Pno→Htime</td>
+</tr>
+<tr>
+<td>Pstate</td>
+<td>处方状态</td>
+<td>BIT</td>
+<td>1</td>
+<td>{ 0, 1 }</td>
+<td>0 代表未处理，1 代表已处理</td>
+<td></td>
+<td>Pno→Pstate</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>数据结构</strong>：</li>
+</ul>
+<pre><code><code><div>数据结构描述 = { 数据结构名, 含义说明, 组成:{数据项或数据结构} }
+</div></code></code></pre>
+<table>
+<thead>
+<tr>
+<th>数据结构名</th>
+<th>含义说明</th>
+<th>组成:{数据项或数据结构}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td>库存管理员</td>
+<td>{ Ano, Aname, Asex, Aage, Apwd }</td>
+</tr>
+<tr>
+<td>Doctor</td>
+<td>医生</td>
+<td>{ Dno, Dname, Dsex, Dage, Dpwd }</td>
+</tr>
+<tr>
+<td>Nurse</td>
+<td>发药处护士</td>
+<td>{ Nno, Nname, Nsex, Nage, Npwd }</td>
+</tr>
+<tr>
+<td>Supplier</td>
+<td>供应商</td>
+<td>{ Sno, Sname, Saddr, Sphone }</td>
+</tr>
+<tr>
+<td>Drug</td>
+<td>药品</td>
+<td>{ PDno, PDname, PDlife, PDnum }</td>
+</tr>
+<tr>
+<td>InventoryDrug</td>
+<td>库存药品</td>
+<td>{ PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime }</td>
+</tr>
+<tr>
+<td>DestroyedDrug</td>
+<td>已销毁药品</td>
+<td>{ PDno, PDname, PDlife, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime }</td>
+</tr>
+<tr>
+<td>Prescription</td>
+<td>处方</td>
+<td>{ Pno, Pid, Dno, Ptime, Nno, Htime, Pstate, List<code>Drug</code> }</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>数据流</strong>：</li>
+</ul>
+<pre><code><code><div>数据流描述 = { 数据流名, 说明, 数据流来源, 数据流去向, 组成:{数据结构}, 平均流量, 高峰期流量 }
+</div></code></code></pre>
+<table>
+<thead>
+<tr>
+<th>数据流名</th>
+<th>说明</th>
+<th>数据流来源</th>
+<th>数据流去向</th>
+<th>组成:{数据结构}</th>
+<th>平均流量</th>
+<th>高峰期流量</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<ul>
+<li><strong>数据存储</strong>：</li>
+</ul>
+<pre><code><code><div>数据存储描述 = { 数据存储名, 说明, 编号, 输入的数据流, 输出的数据流, 组成:{数据结构}, 数据量, 存取频度, 存取方式 }
+</div></code></code></pre>
+<table>
+<thead>
+<tr>
+<th>数据存储名</th>
+<th>说明</th>
+<th>编号</th>
+<th>输入的数据流</th>
+<th>输出的数据流</th>
+<th>组成:{数据结构}</th>
+<th>数据量</th>
+<th>存取频度</th>
+<th>存取方式</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<ul>
+<li><strong>处理过程</strong>：</li>
+</ul>
+<pre><code><code><div>处理过程描述 = { 处理过程名, 说明, 输入:{数据流}, 输出:{数据流}, 处理:{简要说明} }
+</div></code></code></pre>
+<table>
+<thead>
+<tr>
+<th>处理过程名</th>
+<th>说明</th>
+<th>输入:{数据流}</th>
+<th>输出:{数据流}</th>
+<th>处理:{简要说明}</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<h3 id="%e6%a6%82%e5%bf%b5%e7%bb%93%e6%9e%84%e8%ae%be%e8%ae%a1">概念结构设计</h3>
+<p>概念结构设计通过对用户需求进行综合、归纳与抽象，形成一个独立于具体数据库管理系统的概念模型。</p>
+<p><strong>设计描述</strong>：概念模型 (E-R 图)、数据字典。</p>
+<p><strong>任务</strong>：概念结构设计的第一步就是对需求分析阶段收集到的数据进行分类、组织，确定实体、实体的属性、实体之间的联系类型，形成 E-R 图。</p>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1_ER%E5%9B%BE.png" alt="概念结构设计_ER图"></p>
+<h3 id="%e9%80%bb%e8%be%91%e7%bb%93%e6%9e%84%e8%ae%be%e8%ae%a1">逻辑结构设计</h3>
+<p>逻辑结构设计是将概念结构转换为某个数据库管理系统所支持的数据模型，并对其进行优化。</p>
+<p><strong>设计描述</strong>：某种数据模型 (关系 / 非关系)。</p>
+<p><strong>任务</strong>：把概念结构设计阶段设计好的基本 E-R 图转换为与选用数据库管理系统产品所支持的数据模型相符合的逻辑结构。将概念模型转换为全局逻辑模型后，还应该根据局部应用需求，结合具体关系数据库管理系统的特点设计用户的外模式。</p>
+<p><strong>E-R 图向关系模型的转换</strong>：</p>
+<ol>
+<li>一个 1:1 联系可以转换为一个独立的关系模式，也可以与任意一端的关系模式合并。</li>
+<li>一个 1:n 联系可以转换为一个独立的关系模式，也可以与 n 端对应的关系模式合并。</li>
+<li>一个 m:n 联系转换为一个关系模式。</li>
+<li>三个或三个以上实体间的一个多元联系可以转换为一个关系模式。</li>
+<li>具有相同码的关系模式可以合并。</li>
+</ol>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1_%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B.png" alt="逻辑结构设计_关系模型"></p>
+<h3 id="%e7%89%a9%e7%90%86%e7%bb%93%e6%9e%84%e8%ae%be%e8%ae%a1">物理结构设计</h3>
+<p>物理结构设计是为逻辑数据模型选取一个最适合应用环境的物理结构 (包括存储结构和存取方法)。</p>
+<p><strong>设计描述</strong>：存储安排、存取方法选择、存取路径建立。</p>
+<h3 id="%e6%95%b0%e6%8d%ae%e5%ba%93%e5%ae%9e%e6%96%bd">数据库实施</h3>
+<p>在数据库实施阶段，设计人员运用数据库管理系统提供的数据库语言及其宿主语言，根据逻辑设计和物理设计的结果建立数据库，编写与调试应用程序，组织数据入库，并进行试运行。</p>
+<p><strong>设计描述</strong>：创建数据库模式、装入数据、数据库试运行。</p>
+<ul>
+<li><a href="./preDB.sql">preDB.sql</a></li>
+<li><a href="./testDB.sql">testDB.sql</a></li>
+</ul>
+<h3 id="%e6%95%b0%e6%8d%ae%e5%ba%93%e8%bf%90%e8%a1%8c%e5%92%8c%e7%bb%b4%e6%8a%a4">数据库运行和维护</h3>
+<p><strong>设计描述</strong>：性能监测、转储 / 恢复、数据库重组和重构。</p>
+<h2 id="%e5%ba%94%e7%94%a8%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1">应用系统设计</h2>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/wang404838334/article/details/78449164">B/S、C/S 模式介绍</a></li>
+<li><a href="https://blog.csdn.net/jack_xia_2018/article/details/83540199">SSM 框架介绍</a></li>
+</ul>
+<h3 id="%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87">环境准备</h3>
+<h4 id="%e9%85%8d%e7%bd%ae-java-%e7%8e%af%e5%a2%83">配置 Java 环境</h4>
+<ol>
+<li>
+<p>下载 JDK 安装包：</p>
+<ul>
+<li><a href="https://www.oracle.com/technetwork/java/javase/overview/index.html">Java SE 官网</a></li>
+<li><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE 官网下载页面</a></li>
+</ul>
+</li>
+<li>
+<p>配置环境变量：</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JAVA_HOME</td>
+<td>C:\Program Files\Java\jdk1.8.0_231</td>
+</tr>
+<tr>
+<td>JRE_HOME</td>
+<td>C:\Program Files\Java\jre1.8.0_231</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>;%JAVA_HOME%\bin</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h4 id="%e5%ae%89%e8%a3%85-eclipse-ide-for-enterprise-java-developers">安装 Eclipse IDE for Enterprise Java Developers</h4>
+<ul>
+<li><a href="https://www.eclipse.org/">Eclipse 官网</a></li>
+<li><a href="https://www.eclipse.org/downloads/">Eclipse 官网 Installer 下载页面</a></li>
+</ul>
+<h4 id="%e9%85%8d%e7%bd%ae-tomcat-%e7%8e%af%e5%a2%83">配置 Tomcat 环境</h4>
+<ol>
+<li>
+<p>从官网下载相应的 Tomcat Binary Distributions 安装包文件 <code>32-bit/64-bit Windows Service Installer</code>。</p>
+<ul>
+<li><a href="http://tomcat.apache.org/">Tomcat 官网</a></li>
+<li><a href="https://tomcat.apache.org/download-90.cgi">Tomcat 9 官网下载页面</a></li>
+</ul>
+</li>
+<li>
+<p>双击运行下载的安装文件，按照提示一步一步安装并配置。</p>
+</li>
+<li>
+<p>配置环境变量：</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOMCAT_HOME</td>
+<td>C:\Program Files\Apache Software Foundation\Tomcat 9.0</td>
+</tr>
+<tr>
+<td>CATALINA_HOME</td>
+<td>C:\Program Files\Apache Software Foundation\Tomcat 9.0</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>;%TOMCAT_HOME%\bin;%CATALINA_HOME%\lib</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h4 id="%e5%9c%a8-eclipse-%e4%b8%ad%e9%85%8d%e7%bd%ae-tomcat-server">在 Eclipse 中配置 Tomcat Server</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/greenteaone/p/7929571.html">安装 Eclipse，配置 Tomcat</a></li>
+<li><a href="https://blog.csdn.net/weixin_41704733/article/details/79871950">Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上</a></li>
+</ul>
+<h3 id="%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84-dynamic-web-%e9%a1%b9%e7%9b%ae">创建一个新的 Dynamic Web 项目</h3>
+<p>新建一个名为 <code>DIMS</code> 的 <code>Dynamic Web Project</code>，<code>Target runtime</code> 选择上一步在 Eclipse 当中配置的 <code>Apache Tomcat v9.0</code>，<code>Dynamic web module version</code> 选择最新版本，<code>Configuration</code> 选择 <code>Default Configuration for Apache Tomcat v9.0</code>，其它选项不作更改，点击 <code>Next</code>。</p>
+<p>将 <code>Default output folder</code> 的值改为 <code>WebContent\WEB-INF\classes</code>，点击 <code>Next</code>。</p>
+<p>勾选 <code>Generate web.xml deployment descriptor</code>，点击 <code>Finish</code>。</p>
+<p>测试项目是否可以发布成功，参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_41704733/article/details/79871950">Eclipse 环境下如何配置 Tomcat，并且把项目部署到 Tomcat 服务器上</a></li>
+</ul>
+<p>后续需要导入的 jar 包都复制到项目的 <code>WebContent\WEB-INF\lib</code> 目录当中来。</p>
+<h3 id="%e9%9b%86%e6%88%90-spring-%e5%92%8c-spingmvc">集成 Spring 和 SpingMVC</h3>
+<ul>
+<li><a href="https://spring.io/">Spring 官网</a></li>
+<li><a href="https://repo.spring.io/release/org/springframework/spring/">Spring 发行版的下载地址</a></li>
+<li><a href="https://repo.spring.io/release/org/springframework/spring/5.2.1.RELEASE/">Spring 发行版 v5.2.1 的下载地址</a></li>
+</ul>
+<p>下载 <code>spring-5.2.1.RELEASE-dist.zip</code> 并解压。</p>
+<h4 id="%e5%af%bc%e5%85%a5-spring-%e7%9a%84-jar-%e5%8c%85">导入 Spring 的 jar 包</h4>
+<p>将 <code>spring-5.2.1.RELEASE-dist.zip</code> 解压路径的 <code>libs</code> 目录下的一部分 jar 包复制到项目的 <code>WebContent\WEB-INF\lib</code> 目录当中来，需要的 jar 包如下：</p>
+<ul>
+<li>spring-aop-5.2.1.RELEASE.jar</li>
+<li>spring-aspects-5.2.1.RELEASE.jar</li>
+<li>spring-beans-5.2.1.RELEASE.jar</li>
+<li>spring-context-5.2.1.RELEASE.jar</li>
+<li>spring-core-5.2.1.RELEASE.jar</li>
+<li>spring-expression-5.2.1.RELEASE.jar</li>
+<li>spring-jdbc-5.2.1.RELEASE.jar</li>
+<li>spring-test-5.2.1.RELEASE.jar</li>
+<li>spring-tx-5.2.1.RELEASE.jar</li>
+<li>spring-web-5.2.1.RELEASE.jar</li>
+</ul>
+<h4 id="%e5%af%bc%e5%85%a5-springmvc-%e7%9a%84-jar-%e5%8c%85">导入 SpringMVC 的 jar 包</h4>
+<p>将 <code>spring-5.2.1.RELEASE-dist.zip</code> 解压路径的 <code>libs</code> 目录下的一部分 jar 包复制到项目的 <code>WebContent\WEB-INF\lib</code> 目录当中来，需要的 jar 包如下：</p>
+<ul>
+<li>spring-webmvc-5.2.1.RELEASE.jar</li>
+</ul>
+<h4 id="%e5%af%bc%e5%85%a5-apache-commons-%e7%9a%84-jar-%e5%8c%85">导入 Apache Commons 的 jar 包</h4>
+<ul>
+<li><a href="https://commons.apache.org/index.html">Apache Commons 官网</a></li>
+<li><a href="https://commons.apache.org/downloads/index.html">Apache Commons 官网 jar 包下载地址</a></li>
+</ul>
+<p>需要导入的 jar 包：</p>
+<ul>
+<li><a href="https://commons.apache.org/proper/commons-dbcp/download_dbcp.cgi">commons-dbcp2-2.7.0.jar</a></li>
+<li><a href="https://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi">commons-fileupload-1.4.jar</a></li>
+<li><a href="https://commons.apache.org/proper/commons-io/download_io.cgi">commons-io-2.6.jar</a></li>
+<li><a href="https://commons.apache.org/proper/commons-logging/download_logging.cgi">commons-logging-1.2.jar</a></li>
+<li><a href="https://commons.apache.org/proper/commons-pool/download_pool.cgi">commons-pool2-2.7.0.jar</a></li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/wiker_yong/article/details/23551209">一篇关于 Apache Commons 类库的详解</a></li>
+<li><a href="https://blog.csdn.net/qq_34520606/article/details/78431802">Apache Commons 工具包</a></li>
+</ul>
+<h4 id="%e5%af%bc%e5%85%a5%e5%85%b6%e5%ae%83%e5%9f%ba%e7%a1%80-jar-%e5%8c%85">导入其它基础 jar 包</h4>
+<ul>
+<li><a href="https://mvnrepository.com/artifact/org.aspectj/aspectjweaver">aspectjweaver-1.9.4.jar</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.aopalliance/com.springsource.org.aopalliance">com.springsource.org.aopalliance-1.0.0.jar</a></li>
+<li><a href="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations">jackson-annotations-2.10.0.jar</a></li>
+<li><a href="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core">jackson-core-2.10.0.jar</a></li>
+<li><a href="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind">jackson-databind-2.10.0.jar</a></li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/snower08/article/details/83353064">com.springsource.*.xx.jar 和同名 *.xx.jar 有什么区别？</a></li>
+</ul>
+<h4 id="%e9%85%8d%e7%bd%ae-spring">配置 Spring</h4>
+<p>在项目的 <code>Java Resources</code> 项中新建一个名为 <code>resource</code> 的 'source folder'，然后在其下新建两个 XML 文件。</p>
+<p>applicationContext.xml：</p>
+<pre><code class="language-xml"><div><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans"</span>
+       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">"http://www.springframework.org/schema/context"</span>
+       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</div></code></pre>
+<h4 id="%e9%85%8d%e7%bd%ae-springmvc">配置 SpringMVC</h4>
+<p>applicationContext-mvc.xml：</p>
+<pre><code class="language-xml"><div><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans"</span>
+       <span class="hljs-attr">xmlns:mvc</span>=<span class="hljs-string">"http://www.springframework.org/schema/mvc"</span>
+       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">"http://www.springframework.org/schema/context"</span>
+       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd"</span>&gt;</span>
+	<span class="hljs-comment">&lt;!-- mvc 静态资源放行 —— 允许访问图片等静态资源 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">mvc:default-servlet-handler</span>/&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- mvc 支持注解 Controller --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">context:annotation-config</span>/&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">mvc:annotation-driven</span>/&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 设置扫描包的路径 Controller --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">"com.dims.web.controller"</span>/&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 视图解析器 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 配置前缀和后缀 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"prefix"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/WEB-INF/views/<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"suffix"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 文件上传配置 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"multipartResolver"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.springframework.web.multipart.commons.CommonsMultipartResolver"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 最大值配置 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"maxUploadSize"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>200000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</div></code></pre>
+<h3 id="%e9%85%8d%e7%bd%ae-webxml">配置 web.xml</h3>
+<p>在项目的 <code>WebContent\WEB-INF\</code> 目录下找到 web.xml 文件，进行配置：</p>
+<p>web.xml：</p>
+<pre><code class="language-xml"><div><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">web-app</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://xmlns.jcp.org/xml/ns/javaee"</span>
+         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"</span>
+         <span class="hljs-attr">id</span>=<span class="hljs-string">"WebApp_ID"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"4.0"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">display-name</span>&gt;</span>DIMS<span class="hljs-tag">&lt;/<span class="hljs-name">display-name</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">welcome-file-list</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">welcome-file</span>&gt;</span>index.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">welcome-file</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">welcome-file-list</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 解决乱码问题 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>encoding<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>utf-8<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span>
+	
+	<span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 加载 spring 配置文件 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">context-param</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>contextConfigLocation<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">context-param</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 启动的时候加载 spring 的配置文件 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">listener</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="hljs-tag">&lt;/<span class="hljs-name">listener-class</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">listener</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 启动的时候加载 springmvc 的配置文件 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>springmvc<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>contextConfigLocation<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>classpath:applicationContext-mvc.xml<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">load-on-startup</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">load-on-startup</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span>
+	
+	<span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>springmvc<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">web-app</span>&gt;</span>
+</div></code></pre>
+<h3 id="%e9%9b%86%e6%88%90-spring-%e5%92%8c-mybatis">集成 Spring 和 MyBatis</h3>
+<h4 id="%e5%af%bc%e5%85%a5-mybatis-%e7%9a%84-jar-%e5%8c%85">导入 MyBatis 的 jar 包</h4>
+<ul>
+<li>
+<p><a href="https://blog.mybatis.org/">MyBatis 官网</a></p>
+</li>
+<li>
+<p><a href="https://mybatis.org/mybatis-3/zh/index.html">MyBatis v3 官网</a></p>
+</li>
+<li>
+<p><a href="https://github.com/mybatis/mybatis-3/">MyBatis v3 GitHub 项目</a></p>
+</li>
+<li>
+<p><a href="http://mybatis.org/spring/zh/index.html">MyBatis-Spring 官网</a></p>
+</li>
+<li>
+<p><a href="https://github.com/mybatis/mybatis-3/releases">MyBatis v3 GitHub 项目 jar 包下载页面</a></p>
+</li>
+<li>
+<p><a href="https://mvnrepository.com/artifact/org.mybatis/mybatis-spring/2.0.3">MyBatis-Spring jar 包下载页面</a></p>
+</li>
+</ul>
+<p>需要导入的 jar 包：</p>
+<ul>
+<li>asm-7.0.jar</li>
+<li>cglib-3.2.10.jar</li>
+<li>javassist-3.24.1-GA.jar</li>
+<li>log4j-1.2.17.jar</li>
+<li>mybatis-3.5.3.jar</li>
+<li>mybatis-spring-2.0.3.jar</li>
+<li>slf4j-api-1.7.26.jar</li>
+<li>slf4j-log4j12-1.7.26.jar</li>
+</ul>
+<p>除此之外还需要导入 SQL Server 的 JDBC Driver jar 包：</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15">mssql-jdbc-7.4.1.jre8.jar</a></li>
+</ul>
+<h4 id="%e9%85%8d%e7%bd%ae-mybatis">配置 MyBatis</h4>
+<p>在 <code>resource</code> 目录下，新建一个名为 <code>jdbc.properties</code> 的文件：</p>
+<p>jdbc.properties：</p>
+<pre><code><code><div>jdbc.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+jdbc.url=jdbc:sqlserver://localhost:1433;databaseName=DIMS
+jdbc.username=dba
+jdbc.password=abcd1234@
+</div></code></code></pre>
+<p>在 Spring 的配置文件当中，配置 MyBatis：</p>
+<p>applicationContext.xml：</p>
+<pre><code class="language-xml"><div><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans"</span>
+       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">"http://www.springframework.org/schema/context"</span>
+       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span>
+	<span class="hljs-comment">&lt;!-- jdbc.properties → dataSource → sqlSessionFactory → mapper → service → action --&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- jdbc.properties 加载 JDBC 配置文件 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">context:property-placeholder</span> <span class="hljs-attr">location</span>=<span class="hljs-string">"classpath:jdbc.properties"</span> /&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- dataSource 配置数据源 (连接池) --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dataSource"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.apache.commons.dbcp2.BasicDataSource"</span> <span class="hljs-attr">destroy-method</span>=<span class="hljs-string">"close"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 依赖注入连接池需要的属性 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"driverClassName"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${jdbc.driverClassName}"</span> /&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"url"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${jdbc.url}"</span> /&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${jdbc.username}"</span> /&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${jdbc.password}"</span> /&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- sqlSessionFactory --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sqlSessionFactory"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入数据源 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"dataSource"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"dataSource"</span> /&gt;</span>
+		<span class="hljs-comment">&lt;!-- 加载所有的 mapper 路径 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"mapperLocations"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"classpath:com/dims/mapper/*Mapper.xml"</span> /&gt;</span>
+		<span class="hljs-comment">&lt;!-- 配置别名 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"typeAliasesPackage"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"com.dims.domain"</span> /&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 扫描 mapper 层 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 扫描 mapper 接口的包路径 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"basePackage"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"com.dims.mapper"</span> /&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- 扫描 service 层 --&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">"com.dims.service"</span> /&gt;</span>
+	
+	<span class="hljs-comment">&lt;!-- action --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</div></code></pre>
+<h3 id="%e9%85%8d%e7%bd%ae-log4j">配置 log4j</h3>
+<p>在 <code>resource</code> 目录下，新建一个名为 <code>log4j.properties</code> 的文件：</p>
+<p>log4j.properties：</p>
+<pre><code><code><div>log4j.rootLogger=ERROR, stdout
+
+log4j.logger.com.sms=TRACE
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
+</div></code></code></pre>
+<h3 id="%e9%9b%86%e6%88%90%e5%9f%ba%e4%ba%8e-bootstrap-%e5%89%8d%e7%ab%af%e6%a1%86%e6%9e%b6%e7%9a%84-ace-%e7%ae%a1%e7%90%86%e7%b3%bb%e7%bb%9f%e9%a1%b5%e9%9d%a2%e6%a8%a1%e6%9d%bf">集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板</h3>
+<ul>
+<li><a href="http://ace.jeka.by/">ACE 管理系统页面模板预览</a></li>
+<li><a href="https://github.com/bopoda/ace">ACE GitHub 项目</a></li>
+<li><a href="https://github.com/XinLiangCoder/AceAdmin">ACE GitHub 项目 (中文版)</a></li>
+</ul>
+<p>从 ACE 的 GitHub 项目页面下载该项目的压缩包，解压后将解压路径下的 <code>assets</code> 文件夹复制到项目的 <code>WebContent</code> 目录下。</p>
+<h3 id="%e5%af%bc%e5%85%a5-apache-taglibs-%e7%9a%84-jar-%e5%8c%85">导入 Apache Taglibs 的 jar 包</h3>
+<ul>
+<li><a href="http://tomcat.apache.org/download-taglibs.cgi">Apache Taglibs 官网下载页面</a></li>
+</ul>
+<p>需要导入的 jar 包：</p>
+<ul>
+<li>taglibs-standard-impl-1.2.5.jar</li>
+<li>taglibs-standard-spec-1.2.5.jar</li>
+</ul>
+<h3 id="%e8%af%a6%e7%bb%86%e8%ae%be%e8%ae%a1%e9%98%b6%e6%ae%b5">详细设计阶段</h3>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1_%E6%97%B6%E5%BA%8F%E5%9B%BE_User.png" alt="详细设计_时序图_User"></p>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1_%E6%97%B6%E5%BA%8F%E5%9B%BE_Admin.png" alt="详细设计_时序图_Admin"></p>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1_%E6%97%B6%E5%BA%8F%E5%9B%BE_Doctor.png" alt="详细设计_时序图_Doctor"></p>
+<p><img src="file:///f:\eclipse-workspace\jee\DIMS\Doc\%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1_%E6%97%B6%E5%BA%8F%E5%9B%BE_Nurse.png" alt="详细设计_时序图_Nurse"></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/gd-luojialin/p/10356740.html">UML 之时序图</a></li>
+</ul>
+<h3 id="%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98">遇到的问题</h3>
+<ol>
+<li>
+<p><code>javax.el.PropertyNotFoundException: 类型[com.dims.domain.InventoryDrug]上找不到属性[Sno]</code>：</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/gr_guhun/article/details/89953842">javax.el.PropertyNotFoundException——属性未找到</a></li>
+</ul>
+</li>
+<li>
+<p>关于 jsp 页面当中 Date / DateTime 类型的值的显示格式问题：</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/xiaolizi22233/article/details/54237183">jsp 中的日期显示问题</a></li>
+<li><a href="https://www.cnblogs.com/jxldjsn/p/6936924.html">jstl 标签的 fmt:formatDate 格式化日期 String to Date</a></li>
+</ul>
+</li>
+<li>
+<p>关于 jsp 页面当中实型值的显示格式问题：</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/guorun18/article/details/49616985">jsp 页面的数显示两位小数</a></li>
+</ul>
+</li>
+<li>
+<p>关于 <code>Model Attribute</code> 和 <code>Session Attribute</code> 的作用域问题：</p>
+<p>参考：</p>
+<ul>
+<li><a href=""></a></li>
+</ul>
+</li>
+<li>
+<p>SpringMVC 当中 Controller 层能不能有重载方法？</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/qq_38366063/article/details/93030217">SpringMVC 里面 Controller 能不能重载方法</a></li>
+<li></li>
+</ul>
+</li>
+</ol>
+
+    </body>
+    </html>
