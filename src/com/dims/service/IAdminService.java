@@ -29,9 +29,9 @@ public interface IAdminService {
 
 	public List<Drug> queryAllDrugs(); // 查看药品库存列表
 
-	public List<InventoryDrug> queryAllPDbatches(Drug drug); // 查看某一药品的所有库存批次
+	public List<InventoryDrug> querySpecificPDbatches(Drug drug); // 查看某一药品的所有库存批次
 
-	public List<DestroyedDrug> queryAllDestroyedPDbatches(Drug drug); // 参看某一药品的所有已销毁批次
+	public List<DestroyedDrug> querySpecificDestroyedPDbatches(Drug drug); // 参看某一药品的所有已销毁批次
 
 	public void changeApwd(String Apwd, String Ano); // 修改登录密码
 }

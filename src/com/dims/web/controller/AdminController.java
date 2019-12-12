@@ -94,13 +94,24 @@ public class AdminController {
 		List<Drug> drugs = adminService.queryAllDrugs();
 
 		for (Drug drug : drugs) {
-			drug.setInventoryDrugs(adminService.queryAllPDbatches(drug));
+			drug.setInventoryDrugs(adminService.querySpecificPDbatches(drug));
 		}
 
 		model.addAttribute("drugs", drugs);
 
 		// 请求映射到 WEB-INF/views/admin/query-pdbatch-list.jsp
 		return "admin/query-pdbatch-list";
+	}
+
+	@RequestMapping(value = "query-destroyed-drug-list")
+	public String queryDestroyedDrugList(HttpServletRequest req) {
+		if (req.getSession().getAttribute("currentAdmin") == null) {
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
+		}
+
+		// 请求映射到 WEB-INF/views/admin/query-destroyed-drug-list.jsp
+		return "admin/query-destroyed-drug-list";
 	}
 
 	@RequestMapping(value = "/changeApwd")

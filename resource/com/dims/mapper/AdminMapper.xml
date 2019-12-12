@@ -71,16 +71,17 @@
 	</select>
 	
 	<!-- 查看某一药品的所有库存批次 -->
-	<select id="queryAllPDbatches" parameterType="Drug" resultType="InventoryDrug">
+	<select id="querySpecificPDbatches" parameterType="Drug" resultType="InventoryDrug">
 		SELECT *
 		FROM InventoryDrugView
 		WHERE PDno = #{PDno};
 	</select>
 	
 	<!-- 参看某一药品的所有已销毁批次 -->
-	<select id="queryAllDestroyedPDbatches" parameterType="Drug" resultType="DestroyedDrug">
+	<select id="querySpecificDestroyedPDbatches" parameterType="Drug" resultType="DestroyedDrug">
 		SELECT *
-		FROM DestroyedDrugView;
+		FROM DestroyedDrugView
+		WHERE PDno = #{PDno};
 	</select>
 	
 	<!-- 修改登陆密码 -->

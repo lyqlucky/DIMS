@@ -69,13 +69,13 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
-	public List<InventoryDrug> queryAllPDbatches(Drug drug) { // 查看某一药品的所有库存批次
-		return adminMapper.queryAllPDbatches(drug);
+	public List<InventoryDrug> querySpecificPDbatches(Drug drug) { // 查看某一药品的所有库存批次
+		return adminMapper.querySpecificPDbatches(drug);
 	}
 
 	@Override
-	public List<DestroyedDrug> queryAllDestroyedPDbatches(Drug drug) { // 参看某一药品的所有已销毁批次
-		return adminMapper.queryAllDestroyedPDbatches(drug);
+	public List<DestroyedDrug> querySpecificDestroyedPDbatches(Drug drug) { // 参看某一药品的所有已销毁批次
+		return adminMapper.querySpecificDestroyedPDbatches(drug);
 	}
 
 	@Override
