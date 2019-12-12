@@ -12,17 +12,15 @@
 	<!-- 统计量少的库存药品种数 -->
 	<select id="countLowInventoryDrugs" resultType="int">
 		SELECT COUNT(*)
-		FROM (SELECT d.PDno
-				FROM Drug d LEFT OUTER JOIN InventoryDrug i ON d.PDno = i.PDno
-				GROUP BY d.PDno
-				HAVING COALESCE(SUM(i.PDnum), 0) <![CDATA[ <= ]]> 50) Temp;
+		FROM DrugView
+		WHERE PDnum <![CDATA[ <= ]]> 50;
 	</select>
 	
 	<!-- 统计临期库存药品批数 -->
 	<select id="countClose2ExpiryPDbatches" resultType="int">
 		SELECT COUNT(*)
-		FROM Drug d, InventoryDrug i
-		WHERE d.PDno = i.PDno AND DATEDIFF(DAY, i.PDbatch, GETDATE()) >= (d.PDlife / 10 * 9);
+		FROM InventoryDrugView
+		WHERE DATEDIFF(DAY, PDbatch, GETDATE()) >= (PDlife / 10 * 9);
 	</select>
 	
 	<!-- 统计库存药品种数 -->
@@ -88,6 +86,20 @@
 		SELECT *
 		FROM DestroyedDrugView
 		WHERE PDno = #{PDno};
+	</select>
+	
+	<!-- 查看量少的库存药品列表 -->
+	<select id="queryLowInventoryDrugs" resultType="InventoryDrug">
+		SELECT *
+		FROM DrugView
+		WHERE PDnum <![CDATA[ <= ]]> 50;
+	</select>
+	
+	<!-- 查看临期库存药品列表 -->
+	<select id="queryClose2ExpiryPDbatches" resultType="InventoryDrug">
+		SELECT *
+		FROM InventoryDrugView
+		WHERE DATEDIFF(DAY, PDbatch, GETDATE()) >= (PDlife / 10 * 9);
 	</select>
 	
 	<!-- 修改登陆密码 -->

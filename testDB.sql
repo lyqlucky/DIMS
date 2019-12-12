@@ -19,6 +19,10 @@ FROM (SELECT d.PDno
 		GROUP BY d.PDno
 		HAVING COALESCE(SUM(i.PDnum), 0) <= 50) Temp;
 
+SELECT COUNT(*)
+FROM DrugView
+WHERE PDnum <= 50;
+
 -- 统计临期库存药品批数 countClose2ExpiryPDbatches
 SELECT COUNT(*)
 FROM Drug d, InventoryDrug i

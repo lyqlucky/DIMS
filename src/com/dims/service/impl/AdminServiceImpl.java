@@ -84,6 +84,16 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
+	public List<InventoryDrug> queryLowInventoryDrugs() { // 查看量少的库存药品列表
+		return adminMapper.queryLowInventoryDrugs();
+	}
+
+	@Override
+	public List<InventoryDrug> queryClose2ExpiryPDbatches() { // 查看临期库存药品列表
+		return adminMapper.queryClose2ExpiryPDbatches();
+	}
+
+	@Override
 	public void changeApwd(String Apwd, String Ano) { // 修改登录密码
 		adminMapper.changeApwd(Apwd, Ano);
 	}

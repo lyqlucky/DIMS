@@ -35,5 +35,9 @@ public interface AdminMapper {
 
 	public List<DestroyedDrug> querySpecificDestroyedPDbatches(Drug drug); // 参看某一药品的所有已销毁批次
 
+	public List<InventoryDrug> queryLowInventoryDrugs(); // 查看量少的库存药品列表
+
+	public List<InventoryDrug> queryClose2ExpiryPDbatches(); // 查看临期库存药品列表
+
 	public void changeApwd(String Apwd, String Ano); // 修改登录密码
 }
