@@ -98,9 +98,7 @@ public class UserController {
 
 	@RequestMapping(value = "logout")
 	public String logout(HttpServletRequest req) {
-		req.getSession().removeAttribute("currentAdmin");
-		req.getSession().removeAttribute("currentDoctor");
-		req.getSession().removeAttribute("currentNurse");
+		req.getSession().invalidate();
 
 		// 重定向到 WEB-INF/views/login.jsp
 		return "redirect:/login";
