@@ -8,42 +8,42 @@
 
 ## 任务进度  
 
-- [ ] [0. 本组成员任务分工](#本组成员任务分工)  
+- [X] [0. 本组成员任务分工](#本组成员任务分工)  
 - [ ] [1. 数据库设计](#数据库设计)  
 	- [ ] [1.1 需求分析](#需求分析)  
 	- [ ] [1.2 概念结构设计](#概念结构设计)  
 	- [ ] [1.3 逻辑结构设计](#逻辑结构设计)  
 	- [ ] [1.4 物理结构设计](#物理结构设计)  
-	- [ ] [1.5 数据库实施](#数据库实施)  
-	- [ ] [1.6 数据库运行和维护](#数据库运行和维护)  
+	- [X] [1.5 数据库实施](#数据库实施)  
+	- [X] [1.6 数据库运行和维护](#数据库运行和维护)  
 - [ ] [2. 应用系统设计](#应用系统设计)  
-	- [X] [2.0 环境准备](#环境准备)  
-		- [X] [2.0.1 配置 Java 环境](#配置-Java-环境)  
-		- [X] [2.0.2 安装 Eclipse IDE for Enterprise Java Developers](#安装-Eclipse-IDE-for-Enterprise-Java-Developers)  
-		- [X] [2.0.3 配置 Tomcat 环境](#配置-Tomcat-环境)  
-		- [X] [2.0.4 在 Eclipse 中配置 Tomcat Server](#在-Eclipse-中配置-Tomcat-Server)  
-	- [X] [2.1 创建一个新的 Dynamic Web 项目](#创建一个新的-Dynamic-Web-项目)  
-	- [X] [2.2 集成 Spring 和 SpingMVC](#集成-Spring-和-SpingMVC)  
-		- [X] [2.2.1 导入 Spring 的 jar 包](#导入-Spring-的-jar-包)  
-		- [X] [2.2.2 导入 SpringMVC 的 jar 包](#导入-SpringMVC-的-jar-包)  
-		- [X] [2.2.3 导入 Apache Commons 的 jar 包](#导入-Apache-Commons-的-jar-包)  
-		- [X] [2.2.4 导入其它基础 jar 包](#导入其它基础-jar-包)  
-		- [X] [2.2.5 配置 Spring](#配置-Spring)  
-		- [X] [2.2.6 配置 SpringMVC](#配置-SpringMVC)  
-	- [X] [2.3 配置 web.xml](#配置-web.xml)  
-	- [X] [2.4 集成 Spring 和 MyBatis](#集成-Spring-和-MyBatis)  
-		- [X] [2.4.1 导入 MyBatis 的 jar 包](#导入-MyBatis-的-jar-包)  
-		- [X] [2.4.2 配置 MyBatis](#配置-MyBatis)  
-	- [X] [2.5 配置 log4j](#配置-log4j)  
-	- [X] [2.6 集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板](#集成基于-Bootstrap-前端框架的-ACE-管理系统页面模板)  
-	- [X] [2.7 导入 Apache Taglibs 的 jar 包](#导入-Apache-Taglibs-的-jar-包)  
-	- [ ] [2.8 详细设计阶段](#详细设计阶段)  
-	- [ ] [2.9 遇到的问题](#遇到的问题)  
+	- [ ] [2.1 详细设计阶段](#详细设计阶段)  
+	- [X] [2.2 环境准备](#环境准备)  
+		- [X] [2.2.1 配置 Java 环境](#配置-Java-环境)  
+		- [X] [2.2.2 安装 Eclipse IDE for Enterprise Java Developers](#安装-Eclipse-IDE-for-Enterprise-Java-Developers)  
+		- [X] [2.2.3 配置 Tomcat 环境](#配置-Tomcat-环境)  
+		- [X] [2.2.4 在 Eclipse 中配置 Tomcat Server](#在-Eclipse-中配置-Tomcat-Server)  
+	- [X] [2.3 创建一个新的 Dynamic Web 项目](#创建一个新的-Dynamic-Web-项目)  
+	- [X] [2.4 集成 Spring 和 SpingMVC](#集成-Spring-和-SpingMVC)  
+		- [X] [2.4.1 导入 Spring 的 jar 包](#导入-Spring-的-jar-包)  
+		- [X] [2.4.2 导入 SpringMVC 的 jar 包](#导入-SpringMVC-的-jar-包)  
+		- [X] [2.4.3 导入 Apache Commons 的 jar 包](#导入-Apache-Commons-的-jar-包)  
+		- [X] [2.4.4 导入其它基础 jar 包](#导入其它基础-jar-包)  
+		- [X] [2.4.5 配置 Spring](#配置-Spring)  
+		- [X] [2.4.6 配置 SpringMVC](#配置-SpringMVC)  
+	- [X] [2.5 配置 web.xml](#配置-web.xml)  
+	- [X] [2.6 集成 Spring 和 MyBatis](#集成-Spring-和-MyBatis)  
+		- [X] [2.6.1 导入 MyBatis 的 jar 包](#导入-MyBatis-的-jar-包)  
+		- [X] [2.6.2 配置 MyBatis](#配置-MyBatis)  
+	- [X] [2.7 配置 log4j](#配置-log4j)  
+	- [X] [2.8 集成基于 Bootstrap 前端框架的 ACE 管理系统页面模板](#集成基于-Bootstrap-前端框架的-ACE-管理系统页面模板)  
+	- [X] [2.9 导入 Apache Taglibs 的 jar 包](#导入-Apache-Taglibs-的-jar-包)  
 - [ ] [3. 测试与验收](#测试与验收)  
 	- [ ] [3.1 界面测试](#界面测试)  
 	- [ ] [3.2 功能测试](#功能测试)  
 	- [ ] [3.3 性能测试](#性能测试)  
 	- [ ] [3.4 需求测试](#需求测试)  
+- [ ] [4. 遇到的问题](#遇到的问题)  
 
 ## 本组成员任务分工  
 
@@ -226,6 +226,20 @@
 
 * [B/S、C/S 模式介绍](https://blog.csdn.net/wang404838334/article/details/78449164)  
 * [SSM 框架介绍](https://blog.csdn.net/jack_xia_2018/article/details/83540199)  
+
+### 详细设计阶段  
+
+![详细设计_时序图_User](./Doc/详细设计_时序图_User.png)  
+
+![详细设计_时序图_Admin](./Doc/详细设计_时序图_Admin.png)  
+
+![详细设计_时序图_Doctor](./Doc/详细设计_时序图_Doctor.png)  
+
+![详细设计_时序图_Nurse](./Doc/详细设计_时序图_Nurse.png)  
+
+参考：  
+
+* [UML 之时序图](https://www.cnblogs.com/gd-luojialin/p/10356740.html)  
 
 ### 环境准备  
 
@@ -591,21 +605,25 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 * taglibs-standard-impl-1.2.5.jar  
 * taglibs-standard-spec-1.2.5.jar  
 
-### 详细设计阶段  
+## 测试与验收  
 
-![详细设计_时序图_User](./Doc/详细设计_时序图_User.png)  
+### 界面测试  
 
-![详细设计_时序图_Admin](./Doc/详细设计_时序图_Admin.png)  
+界面测试：反复不间断地点击各窗体连接，测试其连接情况是否达到预期效果。  
 
-![详细设计_时序图_Doctor](./Doc/详细设计_时序图_Doctor.png)  
+### 功能测试  
 
-![详细设计_时序图_Nurse](./Doc/详细设计_时序图_Nurse.png)  
+功能测试：对系统各功能模块逐一测试，尽最大可能地发现潜在 BUG 错误。  
 
-参考：  
+### 性能测试  
 
-* [UML 之时序图](https://www.cnblogs.com/gd-luojialin/p/10356740.html)  
+性能测试：将程序以局域网的形式连接数据库，查看数据连接是否满足多用户的要求。  
 
-### 遇到的问题  
+### 需求测试  
+
+需求测试：根据需求分析的内容，给使用者进行试用，测试软件是否和当初设计的一样能满足各用户需求。  
+
+## 遇到的问题  
 
 1. `javax.el.PropertyNotFoundException: 类型[com.dims.domain.InventoryDrug]上找不到属性[Sno]`：  
 	
@@ -670,21 +688,3 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 	* [一分钟实现内网穿透 (ngrok 服务器搭建)](https://blog.csdn.net/zhangguo5/article/details/77848658)  
 	* [内网穿透神器——Serveo](https://www.jianshu.com/p/d0b3991a9ce1)  
 	* [内网穿透工具的原理与开发实战](https://zhuanlan.zhihu.com/p/30351943)  
-
-## 测试与验收  
-
-### 界面测试  
-
-界面测试：反复不间断地点击各窗体连接，测试其连接情况是否达到预期效果。  
-
-### 功能测试  
-
-功能测试：对系统各功能模块逐一测试，尽最大可能地发现潜在 BUG 错误。  
-
-### 性能测试  
-
-性能测试：将程序以局域网的形式连接数据库，查看数据连接是否满足多用户的要求。  
-
-### 需求测试  
-
-需求测试：根据需求分析的内容，给使用者进行试用，测试软件是否和当初设计的一样能满足各用户需求。  
