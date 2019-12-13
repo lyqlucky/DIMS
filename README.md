@@ -663,6 +663,14 @@ log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 	参考：  
 	* [SQL Server DATEDIFF() 函数](https://www.w3school.com.cn/sql/func_datediff.asp)  
 
+11. 怎样进行内网穿透，让外网能访问本地的应用？  
+
+	参考：  
+	* [花生壳官网](https://hsk.oray.com/)  
+	* [一分钟实现内网穿透 (ngrok 服务器搭建)](https://blog.csdn.net/zhangguo5/article/details/77848658)  
+	* [内网穿透神器——Serveo](https://www.jianshu.com/p/d0b3991a9ce1)  
+	* [内网穿透工具的原理与开发实战](https://zhuanlan.zhihu.com/p/30351943)  
+
 ## 测试与验收  
 
 ### 界面测试  
