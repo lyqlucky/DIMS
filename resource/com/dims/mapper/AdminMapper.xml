@@ -106,7 +106,8 @@
 	<!-- 查看药品供应商列表 -->
 	<select id="queryAllSuppliers" resultType="Supplier">
 		SELECT *
-		FROM Supplier;
+		FROM Supplier
+		ORDER BY Sname;
 	</select>
 	
 	<!-- 修改登陆密码 -->
