@@ -359,7 +359,7 @@
 																<fmt:formatDate value="${drug.dtime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
 															</td>
 															<td>
-																<div class="hidden-md hidden-lg">
+																<div class="hidden-sm hidden-xs action-buttons">
 																	<a class="blue" href="#">
 																		<i class="ace-icon fa fa-search-plus bigger-130"></i>
 																	</a>
@@ -370,7 +370,7 @@
 																		<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																	</a>
 																</div>
-																<div class="hidden-sm hidden-xs action-buttons">
+																<div class="hidden-md hidden-lg">
 																	<div class="inline pos-rel">
 																		<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
 																			<i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
