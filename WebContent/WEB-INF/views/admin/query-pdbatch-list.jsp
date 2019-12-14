@@ -323,12 +323,6 @@
 										<table id="simple-table" class="table table-bordered table-hover">
 											<thead>
 												<tr>
-													<th class="center">
-														<label class="pos-rel">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"></span>
-														</label>
-													</th>
 													<th class="detail-col">明细</th>
 													<th>药品编号</th>
 													<th>药品名称</th>
@@ -340,12 +334,6 @@
 											<tbody>
 												<c:forEach items="${drugs}" var="drug">
 													<tr>
-														<td class="center">
-															<label class="pos-rel">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
 														<td class="center">
 															<div class="action-buttons">
 																<a href="#" class="green bigger-140 show-details-btn" title="具体明细">
@@ -418,6 +406,7 @@
 																					<th>药品供应商</th>
 																					<th>药品入库管理员</th>
 																					<th>药品入库时间</th>
+																					<th>操作</th>
 																				</tr>
 																			</thead>
 																			<tbody>
@@ -431,6 +420,52 @@
 																						<td>${batch.SAno}</td>
 																						<td>
 																							<fmt:formatDate value="${batch.stime}" pattern="yyyy 年 MM 月 dd 日 HH:mm:ss"/>
+																						</td>
+																						<td>
+																							<div class="hidden-sm hidden-xs btn-group">
+																								<button class="btn btn-xs btn-success">
+																									<i class="ace-icon fa fa-check bigger-120"></i>
+																								</button>
+																								<button class="btn btn-xs btn-info">
+																									<i class="ace-icon fa fa-pencil bigger-120"></i>
+																								</button>
+																								<button class="btn btn-xs btn-danger">
+																									<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																								</button>
+																								<button class="btn btn-xs btn-warning">
+																									<i class="ace-icon fa fa-flag bigger-120"></i>
+																								</button>
+																							</div>
+																							<div class="hidden-md hidden-lg">
+																								<div class="inline pos-rel">
+																									<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+																										<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+																									</button>
+																									<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+																										<li>
+																											<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																												<span class="blue">
+																													<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																												</span>
+																											</a>
+																										</li>
+																										<li>
+																											<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																												<span class="green">
+																													<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																												</span>
+																											</a>
+																										</li>
+																										<li>
+																											<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																												<span class="red">
+																													<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																												</span>
+																											</a>
+																										</li>
+																									</ul>
+																								</div>
+																							</div>
 																						</td>
 																					</tr>
 																				</c:forEach>

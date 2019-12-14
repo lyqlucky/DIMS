@@ -332,12 +332,6 @@
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
-														<th class="center">
-															<label class="pos-rel">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</th>
 														<th>药品编号</th>
 														<th>药品名称</th>
 														<th>药品数量</th>
@@ -352,12 +346,6 @@
 												<tbody>
 													<c:forEach items="${destroyedDrugs}" var="drug">
 														<tr>
-															<td class="center">
-																<label class="pos-rel">
-																	<input type="checkbox" class="ace" />
-																	<span class="lbl"></span>
-																</label>
-															</td>
 															<td>${drug.PDno}</td>
 															<td>${drug.PDname}</td>
 															<td>${drug.PDnum}</td>
@@ -473,9 +461,7 @@
 				.DataTable( {
 					bAutoWidth: false,
 					"aoColumns": [
-					  { "bSortable": false },
-					  null,null, null, null, null, null, null, null,
-					  { "bSortable": false }
+						null, null, null, null, null, null, null, null, { "bSortable": false }
 					],
 					"aaSorting": [],
 					"iDisplayLength": 5,

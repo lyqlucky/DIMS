@@ -304,12 +304,6 @@
 											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
-														<th class="center">
-															<label class="pos-rel">
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</th>
 														<th>处方编号</th>
 														<th>病人身份证号</th>
 														<th>开出医生编号</th>
@@ -320,12 +314,6 @@
 												<tbody>
 													<c:forEach items="${rxs}" var="rx">
 														<tr>
-															<td class="center">
-																<label class="pos-rel">
-																	<input type="checkbox" class="ace" />
-																	<span class="lbl"></span>
-																</label>
-															</td>
 															<td>${rx.pno}</td>
 															<td>${rx.pid}</td>
 															<td>${rx.dno}</td>
@@ -435,7 +423,7 @@
 				.DataTable( {
 					bAutoWidth: false,
 					"aoColumns": [
-					  { "bSortable": false }, null,null, null, null, { "bSortable": false }
+						null, null, null, null, { "bSortable": false }
 					],
 					"aaSorting": [],
 					"iDisplayLength": 5,
