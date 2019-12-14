@@ -232,6 +232,13 @@
 						<b class="arrow"></b>
 					</li>
 					<li class="">
+						<a href="../admin/query-supplier-list">
+							<i class="menu-icon fa fa-briefcase"></i>
+							<span class="menu-text"> 查看供应商信息列表 </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
 							<span class="menu-text"> 查看药品库存信息 </span>
