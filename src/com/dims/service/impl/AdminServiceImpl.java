@@ -9,6 +9,7 @@ import com.dims.domain.Admin;
 import com.dims.domain.DestroyedDrug;
 import com.dims.domain.Drug;
 import com.dims.domain.InventoryDrug;
+import com.dims.domain.Supplier;
 import com.dims.domain.User;
 import com.dims.mapper.AdminMapper;
 import com.dims.service.IAdminService;
@@ -91,6 +92,11 @@ public class AdminServiceImpl implements IAdminService {
 	@Override
 	public List<InventoryDrug> queryClose2ExpiryPDbatches() { // 查看临期库存药品列表
 		return adminMapper.queryClose2ExpiryPDbatches();
+	}
+
+	@Override
+	public List<Supplier> queryAllSuppliers() { // 查看药品供应商列表
+		return adminMapper.queryAllSuppliers();
 	}
 
 	@Override

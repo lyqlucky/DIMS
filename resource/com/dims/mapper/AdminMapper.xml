@@ -65,7 +65,8 @@
 	<!-- 查看药品库存列表 -->
 	<select id="queryAllDrugs" resultType="Drug">
 		SELECT *
-		FROM DrugView;
+		FROM DrugView
+		ORDER BY PDname;
 	</select>
 	
 	<!-- 查看某一药品的所有库存批次 -->
@@ -100,6 +101,12 @@
 		SELECT *
 		FROM InventoryDrugView
 		WHERE DATEDIFF(DAY, PDbatch, GETDATE()) >= (PDlife / 10 * 9);
+	</select>
+	
+	<!-- 查看药品供应商列表 -->
+	<select id="queryAllSuppliers" resultType="Supplier">
+		SELECT *
+		FROM Supplier;
 	</select>
 	
 	<!-- 修改登陆密码 -->

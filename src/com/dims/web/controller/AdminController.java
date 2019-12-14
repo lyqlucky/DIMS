@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dims.domain.Admin;
 import com.dims.domain.DestroyedDrug;
 import com.dims.domain.Drug;
+import com.dims.domain.Supplier;
 import com.dims.service.IAdminService;
 
 @Controller
@@ -119,6 +120,21 @@ public class AdminController {
 		return "admin/query-destroyed-pdbatch-list";
 	}
 
+	@RequestMapping(value = "/query-supplier-list")
+	public String querySupplierList(HttpServletRequest req, Model model) {
+		if (req.getSession().getAttribute("currentAdmin") == null) {
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
+		}
+
+		List<Supplier> suppliers = adminService.queryAllSuppliers();
+
+		model.addAttribute("suppliers", suppliers);
+
+		// 请求映射到 WEB-INF/views/admin/query-supplier-list.jsp
+		return "admin/query-supplier-list";
+	}
+
 	@RequestMapping(value = "/fill-storage-form")
 	public String fillStorageForm(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("currentAdmin") == null) {
@@ -127,8 +143,10 @@ public class AdminController {
 		}
 
 		List<Drug> drugs = adminService.queryAllDrugs();
+		List<Supplier> suppliers = adminService.queryAllSuppliers();
 
 		model.addAttribute("drugs", drugs);
+		model.addAttribute("suppliers", suppliers);
 
 		// 请求映射到 WEB-INF/views/admin/fill-storage-form.jsp
 		return "admin/fill-storage-form";

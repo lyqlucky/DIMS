@@ -6,6 +6,7 @@ import com.dims.domain.Admin;
 import com.dims.domain.DestroyedDrug;
 import com.dims.domain.Drug;
 import com.dims.domain.InventoryDrug;
+import com.dims.domain.Supplier;
 import com.dims.domain.User;
 
 public interface IAdminService {
@@ -38,6 +39,8 @@ public interface IAdminService {
 	public List<InventoryDrug> queryLowInventoryDrugs(); // 查看量少的库存药品列表
 
 	public List<InventoryDrug> queryClose2ExpiryPDbatches(); // 查看临期库存药品列表
+
+	public List<Supplier> queryAllSuppliers(); // 查看药品供应商列表
 
 	public void changeApwd(String Apwd, String Ano); // 修改登录密码
 }
