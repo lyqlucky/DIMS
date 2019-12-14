@@ -7,8 +7,8 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>查看库存药品列表 - 医院药品库存管理系统</title>
-		<meta name="description" content="查看库存药品列表 - 医院药品库存管理系统" />
+		<title>查看供应商信息列表 - 医院药品库存管理系统</title>
+		<meta name="description" content="查看供应商信息列表 - 医院药品库存管理系统" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
@@ -306,19 +306,16 @@
 								<i class="ace-icon fa fa-home home-icon"></i>
 								<a href="../admin/index">首页</a>
 							</li>
-							<li>
-								<a href="../admin/query-drug-list">查看药品库存信息</a>
-							</li>
-							<li class="active">查看库存药品列表</li>
+							<li class="active">查看供应商信息列表</li>
 						</ul><!-- /.breadcrumb -->
 					</div>
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								查看库存药品列表
+								查看供应商信息列表
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									库存药品列表
+									供应商信息列表
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
