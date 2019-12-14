@@ -332,7 +332,7 @@
 								<form class="form-horizontal" role="form" method="post" action="../admin/submitStorageForm">
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 药品名称 </label>
-										<div class="col-xs-10 col-sm-4">
+										<div class="col-sm-4">
 											<select class="chosen-select form-control" id="form-field-1" name="PDno" data-placeholder="选择药品..." required="required">
 												<option value=""></option>
 												<c:forEach items="${drugs}" var="drug">
@@ -343,9 +343,9 @@
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="id-date-picker-1"> 药品批次 (生产时间) </label>
-										<div class="col-xs-10 col-sm-4">
+										<div class="col-sm-4">
 											<div class="input-group">
-												<input class="form-control date-picker col-xs-10 col-sm-5" id="id-date-picker-1" type="text" placeholder="药品批次 (生产时间)" data-date-format="yyyy 年 mm 月 dd 日" required="required" />
+												<input class="form-control date-picker" id="id-date-picker-1" type="text" placeholder="药品批次 (生产时间)" data-date-format="yyyy 年 mm 月 dd 日" required="required" />
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
@@ -353,14 +353,14 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="spinner2"> 药品数量 </label>
-										<div class="col-sm-9">
-											<input type="text" class="input-sm" id="spinner2" name="PDnum" min=0 placeholder="药品数量" class="col-xs-10 col-sm-5" required="required" />
+										<label class="col-sm-3 control-label no-padding-right" for="spinner1"> 药品数量 </label>
+										<div class="col-sm-4">
+											<input type="text" id="spinner1" name="PDnum" placeholder="药品数量" required="required" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> 药品供应商 </label>
-										<div class="col-xs-10 col-sm-4">
+										<div class="col-sm-4">
 											<select class="chosen-select form-control" id="form-field-4" name="Sno" data-placeholder="选择药品供应商..." required="required">
 												<option value=""></option>
 												<c:forEach items="${suppliers}" var="supplier">
@@ -658,14 +658,14 @@
 					});
 					*/
 				});
-				$('#spinner1').ace_spinner({value:0,min:0,max:200,step:10, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+				$('#spinner1').ace_spinner({value:0, min:0, max:10000, step:100, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
 				.closest('.ace-spinner')
 				.on('changed.fu.spinbox', function(){
 					//console.log($('#spinner1').val())
-				}); 
-				$('#spinner2').ace_spinner({value:0,min:0,max:10000,step:100, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
-				$('#spinner3').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus bigger-110', icon_down:'ace-icon fa fa-minus bigger-110', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
-				$('#spinner4').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus', icon_down:'ace-icon fa fa-minus', btn_up_class:'btn-purple' , btn_down_class:'btn-purple'});
+				});
+				$('#spinner2').ace_spinner({value:0, min:0, max:10000, step:100, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
+				$('#spinner3').ace_spinner({value:0, min:-100, max:100, step:10, on_sides: true, icon_up:'ace-icon fa fa-plus bigger-110', icon_down:'ace-icon fa fa-minus bigger-110', btn_up_class:'btn-success', btn_down_class:'btn-danger'});
+				$('#spinner4').ace_spinner({value:0, min:-100, max:100, step:10, on_sides: true, icon_up:'ace-icon fa fa-plus', icon_down:'ace-icon fa fa-minus', btn_up_class:'btn-purple' , btn_down_class:'btn-purple'});
 				//$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
 				//or
 				//$('#spinner1').closest('.ace-spinner').spinner('disable').spinner('enable').spinner('value', 11);//disable, enable or change value
@@ -794,7 +794,6 @@
 					$('.limiterBox,.autosizejs').remove();
 					$('.daterangepicker.dropdown-menu,.colorpicker.dropdown-menu,.bootstrap-datetimepicker-widget.dropdown-menu').remove();
 				});
-			
 			});
 		</script>
 	</body>

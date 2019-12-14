@@ -322,6 +322,11 @@
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
+						<button class="btn btn-sm btn-primary">
+							<i class="ace-icon fa fa-pencil-square-o bigger-110"></i>
+							添加供应商记录
+							<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+						</button>
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
