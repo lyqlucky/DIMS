@@ -343,6 +343,7 @@
 														<th>药品名称</th>
 														<th>药品保质期 (天数)</th>
 														<th>药品数量</th>
+														<th>药品状态</th>
 														<th>操作</th>
 													</tr>
 												</thead>
@@ -353,6 +354,14 @@
 															<td>${drug.PDname}</td>
 															<td>${drug.PDlife}</td>
 															<td>${drug.PDnum}</td>
+															<td class="hidden-480">
+																<c:if test="${drug.PDnum <= 50}">
+																	<span class="label label-sm label-danger">
+																		<i class="ace-icon fa fa-bolt bigger-110"></i>
+																		库存紧张
+																	</span>
+																</c:if>
+															</td>
 															<td>
 																<div class="hidden-sm hidden-xs action-buttons">
 																	<a class="blue" href="#">
@@ -456,7 +465,7 @@
 				.DataTable( {
 					bAutoWidth: false,
 					"aoColumns": [
-						null, null, null, null, { "bSortable": false }
+						null, null, null, null, null, { "bSortable": false }
 					],
 					"aaSorting": [],
 					"iDisplayLength": 5,
@@ -490,46 +499,42 @@
 					//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
 					//you may want to wrap the table inside a "div.dataTables_borderWrap" element
 					//"iDisplayLength": 50
-					select: {
-						style: 'multi'
-					}
 			    } );
 				$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 				new $.fn.dataTable.Buttons( myTable, {
 					buttons: [
 					  {
 						"extend": "colvis",
-						"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+						"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>显示/隐藏列</span>",
 						"className": "btn btn-white btn-primary btn-bold",
 						columns: ':not(:first):not(:last)'
 					  },
 					  {
 						"extend": "copy",
-						"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
+						"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>复制到剪贴板</span>",
 						"className": "btn btn-white btn-primary btn-bold"
 					  },
 					  {
 						"extend": "csv",
-						"text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
+						"text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>导出到 CSV 文件</span>",
 						"className": "btn btn-white btn-primary btn-bold"
 					  },
-					  {
+					  /* {
 						"extend": "excel",
-						"text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+						"text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>导出到 Excel 文件</span>",
 						"className": "btn btn-white btn-primary btn-bold"
 					  },
 					  {
 						"extend": "pdf",
-						"text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
+						"text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>导出到 PDF 文件</span>",
 						"className": "btn btn-white btn-primary btn-bold"
-					  },
+					  }, */
 					  {
 						"extend": "print",
-						"text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
+						"text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>打印</span>",
 						"className": "btn btn-white btn-primary btn-bold",
-						autoPrint: false,
-						message: 'This print was produced using the Print button for DataTables'
-					  }		  
+						autoPrint: false
+					  }
 					]
 				} );
 				myTable.buttons().container().appendTo( $('.tableTools-container') );
