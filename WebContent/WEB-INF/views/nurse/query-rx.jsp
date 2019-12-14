@@ -300,35 +300,26 @@
 											<input readonly="readonly" type="text" id="form-field-1" placeholder="处方编号" class="col-xs-10 col-sm-5" name="Pno" value="${rx.pno}" />
 										</div>
 									</div>
-									<div class="space-4"></div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 病人身份证号码 </label>
 										<div class="col-sm-9">
 											<input readonly="readonly" type="text" id="form-field-2" placeholder="病人身份证号码" class="col-xs-10 col-sm-5" name="Pid" value="${rx.pid}" />
 										</div>
 									</div>
-									<div class="space-4"></div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> 开出医生编号 </label>
 										<div class="col-sm-9">
 											<input readonly="readonly" type="text" id="form-field-3" placeholder="开出医生编号" class="col-xs-10 col-sm-5" name="Dno" value="${rx.dno}" />
 										</div>
 									</div>
-									<div class="space-4"></div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="date-timepicker1"> 开出时间 </label>
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-body">
-													<div class="widget-main">
-														<div class="input-group">
-															<input readonly="readonly" type="text" id="date-timepicker1" placeholder="开出时间" class="form-control" name="Ptime" value='<fmt:formatDate value="${rx.ptime}" pattern="MM/dd/yyyy HH:mm:ss"/>'/>
-															<span class="input-group-addon">
-																<i class="fa fa-clock-o bigger-110"></i>
-															</span>
-														</div>
-													</div>
-												</div>
+										<div class="col-xs-10 col-sm-4">
+											<div class="input-group">
+												<input readonly="readonly" type="text" id="date-timepicker1" placeholder="开出时间" class="form-control" name="Ptime" value='<fmt:formatDate value="${rx.ptime}" pattern="MM/dd/yyyy HH:mm:ss"/>'/>
+												<span class="input-group-addon">
+													<i class="fa fa-clock-o bigger-110"></i>
+												</span>
 											</div>
 										</div>
 									</div>
@@ -341,27 +332,19 @@
 													<input readonly="readonly" type="text" id="form-field-5" placeholder="处理护士编号" class="col-xs-10 col-sm-5" name="Nno" value="${rx.nno}" />
 												</div>
 											</div>
-											<div class="space-4"></div>
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right" for="date-timepicker1"> 处理时间 </label>
-												<div class="col-sm-4">
-													<div class="widget-box">
-														<div class="widget-body">
-															<div class="widget-main">
-																<div class="input-group">
-																	<input readonly="readonly" type="text" id="date-timepicker1" placeholder="处理时间" class="form-control" name="Htime" value='<fmt:formatDate value="${rx.htime}" pattern="MM/dd/yyyy HH:mm:ss"/>'/>
-																	<span class="input-group-addon">
-																		<i class="fa fa-clock-o bigger-110"></i>
-																	</span>
-																</div>
-															</div>
-														</div>
+												<div class="col-xs-10 col-sm-4">
+													<div class="input-group">
+														<input readonly="readonly" type="text" id="date-timepicker1" placeholder="处理时间" class="form-control" name="Htime" value='<fmt:formatDate value="${rx.htime}" pattern="MM/dd/yyyy HH:mm:ss"/>'/>
+														<span class="input-group-addon">
+															<i class="fa fa-clock-o bigger-110"></i>
+														</span>
 													</div>
 												</div>
 											</div>
 										</c:when>
 									</c:choose>
-									<div class="space-4"></div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-7"> 处方状态 </label>
 										<div class="col-sm-9">
@@ -375,7 +358,6 @@
 											</c:choose>
 										</div>
 									</div>
-									<div class="space-4"></div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 处方包含的药品列表 </label>
 										<div class="col-xs-10 col-sm-4">

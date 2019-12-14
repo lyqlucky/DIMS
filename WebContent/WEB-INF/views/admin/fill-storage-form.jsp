@@ -336,22 +336,12 @@
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="id-date-picker-1"> 药品批次 (生产时间) </label>
-										<div class="col-sm-4">
-											<div class="widget-box">
-												<div class="widget-body">
-													<div class="widget-main">
-														<div class="row">
-															<div class="col-xs-8 col-sm-11">
-																<div class="input-group">
-																	<input class="form-control date-picker col-xs-10 col-sm-5" id="id-date-picker-1" type="text" placeholder="药品批次 (生产时间)" data-date-format="yyyy 年 mm 月 dd 日" required="required" />
-																	<span class="input-group-addon">
-																		<i class="fa fa-calendar bigger-110"></i>
-																	</span>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+										<div class="col-xs-10 col-sm-4">
+											<div class="input-group">
+												<input class="form-control date-picker col-xs-10 col-sm-5" id="id-date-picker-1" type="text" placeholder="药品批次 (生产时间)" data-date-format="yyyy 年 mm 月 dd 日" required="required" />
+												<span class="input-group-addon">
+													<i class="fa fa-calendar bigger-110"></i>
+												</span>
 											</div>
 										</div>
 									</div>
