@@ -99,10 +99,7 @@ public class AdminController {
 			drug.setInventoryDrugs(adminService.querySpecificPDbatches(drug));
 		}
 
-		List<Supplier> suppliers = adminService.queryAllSuppliers();
-
 		model.addAttribute("drugs", drugs);
-		model.addAttribute("suppliers", suppliers);
 
 		// 请求映射到 WEB-INF/views/admin/query-pdbatch-list.jsp
 		return "admin/query-pdbatch-list";

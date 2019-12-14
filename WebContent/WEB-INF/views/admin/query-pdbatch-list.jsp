@@ -322,92 +322,14 @@
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
-						<a href="#modal-table" role="button" class="green" data-toggle="modal">
+						<a href="../admin/fill-storage-form" role="button" class="green" data-toggle="modal">
 							<button class="btn btn-sm btn-primary">
 								<i class="ace-icon fa fa-pencil-square-o bigger-110"></i>
 								添加药品批次入库记录
 								<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
 							</button>
 						</a>
-						<div id="modal-table" class="modal fade" tabindex="-1">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header no-padding">
-										<div class="table-header">
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-												<span class="white">&times;</span>
-											</button>
-											填写药品入库表单
-										</div>
-									</div>
-									<div class="space-6"></div>
-									<form class="form-horizontal" role="form" method="post" action="../admin/submitStorageForm">
-										<div class="modal-body no-padding">
-											<div class="row">
-												<div class="col-xs-12">
-													<div class="form-group">
-														<label class="col-sm-4 control-label no-padding-right" for="form-field-1"> 药品名称 </label>
-														<div class="col-sm-5">
-															<select class="chosen-select form-control" id="form-field-1" name="PDno" required="required">
-																<option value="" disabled="disabled" selected="selected" style="display: none;">选择药品...</option>
-																<c:forEach items="${drugs}" var="drug">
-																	<option value="${drug.PDno}">${drug.PDname}</option>
-																</c:forEach>
-															</select>
-														</div>
-													</div>
-													<div class="form-group">
-														<label class="col-sm-4 control-label no-padding-right" for="id-date-picker-1"> 药品批次 (生产时间) </label>
-														<div class="col-sm-5">
-															<div class="input-group">
-																<input class="form-control date-picker col-xs-10 col-sm-5" id="id-date-picker-1" type="text" placeholder="药品批次 (生产时间)" data-date-format="yyyy 年 mm 月 dd 日" required="required" />
-																<span class="input-group-addon">
-																	<i class="fa fa-calendar bigger-110"></i>
-																</span>
-															</div>
-														</div>
-													</div>
-													<div class="form-group">
-														<label class="col-sm-4 control-label no-padding-right" for="spinner1"> 药品数量 </label>
-														<div class="col-sm-5">
-															<input type="text" id="spinner1" name="PDnum" placeholder="药品数量" required="required" />
-														</div>
-													</div>
-													<div class="form-group">
-														<label class="col-sm-4 control-label no-padding-right" for="form-field-4"> 药品供应商 </label>
-														<div class="col-sm-5">
-															<select class="chosen-select form-control" id="form-field-4" name="Sno" required="required">
-																<option value="" disabled="disabled" selected="selected" style="display: none;">选择药品供应商...</option>
-																<c:forEach items="${suppliers}" var="supplier">
-																	<option value="${supplier.sno}">${supplier.sname}</option>
-																</c:forEach>
-															</select>
-														</div>
-													</div>
-												</div><!-- /.col -->
-											</div><!-- /.row -->
-										</div>
-										<div class="modal-footer no-margin-top">
-											<button class="btn btn-danger" data-dismiss="modal">
-												<i class="ace-icon fa fa-times"></i>
-												取消
-											</button>
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn btn-info" type="submit">
-												<i class="ace-icon fa fa-check bigger-110"></i>
-												提交
-											</button>
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset">
-												<i class="ace-icon fa fa-undo bigger-110"></i>
-												重置
-											</button>
-										</div>
-									</form>
-								</div><!-- /.modal-content -->
-							</div><!-- /.modal-dialog -->
-						</div>
-						<div class="space-4"></div>
+						<div class="space space-6"></div>
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
@@ -614,25 +536,6 @@
 		<script src="../assets/js/buttons.print.min.js"></script>
 		<script src="../assets/js/buttons.colVis.min.js"></script>
 		<script src="../assets/js/dataTables.select.min.js"></script>
-		<!-- page specific plugin scripts -->
-		<!--[if lte IE 8]>
-			<script src="../assets/js/excanvas.min.js"></script>
-		<![endif]-->
-		<script src="../assets/js/jquery-ui.custom.min.js"></script>
-		<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="../assets/js/chosen.jquery.min.js"></script>
-		<script src="../assets/js/spinbox.min.js"></script>
-		<script src="../assets/js/bootstrap-datepicker.min.js"></script>
-		<script src="../assets/js/bootstrap-timepicker.min.js"></script>
-		<script src="../assets/js/moment.min.js"></script>
-		<script src="../assets/js/daterangepicker.min.js"></script>
-		<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
-		<script src="../assets/js/bootstrap-colorpicker.min.js"></script>
-		<script src="../assets/js/jquery.knob.min.js"></script>
-		<script src="../assets/js/autosize.min.js"></script>
-		<script src="../assets/js/jquery.inputlimiter.min.js"></script>
-		<script src="../assets/js/jquery.maskedinput.min.js"></script>
-		<script src="../assets/js/bootstrap-tag.min.js"></script>
 		<!-- ace scripts -->
 		<script src="../assets/js/ace-elements.min.js"></script>
 		<script src="../assets/js/ace.min.js"></script>
@@ -690,19 +593,6 @@
 				  }
 				).css('padding-top', '12px');
 				*/
-				$('#spinner1').ace_spinner({value:0, min:0, max:10000, step:100, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
-				.closest('.ace-spinner')
-				.on('changed.fu.spinbox', function(){
-					//console.log($('#spinner1').val())
-				});
-				$('.date-picker').datepicker({
-					autoclose: true,
-					todayHighlight: true
-				})
-				//show datepicker when clicking on the icon
-				.next().on(ace.click_event, function(){
-					$(this).prev().focus();
-				});
 			})
 		</script>
 	</body>
