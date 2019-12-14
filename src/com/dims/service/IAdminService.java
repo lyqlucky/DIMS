@@ -42,5 +42,7 @@ public interface IAdminService {
 
 	public List<Supplier> queryAllSuppliers(); // 查看药品供应商列表
 
+	public void addNewPDbatch(InventoryDrug newPDbatch); // 药品入库 / 添加一条库存药品记录
+
 	public void changeApwd(String Apwd, String Ano); // 修改登录密码
 }

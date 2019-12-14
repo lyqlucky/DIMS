@@ -322,6 +322,13 @@
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
+						<a href="../admin/fill-storage-form" role="button" class="green" data-toggle="modal">
+							<button class="btn btn-sm btn-primary">
+								<i class="ace-icon fa fa-pencil-square-o bigger-110"></i>
+								添加药品批次入库记录
+								<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+							</button>
+						</a>
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->

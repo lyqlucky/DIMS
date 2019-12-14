@@ -239,6 +239,13 @@
 						<b class="arrow"></b>
 					</li>
 					<li class="">
+						<a href="../admin/add-supplier-form">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text"> 填写新增供应商表单 </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
 							<span class="menu-text"> 查看药品库存信息 </span>
@@ -329,7 +336,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal" role="form" method="post" action="../admin/submitStorageForm">
+								<form class="form-horizontal" role="form" method="post" action="../admin/submit-storage-form">
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 药品名称 </label>
 										<div class="col-sm-4">

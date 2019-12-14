@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dims.domain.Admin;
 import com.dims.domain.DestroyedDrug;
 import com.dims.domain.Drug;
+import com.dims.domain.InventoryDrug;
 import com.dims.domain.Supplier;
 import com.dims.service.IAdminService;
 
@@ -150,6 +151,19 @@ public class AdminController {
 
 		// 请求映射到 WEB-INF/views/admin/fill-storage-form.jsp
 		return "admin/fill-storage-form";
+	}
+
+	@RequestMapping(value = "/submit-storage-form")
+	public String submitStorageForm(HttpServletRequest req, InventoryDrug newPDbatch) {
+		if (req.getSession().getAttribute("currentAdmin") == null) {
+			// 重定向到 WEB-INF/views/login.jsp，留在登录页面
+			return "redirect:/login";
+		}
+
+		adminService.addNewPDbatch(newPDbatch);
+
+		// 重定向到 WEB-INF/views/admin/query-pdbatch-list
+		return "redirect:/admin/query-pdbatch-list";
 	}
 
 	@RequestMapping(value = "/changeApwd")

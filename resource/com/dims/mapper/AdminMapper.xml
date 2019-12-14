@@ -110,6 +110,12 @@
 		ORDER BY Sname;
 	</select>
 	
+	<!-- 药品入库 / 添加一条库存药品记录 -->
+	<insert id="addNewPDbatch" parameterType="InventoryDrug">
+		INSERT INTO InventoryDrug(PDno, PDbatch, PDnum, Sno)
+		VALUES(#{PDno}, #{PDbatch}, #{PDnum}, #{Sno});
+	</insert>
+	
 	<!-- 修改登陆密码 -->
 	<update id="changeApwd">
 		UPDATE Admin

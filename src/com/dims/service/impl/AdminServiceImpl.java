@@ -100,6 +100,11 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
+	public void addNewPDbatch(InventoryDrug newPDbatch) { // 药品入库 / 添加一条库存药品记录
+		adminMapper.addNewPDbatch(newPDbatch);
+	}
+
+	@Override
 	public void changeApwd(String Apwd, String Ano) { // 修改登录密码
 		adminMapper.changeApwd(Apwd, Ano);
 	}
