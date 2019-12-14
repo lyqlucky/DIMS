@@ -311,17 +311,35 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-block alert-success">
-									<button type="button" class="close" data-dismiss="alert">
-										<i class="ace-icon fa fa-times"></i>
-									</button>
-									<i class="ace-icon fa fa-check green"></i>
+								<div class="alert alert-info">
+									<i class="ace-icon fa fa-hand-o-right"></i>
 									欢迎使用
-									<strong class="green">
+									<strong class="blue">
 										医院药品库存管理系统
 										<small>DIMS (v1.0)</small>
 									</strong>
+									<button class="close" data-dismiss="alert">
+										<i class="ace-icon fa fa-times"></i>
+									</button>
 								</div>
+								<c:if test="${lowInventoryDrugsNum != 0}">
+									<div class="alert alert-warning">
+										<i class="ace-icon fa fa-bell-o"></i>
+										警告：共有 ${lowInventoryDrugsNum} 种药品库存紧张，请尽快进货入库！
+										<button class="close" data-dismiss="alert">
+											<i class="ace-icon fa fa-times"></i>
+										</button>
+									</div>
+								</c:if>
+								<c:if test="${close2ExpiryPDbatchesNum != 0}">
+									<div class="alert alert-danger">
+										<i class="ace-icon fa fa-bullhorn"></i>
+										严重：共有 ${close2ExpiryPDbatchesNum} 个批次的库存药品临期，请立即处理！
+										<button class="close" data-dismiss="alert">
+											<i class="ace-icon fa fa-times"></i>
+										</button>
+									</div>
+								</c:if>
 								<div class="row">
 									<div class="space-6"></div>
 									<div class="col-sm-7 infobox-container">
